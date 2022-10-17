@@ -1,0 +1,29 @@
+{
+  "name": "transparencia-compras",
+  "version": "1.0.0",
+  "description": "Programa do setor de compras da FEG/Unesp que visa facilitar a parte de compras e licitação de materiais da instituição.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "concurrently \"webpack --watch\" \"npx tailwindcss -i ./src/input.css -o ./dist/main.css --watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jv-aquino/Transparencia-Compras.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jv-aquino/Transparencia-Compras/issues"
+  },
+  "homepage": "https://github.com/jv-aquino/Transparencia-Compras#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
