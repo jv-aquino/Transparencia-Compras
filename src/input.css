@@ -2,3 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --black-custom: hsl(221, 80%, 5%);
+  --white-text-custom: hsl(117, 86%, 95%); 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  transition: .4s;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  width: 100vw;
+  background-color: hsl(233, 100%, 90%);
+}
+
+nav {
+  background-color: hsl(146, 100%, 45%);
+  box-shadow: 0px 1px 6px 3px gray, inset 0px 0px 5px 100px rgba(3, 223, 215, 0.1);
+}
+nav ul {
+  color: var(--white-text-custom);
+}
+nav ul li {
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  border-radius: 8px;
+  transition: .6s;
+}
+nav ul li:hover {
+  background-color: var(--white-text-custom);
+  color: hsl(178, 97%, 40%);
+}
+
+h1 {
+  color: var(--black-custom);
+  font-family: "Bubblegum Sans", serif;
+}
