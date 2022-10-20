@@ -3,25 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --black-custom: hsl(221, 80%, 5%);
   --white-text-custom: hsl(117, 86%, 95%); 
+  --black-custom: hsl(221, 80%, 5%);
+  --blue-custom: hsl(178, 97%, 40%);
+  --green-custom: hsl(146, 100%, 45%);
 }
 
 * {
   margin: 0;
   padding: 0;
   z-index: 0;
-  transition: .4s;
+
   font-family: 'Inter', sans-serif;
+  transition: .4s;
 }
 
 body {
   width: 100vw;
   background-color: hsl(233, 100%, 90%);
+  overflow-x: hidden;
 }
 
+
 nav {
-  background-color: hsl(146, 100%, 45%);
+  background-color: var(--green-custom);
   box-shadow: 0px 1px 6px 3px gray, inset 0px 0px 5px 100px rgba(3, 223, 215, 0.1);
 }
 nav ul {
@@ -36,10 +41,37 @@ nav ul li {
 }
 nav ul li:hover {
   background-color: var(--white-text-custom);
-  color: hsl(178, 97%, 40%);
+  color: var(--blue-custom);
 }
 
-h1 {
+main {
+  height: 100vh;
+}
+
+main h1 {
+  font-size: 3rem;
+  line-height: 1;
+
   color: var(--black-custom);
   font-family: "Bubblegum Sans", serif;
+}
+
+main button {
+  margin: 1.2rem auto;
+  border-radius: 4px;
+
+  color: var(--white-text-custom);
+  background-color: var(--green-custom) !important;
+  transition: .6s;
+}
+main button:hover {
+  color: var(--blue-custom);
+  background-color: var(--white-text-custom) !important;
+}
+
+footer {
+  color: var(--white-text-custom);
+  background-color: var(--black-custom);
+
+  grid-template-columns: 1fr 3fr;
 }
