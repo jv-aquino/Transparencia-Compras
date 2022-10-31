@@ -9,6 +9,11 @@
   --green-custom: hsl(146, 100%, 45%);
 }
 
+::selection {
+  color: var(--white-text-custom);
+  background-color: var(--blue-custom);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -49,15 +54,17 @@ main {
 }
 
 main h1 {
-  font-size: 3rem;
+  font-size: 3.8rem;
   line-height: 1;
+  padding: 0.1rem;
+  padding-bottom: 0.5rem;
 
   color: var(--black-custom);
   font-family: "Bubblegum Sans", serif;
 }
 
 main button {
-  margin: 1.2rem auto;
+  margin: 0.7rem auto;
   border-radius: 4px;
 
   color: var(--white-text-custom);
@@ -67,6 +74,18 @@ main button {
 main button:hover {
   color: var(--blue-custom);
   background-color: var(--white-text-custom) !important;
+}
+
+main div.contact p {
+  font-size: 1.4rem;
+}
+
+main a, 
+main span {
+  color: #1A5BE4;
+}
+main div.contact span {
+  cursor: default;
 }
 
 footer {
