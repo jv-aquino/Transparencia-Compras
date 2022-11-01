@@ -32,40 +32,53 @@ body {
 
 nav {
   background-color: var(--green-custom);
-  box-shadow: 0px 1px 6px 3px gray, inset 0px 0px 5px 100px rgba(3, 223, 215, 0.1);
-}
-nav ul {
-  color: var(--white-text-custom);
+  box-shadow: 0px 1px 6px 3px gray;
 }
 nav ul li {
+  color: var(--white-text-custom);
+
   font-size: 1.6rem;
   font-weight: 400;
 
-  border-radius: 8px;
+  border-radius: 10px;
   transition: .6s;
 }
-nav ul li:hover {
-  background-color: var(--white-text-custom);
-  color: var(--blue-custom);
+nav ul li.selected {
+  color: #008984;
 }
+nav ul li:hover {
+  color: var(--blue-custom);
+  background-color: var(--white-text-custom);
+}
+nav ul li.selected:hover {
+  color: var(--white-text-custom);
+  background-color: #008984;
+}
+
 
 main {
   height: 100vh;
 }
 
 main h1 {
-  font-size: 3.8rem;
-  line-height: 1;
   padding: 0.1rem;
   padding-bottom: 0.5rem;
 
   color: var(--black-custom);
-  font-family: "Bubblegum Sans", serif;
+
+  font-family: "Quicksand", sans-serif;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.1rem;
 }
 
 main button {
+  font-size: 1.6rem;
+  font-weight: 500;
+
   margin: 0.7rem auto;
-  border-radius: 4px;
+  border-radius: 8px;
 
   color: var(--white-text-custom);
   background-color: var(--green-custom) !important;

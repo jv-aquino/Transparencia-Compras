@@ -9,7 +9,7 @@ const inicio = () => {
   const p = document.createElement("p");
 
   const button = document.createElement("button");  
-  button.classList.add("text-2xl", "p-2");
+  button.classList.add("p-2");
   button.textContent = "Visualizar Pedidos";
 
   main.appendChild(h1);

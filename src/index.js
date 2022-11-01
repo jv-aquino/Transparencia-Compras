@@ -12,17 +12,35 @@ const Dom = (() => {
 
   const changePage = (page) => {
     const main = Pages[page]();
-    cleanMain();
     div.insertBefore(main, div.children[1]);
   }
 
+  const highlightLi = (liId) => {
+    document.querySelectorAll("nav li").forEach(li => {
+      li.classList.remove("selected");
+    });
+
+    const liSelected = document.querySelector("#" + liId);
+    liSelected.classList.add("selected");
+  }
+
   liPages.forEach(li => {
-    li.addEventListener("click", () => {changePage(li.id)});
+    li.addEventListener("click", () => {Controller.switchPage(li.id)});
   });
 
-  return {changePage};
+  return {changePage, cleanMain, highlightLi};
+})();
+
+const Controller = (() => {
+  const switchPage = (page) => {
+    Dom.cleanMain();
+    Dom.changePage(page);
+    Dom.highlightLi(page);
+  }
+
+  return {switchPage};
 })();
 
 const Start = (() => {
-  Dom.changePage("inicio");
+  Controller.switchPage("inicio");
 })();
