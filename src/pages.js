@@ -30,14 +30,42 @@ const contato = () => {
   contactDiv.innerHTML += "<p><span>(12) 3123-2733</span></p>";
   contactDiv.innerHTML += "<p><a href='mailto:sma.feg@unesp.br'>sma.feg@unesp.br</a></p>";
 
-  const funcionariosDiv = document.createElement("div");
-  funcionariosDiv.classList.add("grid", "funcionarios");
-
   main.appendChild(h1);
   main.appendChild(contactDiv);
+
+  return main;
+}
+
+const equipe = () => {
+  main.textContent = '';
+  const h1 = document.createElement("h1");
+  h1.textContent = "Equipe";
+
+  const funcionariosDiv = document.createElement("div");
+  funcionariosDiv.classList.add("grid", "funcionarios");
+  const funcionarios = require("./contact.json").funcionarios;
+  funcionarios.forEach(funcionario => {
+    const div = document.createElement("div");
+    const nome = document.createElement("h3");
+    const cargo = document.createElement("p");
+    const email = document.createElement("p");
+    const telefone = document.createElement("p");
+    nome.textContent = funcionario.nome;
+    cargo.textContent = funcionario.cargo;
+    email.innerHTML = "<a href='mailto:" + funcionario.email + "'>" + funcionario.email + "</a>";
+    telefone.innerHTML = "<a>" + funcionario.telefone + "</a>";
+
+    div.appendChild(nome);
+    div.appendChild(cargo);
+    div.appendChild(email);
+    div.appendChild(telefone);
+    funcionariosDiv.appendChild(div);
+  });
+
+  main.appendChild(h1);
   main.appendChild(funcionariosDiv);
 
   return main;
 }
 
-export {inicio, contato};
+export {inicio, equipe, contato};
