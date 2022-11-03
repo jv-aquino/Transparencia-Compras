@@ -28,7 +28,7 @@ const contato = () => {
   const contactDiv = document.createElement("div");
   contactDiv.classList.add("grid", "contact");
   contactDiv.innerHTML = "<p class='m-auto'>STMA</p>";
-  contactDiv.innerHTML += "<p><span>(12) 3123-2733</span></p>";
+  contactDiv.innerHTML += "<p class='telefone'>(12) 3123-2733</p>";
   contactDiv.innerHTML += "<p><a href='mailto:sma.feg@unesp.br'>sma.feg@unesp.br</a></p>";
 
   main.appendChild(h1);

@@ -91,9 +91,8 @@ main h1.contato::after {
 
 main .highlight,
 main h1 {
-  transform: translateZ(0) scale(1.0, 1.0) translate3d(0,0,0);  
-  backface-visibility: hidden;
-  
+  transform: perspective(0px) translateZ(0) translate3d(0,0,0);
+
   cursor: default;
   position: relative;
 }
@@ -118,7 +117,7 @@ main h1:hover::after {
 
 main .highlight:hover,
 main h1:hover {
-  transform: scale(1.02);
+  transform: translateZ(0) scale(1.02);
 }
 
 main button {
@@ -137,16 +136,15 @@ main button:hover {
   background-color: var(--white) !important;
 }
 
-main div.contact p {
-  font-size: 1.4rem;
-}
-
 main a, 
 main span {
   color: var(--darkblue);
 }
-main div.contact span {
-  cursor: default;
+main div.contact p {
+  font-size: 22px;
+}
+main .telefone {
+  color: var(--darker-lightblue);
 }
 
 main .funcionarios {
@@ -154,7 +152,7 @@ main .funcionarios {
   width: 90%;
 
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--base-padding);
+  gap: calc(var(--base-padding) * 1.2);
 }
 @media screen and (max-width:300px) {
   main .funcionarios {
@@ -165,12 +163,12 @@ main .funcionarios div {
   background-color: var(--white);
   border-radius: 8px;
 
-  padding: var(--base-padding);
+  padding: calc(var(--base-padding) * 1.2);
 }
 main .funcionarios div > * {
   font-size: 18px;
 
-  padding: calc(var(--smallest-padding) * 1.5);
+  padding: calc(var(--smallest-padding) * 1.6);
 }
 main .funcionarios .nome {
   width: fit-content;
@@ -181,9 +179,6 @@ main .funcionarios .nome {
 main .funcionarios .cargo {
   font-size: 19px;
   filter: brightness(92%);
-}
-main .funcionarios .telefone {
-  color: var(--darker-lightblue);
 }
 
 
