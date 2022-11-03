@@ -22,6 +22,7 @@ const inicio = () => {
 const contato = () => {
   main.textContent = '';
   const h1 = document.createElement("h1");
+  h1.classList.add("contato");
   h1.textContent = "Contato";
 
   const contactDiv = document.createElement("div");
@@ -50,7 +51,8 @@ const equipe = () => {
 
     Object.keys(funcionario).forEach(key => {
       const element = document.createElement("p");
-      element.classList.add(key);
+      element.classList.add(key); 
+      (key == "nome") ? element.classList.add("highlight") : null;
       element.innerHTML = (key == 'email') ? `<a href='mailto:${funcionario[key]}'>${funcionario[key]}</a>` : funcionario[key];
       div.appendChild(element);
     })
