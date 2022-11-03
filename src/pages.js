@@ -6,14 +6,16 @@ const inicio = () => {
   const h1 = document.createElement("h1");
   h1.textContent = "Transparência de Compras";
 
-  const p = document.createElement("p");
+  const content = document.createElement("div");
+  content.classList.add("content", "shadow-lg");
+  content.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Consectetur purus ut faucibus pulvinar elementum integer enim. Sodales ut etiam sit amet.";
 
-  const button = document.createElement("button");  
-  button.classList.add("p-2");
+  const button = document.createElement("button");
+  button.classList.add("shadow-lg");
   button.textContent = "Visualizar Pedidos";
 
   main.appendChild(h1);
-  main.appendChild(p);
+  main.appendChild(content);
   main.appendChild(button);
 
   return main;
@@ -48,6 +50,7 @@ const equipe = () => {
   
   funcionarios.forEach(funcionario => {
     const div = document.createElement("div");
+    div.classList.add("shadow-lg")
 
     Object.keys(funcionario).forEach(key => {
       const element = document.createElement("p");

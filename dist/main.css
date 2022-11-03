@@ -664,6 +664,12 @@ video {
   font-weight: 700;
 }
 
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 :root {
   --white: hsl(117, 86%, 95%);
   --black: hsl(221, 80%, 5%);
@@ -673,6 +679,7 @@ video {
   --green: hsl(146, 100%, 45%);
   --base-padding: 16px;
   --smallest-padding: 2px;
+  --base-radius: 8px;
 }
 
 ::-moz-selection {
@@ -701,20 +708,25 @@ body {
 
 nav {
   width: 100%;
-  background-color: var(--green);
+  background-color: var(--darkblue);
   box-shadow: 0px 1px 6px 3px gray;
+}
+
+nav img {
+  filter: brightness(0) invert(1);
+  /* change img to white */
 }
 
 nav ul li {
   color: var(--white);
   font-size: 1.6rem;
   font-weight: 400;
-  border-radius: 10px;
+  border-radius: calc(var(--base-radius) + 2);
   transition: .6s;
 }
 
 nav ul li.selected {
-  color: var(--darker-lightblue);
+  color: hsl(146, 100%, 65%);
 }
 
 nav ul li:hover {
@@ -724,7 +736,7 @@ nav ul li:hover {
 
 nav ul li.selected:hover {
   color: var(--white);
-  background-color: var(--darker-lightblue);
+  background-color: var(--green);
 }
 
 main {
@@ -740,6 +752,87 @@ main h1 {
   font-weight: 700;
   line-height: 1;
   letter-spacing: -2px;
+}
+
+main button {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0.7rem auto;
+  padding: calc(var(--base-padding) * 0.5);
+  border-radius: var(--base-radius);
+  color: var(--white);
+  background-color: var(--green) !important;
+  transition: .6s;
+}
+
+main button:hover {
+  color: var(--lightblue);
+  background-color: var(--white) !important;
+}
+
+main .content {
+  font-size: 18px;
+  width: min(850px, 90%);
+  margin: calc(var(--base-padding) * 0.7) 0 var(--base-padding);
+  padding: var(--base-padding);
+  border-radius: var(--base-radius);
+  background-color: var(--white);
+}
+
+main a, 
+main span {
+  color: var(--darkblue);
+}
+
+main div.contact p {
+  font-size: 22px;
+}
+
+main .telefone {
+  color: var(--darker-lightblue);
+}
+
+main .funcionarios {
+  padding-top: 12px;
+  width: 90%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: calc(var(--base-padding) * 1.2);
+}
+
+@media screen and (max-width:300px) {
+  main .funcionarios {
+    grid-template-columns: 1fr;
+  }
+}
+
+main .funcionarios div {
+  background-color: var(--white);
+  border-radius: var(--base-radius);
+  padding: calc(var(--base-padding) * 1.2);
+}
+
+main .funcionarios div > * {
+  font-size: 18px;
+  padding: calc(var(--smallest-padding) * 1.6);
+}
+
+main .funcionarios .nome {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+main .funcionarios .cargo {
+  font-size: 19px;
+  filter: brightness(92%);
+}
+
+footer {
+  color: var(--white);
+  background-color: var(--black);
+  grid-template-columns: 1fr 3fr;
 }
 
 main h1::after {
@@ -778,75 +871,4 @@ main h1:hover::after {
 main .highlight:hover,
 main h1:hover {
   transform: translateZ(0) scale(1.02);
-}
-
-main button {
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin: 0.7rem auto;
-  border-radius: 8px;
-  color: var(--white);
-  background-color: var(--green) !important;
-  transition: .6s;
-}
-
-main button:hover {
-  color: var(--lightblue);
-  background-color: var(--white) !important;
-}
-
-main a, 
-main span {
-  color: var(--darkblue);
-}
-
-main div.contact p {
-  font-size: 22px;
-}
-
-main .telefone {
-  color: var(--darker-lightblue);
-}
-
-main .funcionarios {
-  padding-top: 12px;
-  width: 90%;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: calc(var(--base-padding) * 1.2);
-}
-
-@media screen and (max-width:300px) {
-  main .funcionarios {
-    grid-template-columns: 1fr;
-  }
-}
-
-main .funcionarios div {
-  background-color: var(--white);
-  border-radius: 8px;
-  padding: calc(var(--base-padding) * 1.2);
-}
-
-main .funcionarios div > * {
-  font-size: 18px;
-  padding: calc(var(--smallest-padding) * 1.6);
-}
-
-main .funcionarios .nome {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 22px;
-  font-weight: 500;
-}
-
-main .funcionarios .cargo {
-  font-size: 19px;
-  filter: brightness(92%);
-}
-
-footer {
-  color: var(--white);
-  background-color: var(--black);
-  grid-template-columns: 1fr 3fr;
 }
