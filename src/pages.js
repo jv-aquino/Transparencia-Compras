@@ -36,6 +36,7 @@ const contato = () => {
   return main;
 }
 
+const funcionarios = require("./contact.json").funcionarios;
 const equipe = () => {
   main.textContent = '';
   const h1 = document.createElement("h1");
@@ -43,22 +44,17 @@ const equipe = () => {
 
   const funcionariosDiv = document.createElement("div");
   funcionariosDiv.classList.add("grid", "funcionarios");
-  const funcionarios = require("./contact.json").funcionarios;
+  
   funcionarios.forEach(funcionario => {
     const div = document.createElement("div");
-    const nome = document.createElement("h3");
-    const cargo = document.createElement("p");
-    const email = document.createElement("p");
-    const telefone = document.createElement("p");
-    nome.textContent = funcionario.nome;
-    cargo.textContent = funcionario.cargo;
-    email.innerHTML = "<a href='mailto:" + funcionario.email + "'>" + funcionario.email + "</a>";
-    telefone.innerHTML = "<a>" + funcionario.telefone + "</a>";
 
-    div.appendChild(nome);
-    div.appendChild(cargo);
-    div.appendChild(email);
-    div.appendChild(telefone);
+    Object.keys(funcionario).forEach(key => {
+      const element = document.createElement("p");
+      element.classList.add(key);
+      element.innerHTML = (key == 'email') ? `<a href='mailto:${funcionario[key]}'>${funcionario[key]}</a>` : funcionario[key];
+      div.appendChild(element);
+    })
+
     funcionariosDiv.appendChild(div);
   });
 

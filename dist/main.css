@@ -642,19 +642,14 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
 }
 
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
 }
 
 .pb-6 {
@@ -772,10 +767,10 @@ main div.contact span {
 }
 
 main .funcionarios {
-  padding-top: 0.5rem;
+  padding-top: 0.7rem;
   width: 90%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
+  gap: 15px;
 }
 
 @media screen and (max-width:300px) {
@@ -788,6 +783,25 @@ main .funcionarios div {
   background-color: var(--white-text-custom);
   border-radius: 8px;
   padding: 1rem;
+}
+
+main .funcionarios div > * {
+  font-size: 1.1rem;
+  padding: 0.1rem;
+}
+
+main .funcionarios .nome {
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+main .funcionarios .cargo {
+  font-size: 1.17rem;
+  filter: brightness(92%);
+}
+
+main .funcionarios .telefone {
+  color: #008984;
 }
 
 footer {

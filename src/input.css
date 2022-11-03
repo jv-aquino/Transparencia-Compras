@@ -104,11 +104,11 @@ main div.contact span {
 }
 
 main .funcionarios {
-  padding-top: 0.5rem;
+  padding-top: 0.7rem;
   width: 90%;
 
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
+  gap: 15px;
 }
 @media screen and (max-width:300px) {
   main .funcionarios {
@@ -120,6 +120,21 @@ main .funcionarios div {
   border-radius: 8px;
 
   padding: 1rem;
+}
+main .funcionarios div > * {
+  font-size: 1.1rem;
+  padding: 0.1rem;
+}
+main .funcionarios .nome {
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+main .funcionarios .cargo {
+  font-size: 1.17rem;
+  filter: brightness(92%);
+}
+main .funcionarios .telefone {
+  color: #008984;
 }
 
 footer {
