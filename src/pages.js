@@ -8,7 +8,10 @@ const inicio = () => {
 
   const content = document.createElement("div");
   content.classList.add("content", "shadow-lg");
-  content.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Consectetur purus ut faucibus pulvinar elementum integer enim. Sodales ut etiam sit amet.";
+  content.innerHTML = "<h3>Início<h3>";
+  content.innerHTML += "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Consectetur purus ut faucibus pulvinar elementum integer enim. Sodales ut etiam sit amet.</p>";
+  content.innerHTML += "<h3>Perguntas Frequentes<h3>";
+  content.innerHTML += "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Consectetur purus ut faucibus pulvinar elementum integer enim. Sodales ut etiam sit amet.</p>";
 
   const button = document.createElement("button");
   button.classList.add("shadow-lg");
@@ -28,8 +31,8 @@ const contato = () => {
   h1.textContent = "Contato";
 
   const contactDiv = document.createElement("div");
-  contactDiv.classList.add("grid", "contact");
-  contactDiv.innerHTML = "<p class='m-auto'>STMA</p>";
+  contactDiv.classList.add("grid", "shadow-lg", "contact");
+  contactDiv.innerHTML = "<p>STMA</p>";
   contactDiv.innerHTML += "<p class='telefone'>(12) 3123-2733</p>";
   contactDiv.innerHTML += "<p><a href='mailto:sma.feg@unesp.br'>sma.feg@unesp.br</a></p>";
 

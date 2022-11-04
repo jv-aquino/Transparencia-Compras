@@ -31,6 +31,8 @@
   box-sizing: border-box !important;
 
   font-family: 'Inter', sans-serif;
+  color: var(--black);
+
   transition: .4s;
 }
 
@@ -55,7 +57,7 @@ nav ul li {
   font-size: 1.6rem;
   font-weight: 400;
 
-  border-radius: calc(var(--base-radius) + 2);
+  border-radius: calc(var(--base-radius) + 2px);
   transition: .6s;
 }
 nav ul li.selected {
@@ -72,14 +74,12 @@ nav ul li.selected:hover {
 
 
 main {
-  min-height: 100vh;
+  min-height: 95vh;
 }
 
 main h1 {
   padding: var(--smallest-padding);
   padding-bottom: var(--base-padding);
-
-  color: var(--black);
 
   font-family: "Quicksand", sans-serif;
   font-size: 60px;
@@ -105,7 +105,21 @@ main button:hover {
   background-color: var(--white) !important;
 }
 
-main .content {
+main div.content > * {
+  padding: var(--smallest-padding);
+}
+main div.content h3 {
+  font-size: 30px;
+  font-weight: 600;
+
+  cursor: default;
+}
+main div.content p {
+  padding-bottom: calc(var(--base-padding) * 0.6);
+}
+
+main div.content,
+main div.contact {
   font-size: 18px;
 
   width: min(850px, 90%);
@@ -117,13 +131,16 @@ main .content {
   background-color: var(--white);
 }
 
-main a, 
-main span {
+main a {
   color: var(--darkblue);
+}
+main div.contact {
+
 }
 main div.contact p {
   font-size: 22px;
 }
+
 main .telefone {
   color: var(--darker-lightblue);
 }
@@ -133,7 +150,7 @@ main .funcionarios {
   width: 90%;
 
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: calc(var(--base-padding) * 1.2);
+  gap: calc(var(--base-padding) * 1.5);
 }
 @media screen and (max-width:300px) {
   main .funcionarios {
@@ -144,12 +161,12 @@ main .funcionarios div {
   background-color: var(--white);
   border-radius: var(--base-radius);
 
-  padding: calc(var(--base-padding) * 1.2);
+  padding: calc(var(--base-padding) * 1.3);
 }
 main .funcionarios div > * {
   font-size: 18px;
 
-  padding: calc(var(--smallest-padding) * 1.6);
+  padding: calc(var(--smallest-padding) * 1.8);
 }
 main .funcionarios .nome {
   width: fit-content;
@@ -158,19 +175,23 @@ main .funcionarios .nome {
   font-weight: 500;
 }
 main .funcionarios .cargo {
+  cursor: default;
+
   font-size: 19px;
   filter: brightness(92%);
 }
 
 
 footer {
-  color: var(--white);
   background-color: var(--black);
 
   grid-template-columns: 1fr 3fr;
 }
+footer * {
+  color: var(--white);
+}
 
-
+/* Animations */
 main h1::after {
   bottom: 5px !important;
 }
