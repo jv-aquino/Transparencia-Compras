@@ -845,11 +845,25 @@ main .funcionarios .cargo {
 
 footer {
   background-color: var(--black);
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 250px repeat(auto-fit, minmax(250px, 1fr));
+  transition: .4s;
 }
 
 footer * {
   color: var(--white);
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--base-padding) * 0.5);
+}
+
+footer li {
+  cursor: pointer !important;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 /* Animations */
@@ -862,15 +876,15 @@ main h1.contato::after {
   bottom: 8px !important;
 }
 
-main .highlight,
-main h1 {
+.highlight,
+h1 {
   transform: perspective(0px) translateZ(0) translate3d(0,0,0);
   cursor: default;
   position: relative;
 }
 
-main .highlight::after,
-main h1::after {
+.highlight::after,
+h1::after {
   content: "";
   position: absolute;
   left: 0;
@@ -878,16 +892,25 @@ main h1::after {
   width: 0;
   height: 2px;
   border-radius: 20px;
-  background-color: var(--darker-lightblue);
   transition: .6s;
+  background-color: var(--darker-lightblue);
 }
 
-main .highlight:hover::after,
-main h1:hover::after {
+footer .highlight:hover {
+  text-shadow: 0 0 1px var(--white);
+}
+
+.highlight:hover::after,
+h1:hover::after {
   width: 100%;
 }
 
-main .highlight:hover,
+main .nome.highlight:hover,
 main h1:hover {
   transform: translateZ(0) scale(1.02);
+}
+
+footer .highlight::after {
+  bottom: 1px;
+  background-color: var(--lightblue);
 }
