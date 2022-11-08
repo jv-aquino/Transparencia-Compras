@@ -13,12 +13,18 @@
 </head>
 <body>
   <div id="container">
-    <nav class="py-3 px-7 flex justify-between">
+    <nav class="py-3 px-7 flex justify-between items-center">
       <img src="./img/unesp.png" alt="Logo da Unesp" class="h-16">
       <ul class="font-bold flex items-center gap-3">
-        <li class="cursor-pointer p-2" id="inicio">Início</li>
-        <li class="cursor-pointer p-2" id="equipe">Equipe</li>
-        <li class="cursor-pointer p-2" id="contato">Contato</li>
+        <li class="cursor-pointer p-2 page" id="inicio">Início</li>
+        <div class="dropdown">
+          <li class="cursor-pointer p-2" id="pedido">Pedidos</li>
+          <ul id="pedidos">
+            <li class="p-2 cursor-pointer page" id="visualizar">Visualizar Pedidos</li>
+          </ul>
+        </div>
+        <li class="cursor-pointer p-2 page" id="equipe">Equipe</li>
+        <li class="cursor-pointer p-2 page" id="contato">Contato</li>
       </ul>
     </nav>
     
@@ -26,9 +32,9 @@
       <img src="./img/stma.png" alt="Logo da STMA" class="h-24 justify-self-center">
       <ul>
         <h4></h4>
-        <li class="highlight">Início</li>
-        <li class="highlight">Equipe</li>
-        <li class="highlight">Contato</li>
+        <li class="highlight page" id="inicio"><a href="#container">Início</a></li>
+        <li class="highlight page" id="equipe"><a href="#container">Equipe</a></li>
+        <li class="highlight page" id="contato"><a href="#container">Contato</a></li>
       </ul>
       <ul>
         <h4></h4>

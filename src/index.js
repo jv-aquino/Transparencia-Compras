@@ -2,7 +2,25 @@ import * as Pages from "./pages.js";
 
 const Dom = (() => {
   const div = document.querySelector("div#container");
-  const liPages = document.querySelectorAll("nav li");
+  const liPages = document.querySelectorAll("li.page");
+
+  const drops = document.querySelectorAll(".dropdown li");
+  const downs = document.querySelectorAll(".dropdown ul");
+
+  drops.forEach(dropLi => {
+    dropLi.addEventListener("mouseenter", () => {
+      dropLi.classList.add("visible");
+      
+      document.querySelector("ul#" + dropLi.id + "s").classList.add("visible");
+    });
+  });
+  downs.forEach(downUl => {
+    downUl.addEventListener("mouseleave", () => {
+      document.querySelector("li#" + downUl.id.slice(0, -1)).classList.remove("visible");
+
+      downUl.classList.remove("visible");
+    });
+  })
 
   const cleanMain = () => {
     if (div.children.length > 2) {

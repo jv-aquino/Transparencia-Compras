@@ -36,6 +36,10 @@
   transition: .4s;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
 
@@ -43,6 +47,7 @@ body {
 }
 
 nav {
+  position: relative;
   width: 100%;
 
   background-color: var(--darkblue);
@@ -54,7 +59,7 @@ nav img {
 nav ul li {
   color: var(--white);
 
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 400;
 
   border-radius: calc(var(--base-radius) + 2px);
@@ -63,7 +68,8 @@ nav ul li {
 nav ul li.selected {
   color: hsl(146, 100%, 65%);
 }
-nav ul li:hover {
+nav ul li:hover,
+nav ul li.visible {
   color: var(--lightblue);
   background-color: var(--white);
 }
@@ -72,12 +78,31 @@ nav ul li.selected:hover {
   background-color: var(--green);
 }
 
+nav .dropdown ul {
+  position: absolute;
+  z-index: 1;
 
-main {
-  min-height: 95vh;
+  display: none;
+}
+nav .dropdown > li {
+  border-radius: var(--base-radius) var(--base-radius) 0 0;
+}
+nav .dropdown ul li {
+  border-radius: var(--base-radius);
+  border-top-left-radius: 0;
+}
+nav .dropdown ul.visible {
+  display: block;
 }
 
+
+main {
+  min-height: 90vh;
+}
 main h1 {
+  text-align: center;
+  width: fit-content;
+
   padding: var(--smallest-padding);
   padding-bottom: var(--base-padding);
 
