@@ -73,7 +73,8 @@ nav ul li.visible {
   color: var(--lightblue);
   background-color: var(--white);
 }
-nav ul li.selected:hover {
+nav ul li.selected:hover,
+nav .dropdown ul li.selected:hover {
   color: var(--white);
   background-color: var(--green);
 }
@@ -82,17 +83,45 @@ nav .dropdown ul {
   position: absolute;
   z-index: 1;
 
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: .6s;
 }
 nav .dropdown > li {
   border-radius: var(--base-radius) var(--base-radius) 0 0;
 }
-nav .dropdown ul li {
-  border-radius: var(--base-radius);
-  border-top-left-radius: 0;
+nav .dropdown > li.selected:hover {
+  color: var(--lightblue);
+  background-color: var(--white);
 }
+
+nav .dropdown ul li {
+  border-radius: 0;
+  
+  color: var(--lightblue);
+  background-color: var(--white);
+}
+nav .dropdown ul li:hover {
+  color: var(--white);
+  background-color: var(--lightblue);
+}
+
 nav .dropdown ul.visible {
   display: block;
+  visibility: visible;
+  opacity: 1;
+}
+nav .dropdown ul li.selected {
+  color: var(--green);
+}
+
+nav .dropdown ul li:first-child {
+  border-top-right-radius: var(--base-radius);
+}
+nav .dropdown ul li:last-child {
+  border-bottom-left-radius: var(--base-radius);
+  border-bottom-right-radius: var(--base-radius);
 }
 
 

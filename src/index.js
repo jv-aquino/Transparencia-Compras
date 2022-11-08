@@ -4,13 +4,13 @@ const Dom = (() => {
   const div = document.querySelector("div#container");
   const liPages = document.querySelectorAll("li.page");
 
-  const drops = document.querySelectorAll(".dropdown li");
+  const drops = document.querySelectorAll(".dropdown > li");
   const downs = document.querySelectorAll(".dropdown ul");
 
   drops.forEach(dropLi => {
     dropLi.addEventListener("mouseenter", () => {
       dropLi.classList.add("visible");
-      
+
       document.querySelector("ul#" + dropLi.id + "s").classList.add("visible");
     });
   });
@@ -39,6 +39,12 @@ const Dom = (() => {
     });
 
     const liSelected = document.querySelector("#" + liId);
+
+    let dropdownGroup = liSelected.getAttribute("data-drop");
+    if (dropdownGroup != null) {
+      document.querySelector("#" + dropdownGroup).classList.add("selected");
+    }
+    
     liSelected.classList.add("selected");
   }
 

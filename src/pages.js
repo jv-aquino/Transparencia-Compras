@@ -13,16 +13,26 @@ const inicio = () => {
   content.innerHTML += "<h3>Perguntas Frequentes<h3>";
   content.innerHTML += "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Consectetur purus ut faucibus pulvinar elementum integer enim. Sodales ut etiam sit amet.</p>";
 
+  main.appendChild(h1);
+  main.appendChild(content);
+
+  return main;
+};
+
+const visualizar = () => {
+  main.textContent = '';
+  const h1 = document.createElement("h1");
+  h1.textContent = "Pedidos";
+
   const button = document.createElement("button");
   button.classList.add("shadow-lg");
   button.textContent = "Visualizar Pedidos";
 
   main.appendChild(h1);
-  main.appendChild(content);
   main.appendChild(button);
 
   return main;
-};
+}
 
 const contato = () => {
   main.textContent = '';
@@ -72,4 +82,4 @@ const equipe = () => {
   return main;
 }
 
-export {inicio, equipe, contato};
+export {inicio, equipe, contato, visualizar};
