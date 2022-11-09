@@ -15,7 +15,7 @@ const Dom = (() => {
     });
   });
   downs.forEach(downUl => {
-    downUl.addEventListener("mouseleave", () => {
+    downUl.parentNode.addEventListener("mouseleave", () => {
       document.querySelector("li#" + downUl.id.slice(0, -1)).classList.remove("visible");
 
       downUl.classList.remove("visible");

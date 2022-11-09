@@ -642,9 +642,9 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .px-2 {
@@ -702,6 +702,8 @@ video {
   transition: .4s;
 }
 
+/* Creates smooth scroll behaviour for in page links */
+
 html {
   scroll-behavior: smooth;
 }
@@ -713,9 +715,11 @@ body {
 
 nav {
   position: relative;
+  /* nav as a parent position container for dropdowns */
   width: 100%;
   background-color: var(--darkblue);
   box-shadow: 0px 1px 6px 3px gray;
+  z-index: 1 !important;
 }
 
 nav img {
@@ -732,7 +736,8 @@ nav ul li {
 }
 
 nav ul li.selected {
-  color: hsl(146, 100%, 65%);
+  color: hsl(146, 100%, 60%);
+  /* slightly lighter green for nav links */
 }
 
 nav ul li:hover,
@@ -747,12 +752,16 @@ nav .dropdown ul li.selected:hover {
   background-color: var(--green);
 }
 
-nav .dropdown ul {
-  position: absolute;
-  z-index: 1;
-  visibility: hidden;
-  opacity: 0;
-  transition: .6s;
+/* Dropdown menus */
+
+nav .dropdown {
+  position: relative;
+}
+
+nav .dropdown * {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
 }
 
 nav .dropdown > li {
@@ -764,7 +773,16 @@ nav .dropdown > li.selected:hover {
   background-color: var(--white);
 }
 
+nav .dropdown ul {
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: .6s;
+}
+
 nav .dropdown ul li {
+  display: block;
   border-radius: 0;
   color: var(--lightblue);
   background-color: var(--white);
@@ -792,6 +810,10 @@ nav .dropdown ul li:first-child {
 nav .dropdown ul li:last-child {
   border-bottom-left-radius: var(--base-radius);
   border-bottom-right-radius: var(--base-radius);
+}
+
+nav #contatos li {
+  padding-right: calc(var(--base-padding) * 2);
 }
 
 main {
@@ -907,7 +929,7 @@ main .funcionarios .cargo {
 
 footer {
   background-color: var(--black);
-  grid-template-columns: 250px repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 250px repeat(auto-fit, minmax(100px, 1fr));
   transition: .4s;
 }
 

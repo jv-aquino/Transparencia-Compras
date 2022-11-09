@@ -34,11 +34,11 @@ const visualizar = () => {
   return main;
 }
 
-const contato = () => {
+const stma = () => {
   main.textContent = '';
   const h1 = document.createElement("h1");
   h1.classList.add("contato");
-  h1.textContent = "Contato";
+  h1.textContent = "Contato da STMA";
 
   const contactDiv = document.createElement("div");
   contactDiv.classList.add("grid", "shadow-lg", "contact");
@@ -82,4 +82,4 @@ const equipe = () => {
   return main;
 }
 
-export {inicio, equipe, contato, visualizar};
+export {inicio, equipe, stma, visualizar};
