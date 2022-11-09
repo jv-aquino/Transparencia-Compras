@@ -13,7 +13,7 @@
 </head>
 <body>
   <div id="container">
-    <nav class="py-3 px-7 flex justify-between items-center">
+    <nav class="py-3 px-8 flex justify-between items-center">
       <img src="./img/unesp.png" alt="Logo da Unesp" class="h-16">
       <ul class="font-bold flex items-center gap-3">
         <li class="cursor-pointer p-2 page" id="inicio">Início</li>
@@ -23,8 +23,13 @@
             <li class="p-2 cursor-pointer page" data-drop="pedido" id="visualizar">Visualizar Pedidos</li>
           </ul>
         </div>
-        <li class="cursor-pointer p-2 page" id="equipe">Equipe</li>
-        <li class="cursor-pointer p-2 page" id="contato">Contato</li>
+        <div class="dropdown">
+        <li class="cursor-pointer p-2" id="contato">Contato</li>
+          <ul id="contatos">
+            <li class="cursor-pointer p-2 page" id="equipe">Equipe</li>
+            <li class="cursor-pointer p-2 page" id="stma">STMA</li>
+          </ul>
+        </div>
       </ul>
     </nav>
     
