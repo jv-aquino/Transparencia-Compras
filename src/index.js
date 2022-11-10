@@ -1,9 +1,6 @@
 import * as Pages from "./pages.js";
 
-const Dom = (() => {
-  const div = document.querySelector("div#container");
-  const liPages = document.querySelectorAll("li.page");
-
+const Nav = (() => {
   const drops = document.querySelectorAll(".dropdown > li");
   const downs = document.querySelectorAll(".dropdown ul");
 
@@ -20,8 +17,26 @@ const Dom = (() => {
 
       downUl.classList.remove("visible");
     });
-  })
+  });
 
+  const mobileMenuIcon = document.querySelector("nav #mobileButton span");
+  
+  const toggleMenu = () => {
+    if (mobileMenuIcon.textContent == "menu") {
+      mobileMenuIcon.textContent = "close";
+    }
+    else {
+      mobileMenuIcon.textContent = "menu";
+    }
+  }
+
+  mobileMenuIcon.addEventListener("click", toggleMenu);
+})();
+
+const Dom = (() => {
+  const div = document.querySelector("div#container");
+  const liPages = document.querySelectorAll("li.page");
+  
   const cleanMain = () => {
     if (div.children.length > 2) {
       div.removeChild(div.children[1]);
