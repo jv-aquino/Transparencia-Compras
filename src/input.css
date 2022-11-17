@@ -71,7 +71,7 @@ nav ul li {
   transition: .6s;
 }
 nav ul li.selected {
-  color: hsl(146, 100%, 60%); /* slightly lighter green for nav links */
+  color: hsl(146, 100%, 60%) !important; /* slightly lighter green for nav links */
 }
 nav ul li:hover,
 nav ul li.visible {
@@ -329,9 +329,47 @@ nav #mobileButton span {
 @media screen and (max-width:850px) {
   nav #mobileButton {
     display: flex;
+
+    z-index: 5;
   }
-  nav > ul {
-    display: none;
+  nav #mobileButton span.selected {
+    color: var(--black);
+  }
+  nav div.ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    width: 0% !important;
+    height: 0vh !important;
+    
+    background-color: var(--white);
+
+    align-items: center;
+    justify-content: center;
+
+    transition: .5s;
+
+    display: flex;
+  }
+  nav div.ul.selected {
+    display: flex;
+
+    z-index: 2;
+
+    width: 100% !important;
+    height: 100vh !important;
+  }
+  nav div.ul > ul {
+    flex-direction: column;
+  }
+  nav div.ul ul li {
+    color: var(--darkblue);
+  }
+  nav .ul .dropdown * {
+    position: relative;
   }
 
   footer {

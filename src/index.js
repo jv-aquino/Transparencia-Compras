@@ -1,6 +1,7 @@
 import * as Pages from "./pages.js";
 
 const Nav = (() => {
+  const mobileNav = document.querySelector("nav div.ul")
   const drops = document.querySelectorAll(".dropdown > li");
   const downs = document.querySelectorAll(".dropdown ul");
 
@@ -24,9 +25,13 @@ const Nav = (() => {
   const toggleMenu = () => {
     if (mobileMenuIcon.textContent == "menu") {
       mobileMenuIcon.textContent = "close";
+      mobileMenuIcon.classList.add("selected");
+      mobileNav.classList.add("selected");
     }
     else {
       mobileMenuIcon.textContent = "menu";
+      mobileMenuIcon.classList.remove("selected");
+      mobileNav.classList.remove("selected");
     }
   }
 
