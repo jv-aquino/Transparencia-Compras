@@ -34,7 +34,7 @@ const visualizar = () => {
   return main;
 }
 
-const stma = () => {
+const contato = () => {
   main.textContent = '';
   const h1 = document.createElement("h1");
   h1.classList.add("contato");
@@ -82,4 +82,4 @@ const equipe = () => {
   return main;
 }
 
-export {inicio, equipe, stma, visualizar};
+export {inicio, equipe, contato, visualizar};

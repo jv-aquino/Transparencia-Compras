@@ -11,6 +11,18 @@ const Nav = (() => {
 
       document.querySelector("ul#" + dropLi.id + "s").classList.add("visible");
     });
+    dropLi.addEventListener("click", () => {
+      if (dropLi.classList.contains("visible")) {
+        dropLi.classList.remove("visible");
+
+        document.querySelector("ul#" + dropLi.id + "s").classList.remove("visible");
+      } 
+      else {
+        dropLi.classList.add("visible");
+
+        document.querySelector("ul#" + dropLi.id + "s").classList.add("visible");
+      }
+    });
   });
   downs.forEach(downUl => {
     downUl.parentNode.addEventListener("mouseleave", () => {
@@ -62,7 +74,7 @@ const Dom = (() => {
 
     let dropdownGroup = liSelected.getAttribute("data-drop");
     if (dropdownGroup != null) {
-      document.querySelector("#" + dropdownGroup).classList.add("selected");
+      document.querySelector("nav #" + dropdownGroup).classList.add("selected");
     }
     
     liSelected.classList.add("selected");
