@@ -675,12 +675,14 @@ video {
 }
 
 :root {
-  --white: hsl(117, 86%, 95%);
   --black: hsl(221, 80%, 5%);
-  --lightblue: hsl(178, 97%, 40%);
-  --darker-lightblue: hsl(178, 100%, 27%);
-  --darkblue: hsl(221, 80%, 50%);
-  --green: hsl(146, 100%, 45%);
+  --grey900: hsl(233, 100%, 90%);
+  --white: hsl(117, 86%, 94%);
+  --lblue700: hsl(178, 100%, 27%);
+  --lblue500: hsl(178, 97%, 40%);
+  --dblue500: hsl(221, 80%, 50%);
+  --green500: hsl(146, 100%, 45%);
+  --green400: hsl(146, 85%, 54%);
   --base-padding: 16px;
   --smallest-padding: 2px;
   --base-radius: 8px;
@@ -688,19 +690,19 @@ video {
 
 ::-moz-selection {
   color: var(--white);
-  background-color: var(--lightblue);
+  background-color: var(--lblue500);
 }
 
 ::selection {
   color: var(--white);
-  background-color: var(--lightblue);
+  background-color: var(--lblue500);
 }
 
 * {
   margin: 0;
   padding: 0;
   z-index: 0;
-  box-sizing: border-box !important;
+  box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   color: var(--black);
   transition: .4s;
@@ -714,7 +716,7 @@ html {
 
 body {
   width: 100%;
-  background-color: hsl(233, 100%, 90%);
+  background-color: var(--grey900);
 }
 
 nav {
@@ -722,9 +724,9 @@ nav {
   position: relative;
   /* nav as a parent position container for dropdowns */
   width: 100%;
-  background-color: var(--darkblue);
+  background-color: var(--dblue500);
   box-shadow: 0px 1px 6px 3px gray;
-  z-index: 1 !important;
+  z-index: 1;
 }
 
 nav img {
@@ -745,20 +747,20 @@ nav ul li {
 }
 
 nav ul li.selected {
-  color: hsl(146, 100%, 60%) !important;
+  color: var(--green400);
   /* slightly lighter green for nav links */
 }
 
 nav ul li:hover,
 nav ul li.visible {
-  color: var(--lightblue);
+  color: var(--lblue500);
   background-color: var(--white);
 }
 
 nav ul li.selected:hover,
 nav .dropdown ul li.selected:hover {
-  color: var(--white) !important;
-  background-color: var(--green) !important;
+  color: var(--white);
+  background-color: var(--green500);
 }
 
 /* Dropdown menus */
@@ -782,9 +784,13 @@ nav .dropdown > li span {
   top: 3px;
 }
 
+nav .dropdown > li.selected {
+  color: var(--green400);
+}
+
 nav .dropdown > li.selected:hover {
-  color: var(--lightblue) !important;
-  background-color: var(--white) !important;
+  color: var(--green400);
+  background-color: var(--white);
 }
 
 nav .dropdown ul {
@@ -798,13 +804,13 @@ nav .dropdown ul {
 nav .dropdown ul li {
   display: block;
   border-radius: 0;
-  color: var(--lightblue);
+  color: var(--lblue500);
   background-color: var(--white);
 }
 
 nav .dropdown ul li:hover {
   color: var(--white);
-  background-color: var(--lightblue);
+  background-color: var(--lblue500);
 }
 
 nav .dropdown ul.visible {
@@ -814,7 +820,7 @@ nav .dropdown ul.visible {
 }
 
 nav .dropdown ul li.selected {
-  color: var(--green);
+  color: var(--green400);
 }
 
 nav .dropdown ul li:first-child {
@@ -849,7 +855,7 @@ main h1 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: auto var(--base-padding);
+  margin: 0 calc(var(--base-padding) * 1.5) 2px;
   padding: var(--smallest-padding);
   padding-bottom: var(--base-padding);
   font-family: "Quicksand", sans-serif;
@@ -866,13 +872,13 @@ main button {
   padding: calc(var(--base-padding) * 0.5);
   border-radius: var(--base-radius);
   color: var(--white);
-  background-color: var(--green) !important;
+  background-color: var(--green500);
   transition: .6s;
 }
 
 main button:hover {
-  color: var(--lightblue);
-  background-color: var(--white) !important;
+  color: var(--lblue500);
+  background-color: var(--white);
 }
 
 main div.content > * {
@@ -880,27 +886,32 @@ main div.content > * {
 }
 
 main div.content h3 {
-  font-size: 30px;
+  font-size: 28px;
+  line-height: 1.2;
   font-weight: 600;
   cursor: default;
 }
 
 main div.content p {
-  padding-bottom: calc(var(--base-padding) * 0.6);
+  padding-bottom: calc(var(--base-padding) * 1.5);
 }
 
 main div.content,
 main div.contact {
   font-size: 18px;
-  width: min(850px, 90%);
+  width: min(800px, 90%);
   margin: calc(var(--base-padding) * 0.7) 0 var(--base-padding);
-  padding: var(--base-padding);
+  padding: calc(var(--base-padding) * 1.4);
   border-radius: var(--base-radius);
   background-color: var(--white);
 }
 
+main div.content {
+  padding-bottom: calc(var(--base-padding) * -1);
+}
+
 main a {
-  color: var(--darkblue);
+  color: var(--dblue500);
 }
 
 main div.contact {
@@ -911,7 +922,7 @@ main div.contact p {
 }
 
 main .telefone {
-  color: var(--darker-lightblue);
+  color: var(--lblue700);
 }
 
 main .funcionarios {
@@ -955,9 +966,8 @@ main .funcionarios .cargo {
 footer {
   background-color: var(--black);
   display: grid;
-  grid-template-columns: 250px;
+  grid-template-columns: repeat(auto-fit, 200px);
   grid-auto-flow: column;
-  grid-auto-columns: 1fr;
   grid-template-rows: 1fr -webkit-fit-content;
   grid-template-rows: 1fr fit-content;
   gap: calc(var(--base-padding) * 0.5);
@@ -967,14 +977,14 @@ footer {
 
 footer * {
   color: var(--white);
-  justify-self: auto;
+  justify-content: center;
 }
 
 footer h4 {
   cursor: default;
   font-size: 1.3rem;
   font-weight: 500;
-  color: var(--darkblue);
+  color: var(--dblue500);
   padding: var(--smallest-padding) 0;
 }
 
@@ -985,7 +995,7 @@ footer ul {
 }
 
 footer li {
-  cursor: pointer !important;
+  cursor: pointer;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -1013,7 +1023,11 @@ nav #mobileButton span {
 
 @media screen and (max-width:850px) {
   main h1 {
-    font-size: 50px;
+    font-size: calc(42px + 1vw);
+  }
+
+  main div.content h3 {
+    font-size: 25px;
   }
 
   nav #mobileButton {
@@ -1030,20 +1044,24 @@ nav #mobileButton span {
     top: 0;
     left: 0;
     z-index: -1;
-    width: 0% !important;
-    height: 100vh !important;
+    width: 0%;
+    height: 100vh;
     background-color: var(--white);
     align-items: center;
     justify-content: center;
     transition: .4s;
-    display: flex;
+    display: grid;
+  }
+
+  nav div.ul * {
+    font-size: 28px;
   }
 
   nav div.ul.selected {
     display: flex;
     z-index: 2;
-    width: 100% !important;
-    height: 100vh !important;
+    width: 100%;
+    height: 100vh;
   }
 
   nav div.ul:not(.selected) * {
@@ -1055,27 +1073,45 @@ nav #mobileButton span {
   }
 
   nav div.ul ul li {
-    color: var(--darkblue);
+    color: var(--dblue500);
+  }
+
+  nav div.ul ul li.page.selected {
+    color: var(--green500);
+  }
+
+  nav div.ul ul li.page.selected:hover {
+    color: var(--white);
   }
 
   nav div.ul .dropdown * {
     margin: auto;
-    position: relative !important;
-    min-width: -webkit-fit-content !important;
-    min-width: -moz-fit-content !important;
-    min-width: fit-content !important;
+    position: relative;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+  }
+
+  nav .dropdown {
+    display: flex;
+    flex-direction: column;
   }
 
   nav .dropdown ul li:hover {
-    background-color: var(--darkblue);
+    background-color: var(--dblue500);
   }
 
-  nav ul li.selected {
-    color: var(--green) !important;
+  nav div.ul .dropdown > li.selected {
+    color: var(--green500);
   }
 
-  nav ul li.selected:hover {
-    color: var(--white) !important;
+  nav .dropdown > li.selected:hover {
+    color: var(--green500);
+  }
+
+  nav li.page:hover {
+    color: var(--white);
+    background-color: var(--dblue500);
   }
 
   footer {
@@ -1106,11 +1142,11 @@ nav #mobileButton span {
 /* Animations */
 
 main h1::after {
-  bottom: 5px !important;
+  bottom: 5px;
 }
 
 main h1.contato::after {
-  bottom: 8px !important;
+  bottom: 8px;
 }
 
 .highlight,
@@ -1130,7 +1166,7 @@ h1::after {
   height: 2px;
   border-radius: 20px;
   transition: .6s;
-  background-color: var(--darker-lightblue);
+  background-color: var(--lblue700);
 }
 
 footer .highlight:hover {
@@ -1149,5 +1185,5 @@ main h1:hover {
 
 footer .highlight::after {
   bottom: 0;
-  background-color: var(--lightblue);
+  background-color: var(--lblue500);
 }
