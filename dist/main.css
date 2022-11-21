@@ -798,7 +798,13 @@ nav .dropdown ul {
   position: absolute;
   visibility: hidden;
   opacity: 0;
+  height: 0;
+  z-index: -1;
   transition: .6s;
+}
+
+nav .dropdown ul * {
+  z-index: -1;
 }
 
 nav .dropdown ul li {
@@ -814,9 +820,14 @@ nav .dropdown ul li:hover {
 }
 
 nav .dropdown ul.visible {
-  display: block;
   visibility: visible;
   opacity: 1;
+  height: auto;
+  z-index: 2;
+}
+
+nav .dropdown ul.visible * {
+  z-index: 2;
 }
 
 nav .dropdown ul li.selected {
@@ -912,9 +923,6 @@ main div.content {
 
 main a {
   color: var(--dblue500);
-}
-
-main div.contact {
 }
 
 main div.contact p {
@@ -1039,6 +1047,11 @@ nav #mobileButton span {
     color: var(--black);
   }
 
+  nav li.page:hover {
+    color: var(--white);
+    background-color: var(--dblue500);
+  }
+
   nav div.ul {
     position: fixed;
     top: 0;
@@ -1097,6 +1110,10 @@ nav #mobileButton span {
     flex-direction: column;
   }
 
+  nav .dropdown ul {
+    overflow: hidden;
+  }
+
   nav .dropdown ul li:hover {
     background-color: var(--dblue500);
   }
@@ -1107,11 +1124,6 @@ nav #mobileButton span {
 
   nav .dropdown > li.selected:hover {
     color: var(--green500);
-  }
-
-  nav li.page:hover {
-    color: var(--white);
-    background-color: var(--dblue500);
   }
 
   footer {
