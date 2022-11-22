@@ -37,6 +37,7 @@
 
   transition: .4s;
 }
+
 /* Creates smooth scroll behaviour for in page links */
 html {
   scroll-behavior: smooth;
@@ -44,10 +45,10 @@ html {
 
 body {
   width: 100%;
-
   background-color: var(--grey900);
 }
 
+/* Nav */
 nav {
   display: flex;
   position: relative; /* nav as a parent position container for dropdowns */
@@ -84,6 +85,7 @@ nav ul li.selected:hover,
 nav .dropdown ul li.selected:hover {
   color: var(--white);
   background-color: var(--green500);
+  
 }
 
 /* Dropdown menus */
@@ -170,6 +172,97 @@ nav span {
   font-size: inherit;
 }
 
+/* Mobile nav button */
+nav #mobileButton {
+  display: none;
+  color: var(--white);
+}
+nav #mobileButton span {
+  padding-top: var(--smallest-padding);
+  font-size: 2.4rem;
+}
+/* Responsive nav */
+@media screen and (max-width:850px) {
+  nav #mobileButton {
+    display: flex;
+
+    z-index: 5;
+  }
+  nav #mobileButton span.selected {
+    color: var(--black);
+  }
+
+  nav li.page:hover {
+    color: var(--white);
+    background-color: var(--dblue500);
+  }
+
+  nav div.ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    width: 0%;
+    height: 100vh;
+
+    background-color: var(--white);
+
+    align-items: center;
+    justify-content: center;
+
+    transition: .4s;
+  }
+  nav div.ul * {
+    font-size: 28px;
+  }
+
+  nav div.ul.selected {
+    display: flex;
+
+    z-index: 2;
+
+    width: 100%;
+    height: 100vh;
+  }
+
+  nav div.ul:not(.selected) * {
+    display: none;
+  } 
+
+  nav div.ul > ul {
+    flex-direction: column;
+  }
+  nav div.ul ul li {
+    color: var(--dblue500);
+  }
+  nav div.ul ul li.page.selected {
+    color: var(--green500);
+  }
+  nav div.ul ul li.page.selected:hover {
+    color: var(--white);
+  }
+  nav div.ul .dropdown * {
+    margin: auto;
+
+    position: relative;
+    min-width: fit-content;
+  }
+  nav .dropdown {
+    display: flex;
+    flex-direction: column;
+  }
+  nav .dropdown ul {
+    overflow: hidden;
+  }
+  nav .dropdown ul li:hover {
+    background-color: var(--dblue500);
+  }
+  nav div.ul .dropdown > li.selected {
+    color: var(--green500);
+  }
+}
 
 
 main {
@@ -220,6 +313,7 @@ main div.content h3 {
 }
 main div.content p {
   padding-bottom: calc(var(--base-padding) * 1.5);
+  line-height: 1.6;
 }
 
 main div.content,
@@ -285,7 +379,18 @@ main .funcionarios .cargo {
   filter: brightness(92%);
 }
 
+/* Responsive main section */
+@media screen and (max-width:850px) {
+  main h1 {
+    font-size: calc(42px + 1vw);
+  }
+  main div.content h3 {
+    font-size: 25px;
+  }
+}
 
+
+/* Footer */
 footer {
   background-color: var(--black);
 
@@ -333,111 +438,8 @@ footer img {
 
   grid-column: 1 / 1;
 }
-
-/* Responsive page */
-nav #mobileButton {
-  display: none;
-  color: var(--white);
-}
-nav #mobileButton span {
-  padding-top: var(--smallest-padding);
-  font-size: 2.4rem;
-}
-
+/* Mobile footer */
 @media screen and (max-width:850px) {
-  main h1 {
-    font-size: calc(42px + 1vw);
-  }
-  main div.content h3 {
-    font-size: 25px;
-  }
-
-  nav #mobileButton {
-    display: flex;
-
-    z-index: 5;
-  }
-  nav #mobileButton span.selected {
-    color: var(--black);
-  }
-
-  nav li.page:hover {
-    color: var(--white);
-    background-color: var(--dblue500);
-  }
-
-  nav div.ul {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    z-index: -1;
-
-    width: 0%;
-    height: 100vh;
-
-    background-color: var(--white);
-
-    align-items: center;
-    justify-content: center;
-
-    transition: .4s;
-
-    display: grid;
-  }
-  nav div.ul * {
-    font-size: 28px;
-  }
-
-  nav div.ul.selected {
-    display: flex;
-
-    z-index: 2;
-
-    width: 100%;
-    height: 100vh;
-  }
-
-  nav div.ul:not(.selected) * {
-    display: none;
-  } 
-
-  nav div.ul > ul {
-    flex-direction: column;
-  }
-  nav div.ul ul li {
-    color: var(--dblue500);
-  }
-  nav div.ul ul li.page.selected {
-    color: var(--green500);
-  }
-  nav div.ul ul li.page.selected:hover {
-    color: var(--white);
-  }
-  nav div.ul .dropdown * {
-    margin: auto;
-
-    position: relative;
-    min-width: fit-content;
-  }
-  nav .dropdown {
-    display: flex;
-    flex-direction: column;
-  }
-  nav .dropdown ul {
-    overflow: hidden;
-  }
-  nav .dropdown ul li:hover {
-    background-color: var(--dblue500);
-  }
-  nav div.ul .dropdown > li.selected {
-    color: var(--green500);
-  }
-  nav .dropdown > li.selected:hover {
-    color: var(--green500);
-  }
-  
-  
   footer {
     display: block;
   }
