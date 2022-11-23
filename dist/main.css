@@ -674,9 +674,16 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.drop-shadow-lg {
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 :root {
   --black: hsl(221, 80%, 5%);
-  --grey900: hsl(233, 100%, 90%);
+  --grey500: hsl(240, 8%, 51%);
+  --grey300: hsl(235, 14%, 71%);
+  --grey100: hsl(234, 100%, 91%);
   --white: hsl(117, 86%, 94%);
   --lblue700: hsl(178, 100%, 27%);
   --lblue500: hsl(178, 97%, 40%);
@@ -716,7 +723,7 @@ html {
 
 body {
   width: 100%;
-  background-color: var(--grey900);
+  background-color: var(--grey100);
 }
 
 /* Nav */
@@ -745,7 +752,7 @@ nav ul li {
   font-size: 1.5rem;
   font-weight: 400;
   border-radius: calc(var(--base-radius) + 2px);
-  transition: .6s;
+  transition: .6s, box-shadow .3s;
 }
 
 nav ul li.selected {
@@ -857,6 +864,16 @@ nav .dropdown > li.visible span {
 nav span {
   color: inherit;
   font-size: inherit;
+}
+
+/* Emulate nav light source */
+
+nav ul li:hover,
+nav ul li.visible,
+nav ul.visible li {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)  !important;
 }
 
 /* Mobile nav button */
@@ -1042,12 +1059,6 @@ main .funcionarios {
   gap: calc(var(--base-padding) * 1.5);
 }
 
-@media screen and (max-width:300px) {
-  main .funcionarios {
-    grid-template-columns: 1fr;
-  }
-}
-
 main .funcionarios div {
   background-color: var(--white);
   border-radius: var(--base-radius);
@@ -1073,6 +1084,12 @@ main .funcionarios .cargo {
   filter: brightness(92%);
 }
 
+@media screen and (max-width:300px) {
+  main .funcionarios {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Responsive main section */
 
 @media screen and (max-width:850px) {
@@ -1083,6 +1100,14 @@ main .funcionarios .cargo {
   main div.content h3 {
     font-size: 25px;
   }
+}
+
+/* Emulate light source */
+
+main .funcionarios div,
+main .content,
+main .contact {
+  box-shadow: inset 0 2px 0 rgba(204, 204, 235, 0.9);
 }
 
 /* Footer */

@@ -7,7 +7,7 @@ const inicio = () => {
   h1.textContent = "Transparência de Compras";
 
   const content = document.createElement("div");
-  content.classList.add("content", "shadow-lg");
+  content.classList.add("content", "drop-shadow-lg");
   content.innerHTML = "<h3>Início<h3>";
   content.innerHTML += "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Consectetur purus ut faucibus pulvinar elementum integer enim. Sodales ut etiam sit amet.</p>";
   content.innerHTML += "<h3>Perguntas Frequentes<h3>";
@@ -41,7 +41,7 @@ const contato = () => {
   h1.textContent = "Contato da STMA";
 
   const contactDiv = document.createElement("div");
-  contactDiv.classList.add("grid", "shadow-lg", "contact");
+  contactDiv.classList.add("grid", "drop-shadow-lg", "contact");
   contactDiv.innerHTML = "<p>STMA</p>";
   contactDiv.innerHTML += "<p class='telefone'>(12) 3123-2733</p>";
   contactDiv.innerHTML += "<p><a href='mailto:sma.feg@unesp.br'>sma.feg@unesp.br</a></p>";
@@ -63,7 +63,7 @@ const equipe = () => {
   
   funcionarios.forEach(funcionario => {
     const div = document.createElement("div");
-    div.classList.add("shadow-lg")
+    div.classList.add("drop-shadow-lg")
 
     Object.keys(funcionario).forEach(key => {
       const element = document.createElement("p");
