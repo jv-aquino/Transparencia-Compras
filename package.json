@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "concurrently \"webpack --watch\" \"npx tailwindcss -i ./src/input.css -o ./dist/main.css --watch\"",
-    "production":  "concurrently \"minify ./dist/main.css > ./dist/main.min.css\" \"webpack\""
+    "prod": "css-minify -f ./dist/main.css -o dist && webpack && rename.bat",
+    "rename": "rename.bat"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "concurrently": "^7.4.0"
+    "concurrently": "^7.4.0",
+    "css-minify": "^2.0.0"
   }
 }

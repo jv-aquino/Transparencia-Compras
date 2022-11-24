@@ -75,7 +75,7 @@ nav ul li {
   font-weight: 400;
 
   border-radius: calc(var(--base-radius) + 2px);
-  transition: .6s, box-shadow .3s;
+  transition: .6s, box-shadow .3s, z-index 0s;
 }
 nav ul li.selected {
   color: var(--green400); /* slightly lighter green for nav links */
@@ -122,7 +122,7 @@ nav .dropdown ul {
   height: 0;
   z-index: -1;
 
-  transition: .6s;
+  transition: .6s, z-index 0s;
 }
 nav .dropdown ul * {
   z-index: -1;
@@ -176,13 +176,16 @@ nav span {
 }
 
 /* Emulate nav light source */
-nav ul li:hover,
-nav ul li.visible,
-nav ul.visible li {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)  !important;
+@media screen and (min-width:850px) {
+  nav ul li:hover,
+  nav ul li.visible,
+  nav ul.visible li {
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)  !important;
+  }
 }
+
 
 /* Mobile nav button */
 nav #mobileButton {
@@ -277,6 +280,7 @@ nav #mobileButton span {
 }
 
 
+/* Main */
 main {
   min-height: 87vh;
 }
@@ -295,6 +299,24 @@ main h1 {
   line-height: 1;
   letter-spacing: -2px;
 }
+main .content p {
+  text-align: justify;
+  hyphens: auto;
+  
+  line-height: 1.6;
+}
+
+main ul {
+  margin-left: var(--base-padding);
+  list-style: disc !important;
+}
+main ul li {
+  font-weight: 500;
+}
+main ul.p {
+  margin-top: calc(var(--base-padding) * -1.5);
+  margin-bottom: calc(var(--base-padding));
+}
 
 main button {
   font-size: 1.6rem;
@@ -308,9 +330,16 @@ main button {
   background-color: var(--green500);
   transition: .6s;
 }
-main button:hover {
+main button.pedidos {
+  padding-top: calc(calc(var(--base-padding) * 0.5) + 2px);
+  
+  box-shadow: inset 0 2px 0 rgba(158, 247, 140, 0.9);
+}
+main button.pedidos:hover {
   color: var(--lblue500);
   background-color: var(--white);
+
+  box-shadow: inset 0 2px 0 hsl(209, 84%, 88%);
 }
 
 main div.content > * {
@@ -325,7 +354,6 @@ main div.content h3 {
 }
 main div.content p {
   padding-bottom: calc(var(--base-padding) * 1.5);
-  line-height: 1.6;
 }
 
 main div.content,
@@ -439,6 +467,8 @@ footer h4 {
   padding: var(--smallest-padding) 0;
 }
 footer ul {
+  justify-content: start;
+
   display: flex;
   flex-direction: column;
 
@@ -475,6 +505,7 @@ footer img {
     height: auto;
   }
   footer ul {
+    justify-content: center;
     display: block;
   }
   footer ul li {

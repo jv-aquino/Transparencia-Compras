@@ -34,6 +34,12 @@ const Nav = (() => {
 
   const mobileMenuIcon = document.querySelector("nav #mobileButton span");
   
+  const closeMenu = () => {
+    mobileMenuIcon.textContent = "menu";
+    mobileMenuIcon.classList.remove("selected");
+    mobileNav.classList.remove("selected");
+  }
+
   const toggleMenu = () => {
     if (mobileMenuIcon.textContent == "menu") {
       mobileMenuIcon.textContent = "close";
@@ -41,13 +47,13 @@ const Nav = (() => {
       mobileNav.classList.add("selected");
     }
     else {
-      mobileMenuIcon.textContent = "menu";
-      mobileMenuIcon.classList.remove("selected");
-      mobileNav.classList.remove("selected");
+      closeMenu();
     }
   }
 
   mobileMenuIcon.addEventListener("click", toggleMenu);
+
+  return {toggleMenu, closeMenu}
 })();
 
 const Dom = (() => {
@@ -63,6 +69,10 @@ const Dom = (() => {
   const changePage = (page) => {
     const main = Pages[page]();
     div.insertBefore(main, div.children[1]);
+
+    try {
+      Nav.closeMenu();
+    } catch (e) {}
   }
 
   const highlightLi = (liId) => {

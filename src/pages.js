@@ -9,7 +9,8 @@ const inicio = () => {
   const content = document.createElement("div");
   content.classList.add("content", "drop-shadow-lg");
   content.innerHTML = "<h3>Início<h3>";
-  content.innerHTML += "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Consectetur purus ut faucibus pulvinar elementum integer enim. Sodales ut etiam sit amet.</p>";
+  content.innerHTML += "<p>Bem-vindo ao site oficial da STMA! Aqui você poderá encontrar informações sobre:</p>";
+  content.innerHTML += "<ul class='p'><li>a</li><li>b</li><li>c</li><li>d</li></ul>";
   content.innerHTML += "<h3>Perguntas Frequentes<h3>";
   content.innerHTML += "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Consectetur purus ut faucibus pulvinar elementum integer enim. Sodales ut etiam sit amet.</p>";
 
@@ -25,7 +26,7 @@ const visualizar = () => {
   h1.textContent = "Pedidos";
 
   const button = document.createElement("button");
-  button.classList.add("shadow-lg");
+  button.classList.add("drop-shadow-lg", "pedidos");
   button.textContent = "Visualizar Pedidos";
 
   main.appendChild(h1);
@@ -82,4 +83,14 @@ const equipe = () => {
   return main;
 }
 
-export {inicio, equipe, contato, visualizar};
+const sobre = () => {
+  main.textContent = '';
+  const h1 = document.createElement("h1");
+  h1.textContent = "STMA";
+
+  main.appendChild(h1);
+
+  return main;
+}
+
+export {inicio, visualizar, equipe, contato, sobre};
