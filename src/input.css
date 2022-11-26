@@ -413,9 +413,12 @@ main .funcionarios .cargo {
   font-size: 19px;
   filter: brightness(92%);
 }
-@media screen and (max-width:300px) {
+@media screen and (max-width:400px) {
   main .funcionarios {
     grid-template-columns: 1fr;
+  }
+  main .funcionarios div * {
+    overflow-wrap: anywhere;
   }
 }
 
@@ -514,50 +517,52 @@ footer img {
 }
 
 
-/* Animations */
-main h1::after {
-  bottom: 5px;
-}
-main h1.contato::after {
-  bottom: 8px;
-}
+/* Highlight Animation (desktop) */
+@media screen and (min-width:850px) {
+  main h1::after {
+    bottom: 5px;
+  }
+  main h1.contato::after {
+    bottom: 8px;
+  }
 
-.highlight,
-h1 {
-  transform: perspective(0px) translateZ(0) translate3d(0,0,0);
+  .highlight,
+  h1 {
+    transform: perspective(0px) translateZ(0) translate3d(0,0,0);
 
-  cursor: default;
-  position: relative;
-}
-.highlight::after,
-h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 3px;
+    cursor: default;
+    position: relative;
+  }
+  .highlight::after,
+  h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
 
-  width: 0;
-  height: 2px;
-  border-radius: 20px;
+    width: 0;
+    height: 2px;
+    border-radius: 20px;
 
-  transition: .6s;
+    transition: .6s;
 
-  background-color: var(--lblue700);
-} 
-footer .highlight:hover {
-  text-shadow: 0 0 1px var(--white);
-}
-.highlight:hover::after,
-h1:hover::after {
-  width: 100%;
-}
+    background-color: var(--lblue700);
+  } 
+  footer .highlight:hover {
+    text-shadow: 0 0 1px var(--white);
+  }
+  .highlight:hover::after,
+  h1:hover::after {
+    width: 100%;
+  }
 
-main .nome.highlight:hover,
-main h1:hover {
-  transform: translateZ(0) scale(1.02);
-}
+  main .nome.highlight:hover,
+  main h1:hover {
+    transform: translateZ(0) scale(1.02);
+  }
 
-footer .highlight::after {
-  bottom: 0;
-  background-color: var(--lblue500);
+  footer .highlight::after {
+    bottom: 0;
+    background-color: var(--lblue500);
+  }
 }

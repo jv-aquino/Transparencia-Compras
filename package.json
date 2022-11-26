@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "concurrently \"webpack --watch\" \"npx tailwindcss -i ./src/input.css -o ./dist/main.css --watch\"",
-    "prod": "css-minify -f ./dist/main.css -o dist && webpack && rename.bat",
-    "rename": "rename.bat"
+    "prod": "css-minify -f ./dist/main.css -o dist && webpack && del dist\\main.css && rename dist\\main.min.css main.css"
   },
   "repository": {
     "type": "git",
