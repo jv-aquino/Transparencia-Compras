@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --black: hsl(221, 80%, 5%);
+  --black: rgb(3, 9, 23);
 
-  --grey500: hsl(240, 8%, 51%);
-  --grey300: hsl(235, 14%, 71%);
-  --grey100: hsl(234, 100%, 91%);
+  --grey500: rgb(120, 120, 140);
+  --grey300: rgb(171, 172, 191);
+  --grey100: rgb(214, 218, 255);
 
-  --white: hsl(117, 86%, 95%); 
+  --white: rgb(232, 253, 231); 
 
-  --lblue700: hsl(178, 100%, 27%);
-  --lblue500: hsl(178, 97%, 40%);
+  --liblue700: rgb(0, 138, 133);
+  --liblue500: rgb(3, 201, 194);
 
-  --dblue500: hsl(221, 80%, 50%);
+  --dblue500: rgb(25, 90, 230);
 
-  --green500: hsl(146, 100%, 45%);
-  --green400: hsl(146, 85%, 54%);
+  --green500: rgb(0, 230, 99);
+  --green400: rgb(38, 237, 124);
 
   --base-padding: 16px;
   --smallest-padding: 2px;
@@ -27,7 +27,7 @@
 
 ::selection {
   color: var(--white);
-  background-color: var(--lblue500);
+  background-color: var(--liblue500);
 }
 
 * {
@@ -82,7 +82,7 @@ nav ul li.selected {
 }
 nav ul li:hover,
 nav ul li.visible {
-  color: var(--lblue500);
+  color: var(--liblue500);
   background-color: var(--white);
 }
 nav ul li.selected:hover,
@@ -131,12 +131,12 @@ nav .dropdown ul li {
   display: block;
   border-radius: 0;
   
-  color: var(--lblue500);
+  color: var(--liblue500);
   background-color: var(--white);
 }
 nav .dropdown ul li:hover {
   color: var(--white);
-  background-color: var(--lblue500);
+  background-color: var(--liblue500);
 }
 
 nav .dropdown ul.visible {
@@ -336,7 +336,7 @@ main button.pedidos {
   box-shadow: inset 0 2px 0 rgba(158, 247, 140, 0.9);
 }
 main button.pedidos:hover {
-  color: var(--lblue500);
+  color: var(--liblue500);
   background-color: var(--white);
 
   box-shadow: inset 0 2px 0 hsl(209, 84%, 88%);
@@ -380,7 +380,7 @@ main div.contact p {
 }
 
 main .telefone {
-  color: var(--lblue700);
+  color: var(--liblue700);
 }
 
 main .funcionarios {
@@ -406,7 +406,7 @@ main .funcionarios div::before {
   height: calc(100% - 2px);
   border-radius: 6px 0 0 6px;
 
-  background-color: var(--lblue500);
+  background-color: var(--liblue500);
 }
 main .funcionarios div > * {
   font-size: 18px;
@@ -558,7 +558,7 @@ footer img {
 
     transition: .6s;
 
-    background-color: var(--lblue700);
+    background-color: var(--liblue700);
   } 
   footer .highlight:hover {
     text-shadow: 0 0 1px var(--white);
@@ -575,6 +575,6 @@ footer img {
 
   footer .highlight::after {
     bottom: 0;
-    background-color: var(--lblue500);
+    background-color: var(--liblue500);
   }
 }
