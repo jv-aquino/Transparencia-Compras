@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --black: rgb(3, 9, 23);
+  --black: hsl(221, 80%, 5%);
 
-  --grey500: rgb(120, 120, 140);
-  --grey300: rgb(171, 172, 191);
-  --grey100: rgb(214, 218, 255);
+  --grey500: hsl(240, 8%, 51%);
+  --grey300: hsl(235, 14%, 71%);
+  --grey100: hsl(234, 100%, 92%);
 
-  --white: rgb(232, 253, 231); 
+  --white: hsl(117, 86%, 95%); 
 
-  --liblue700: rgb(0, 138, 133);
-  --liblue500: rgb(3, 201, 194);
+  --liblue700: hsl(178, 100%, 27%);
+  --liblue500: hsl(178, 97%, 40%);
 
-  --dblue500: rgb(25, 90, 230);
+  --dblue500: hsl(221, 80%, 50%);
 
-  --green500: rgb(0, 230, 99);
-  --green400: rgb(38, 237, 124);
+  --green500: hsl(146, 100%, 45%);
+  --green400: hsl(146, 85%, 54%);
 
   --base-padding: 16px;
   --smallest-padding: 2px;
@@ -59,7 +59,7 @@ nav {
   width: 100%;
 
   background-color: var(--dblue500);
-  box-shadow: 0px 1px 6px 3px gray;
+  box-shadow: 0px 1px 6px 3px rgba(128, 128, 128, 0.9);
   z-index: 1;
 }
 nav img {
@@ -172,7 +172,6 @@ nav .dropdown > li.visible span {
 
 nav span {
   color: inherit;
-  font-size: inherit;
 }
 
 /* Emulate nav light source */
@@ -475,7 +474,7 @@ footer * {
 footer h4 {
   cursor: default;
 
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 500;
   color: var(--dblue500);
 
@@ -490,9 +489,27 @@ footer ul {
   gap: calc(var(--smallest-padding) * 3);
 }
 footer li {
+  font-size: 1rem;
   cursor: pointer;
 
   width: fit-content;
+}
+footer li span {
+  color: inherit;
+  font-size: 1.3rem !important;
+
+  position: relative;
+  top: 3px;
+
+  padding-right: 6px;
+}
+footer #equipe span {
+  font-size: 1.27rem !important;
+  top: 4px;
+}
+footer #contato span,
+footer li span.email {
+  font-size: 1.2rem !important;
 }
 
 /* Desktop footer */
