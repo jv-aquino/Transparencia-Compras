@@ -193,7 +193,7 @@ nav #mobileButton {
 }
 nav #mobileButton span {
   padding-top: var(--smallest-padding);
-  font-size: 2.4rem;
+  font-size: 2.6rem;
 }
 /* Responsive nav */
 @media screen and (max-width:850px) {
@@ -219,7 +219,7 @@ nav #mobileButton span {
     z-index: -1;
 
     width: 0%;
-    height: 100vh;
+    height: 100%;
 
     background-color: var(--white);
 
@@ -318,11 +318,11 @@ main ul.p {
 }
 
 main button {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 500;
 
   margin: 0.7rem auto;
-  padding: calc(var(--base-padding) * 0.5);
+  padding: calc(var(--base-padding) * 0.6);
   border-radius: var(--base-radius);
 
   color: var(--white);
