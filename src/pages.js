@@ -54,7 +54,7 @@ const contato = () => {
   return main;
 }
 
-const funcionarios = require("./contact.json").funcionarios;
+const funcionarios = require("../data/equipe.json");
 const equipe = () => {
   main.textContent = '';
   const h1 = document.createElement("h1");
@@ -68,8 +68,10 @@ const equipe = () => {
     div.classList.add("drop-shadow-lg")
 
     Object.keys(funcionario).forEach(key => {
+      if (key == "Funções") {return}
+
       const element = document.createElement("p");
-      element.classList.add(key); 
+      element.classList.add(key.toLowerCase()); 
       (key == "nome") ? element.classList.add("highlight") : null;
       element.innerHTML = (key == 'email') ? `<a href='mailto:${funcionario[key]}'>${funcionario[key]}</a>` : funcionario[key];
       div.appendChild(element);
