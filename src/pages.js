@@ -72,8 +72,8 @@ const equipe = () => {
 
       const element = document.createElement("p");
       element.classList.add(key.toLowerCase()); 
-      (key == "nome") ? element.classList.add("highlight") : null;
-      element.innerHTML = (key == 'email') ? `<a href='mailto:${funcionario[key]}'>${funcionario[key]}</a>` : funcionario[key];
+      (key == "Nome") ? element.classList.add("highlight") : null;
+      element.innerHTML = (key == 'Email') ? `<a href='mailto:${funcionario[key]}'>${funcionario[key]}</a>` : funcionario[key];
       div.appendChild(element);
     })
 

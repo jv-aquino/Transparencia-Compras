@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "concurrently \"webpack --watch\" \"npx tailwindcss -i ./src/input.css -o ./dist/main.css --watch\"",
     "prod": "css-minify -f ./dist/main.css -o dist && webpack && del dist\\main.css && rename dist\\main.min.css main.css",
-    "data": "node ./data/data.js"
+    "data": "node ./data/data.js && webpack"
   },
   "repository": {
     "type": "git",
