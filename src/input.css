@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --black: hsl(221, 80%, 5%);
+  --black: hsl(222, 77%, 5%);
 
   --grey500: hsl(240, 8%, 51%);
   --grey300: hsl(235, 14%, 71%);
@@ -302,7 +302,7 @@ main .content p {
   text-align: justify;
   hyphens: auto;
   
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 main ul {
@@ -313,8 +313,10 @@ main ul li {
   font-weight: 500;
 }
 main ul.p {
-  margin-top: calc(var(--base-padding) * -1.5);
+  margin-top: calc(var(--base-padding) * -1.4);
   margin-bottom: calc(var(--base-padding));
+
+  line-height: 1.65;
 }
 
 main button {
@@ -486,7 +488,7 @@ footer ul {
   display: flex;
   flex-direction: column;
 
-  gap: calc(var(--smallest-padding) * 3);
+  gap: calc(var(--base-padding) * 0.5);
 }
 footer li {
   font-size: 1rem;
@@ -514,7 +516,7 @@ footer li span.email {
 
 /* Desktop footer */
 footer img {
-  height: 100px;
+  height: 120px;
   width: auto;
 
   grid-column: 1 / 1;
