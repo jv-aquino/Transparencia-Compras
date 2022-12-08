@@ -40,3 +40,11 @@ npm install
 ------------
 
 ## 2. Alterando os dados da Equipe
+### O site da STMA tem uma página com os dados da equipe da seção, e esses dados são armazenados por meio de uma planilha no Excel a qual você deve ter acesso. Para alterar as informações no site é preciso alterar esse Excel e depois seguir os passos adiante:
+1. ### Faça o Download da planilha em formato CSV e nomeie-a de "equipe.csv" substituindo o arquivo de mesmo nome já existente na pasta **/data/**
+2. ### Abra o CMD ou Bash no VSCode indo em **Terminal > New Terminal**
+3. ### Por fim, execute o comando a seguir no terminal e depois atualize o site:
+```bash
+npm run data
+```
+### Esse comando modificará o arquivo equipe.json (que está sendo usado para gerar o conteúdo da página) e executará o Webpack, que vai então atualizar o Javascript que está sendo utilizado na página e suas informações.
