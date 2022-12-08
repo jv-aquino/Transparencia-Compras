@@ -8,7 +8,8 @@ Programa do setor de compras da FEG/Unesp que visa facilitar a parte de compras 
 ## Manual
 
 ### [**0. Tech Stack**](#0-tech-stack)
-### [**1. Alterando a Equipe**](#1-alterando-os-dados-da-equipe)
+### [**1. Configurando o projeto**](#1-configurando-o-projeto)
+### [**2. Alterando os dados da Equipe**](#2-alterando-os-dados-da-equipe)
 
 ------------
 
@@ -27,4 +28,15 @@ Programa do setor de compras da FEG/Unesp que visa facilitar a parte de compras 
 
 ------------
 
-## 1. Alterando os dados da Equipe
+## 1. Configurando o projeto
+1. ### Como já citado, o programa usa Node/NPM e para os passos a seguir e para se mexer com o site no geral é necessário usá-los. Para isso, deve-se [instalar o Node.js](https://nodejs.org/en/) **(versão LTS)** e reiniciar o computador, assim tanto o Node.js quanto a NPM estarão instalados e funcionando em seu computador.
+2. ### Para clonar e modificar o projeto também usamos o programa [Git](https://git-scm.com/downloads) que tem a função de controlar as versões e alterações do projeto. Se você ainda não tem essa importante ferramenta instalada, [instale-a aqui](https://git-scm.com/downloads). Após isso, clone este projeto em sua máquina.
+3. ### Com tudo isso feito, abra o seu editor de código (como o [VSCode](https://code.visualstudio.com/)) na pasta do projeto e abra um Terminal indo em **Terminal > New Terminal**. No terminal, insira o seguinte comando para instalar todas as dependências do projeto que são usadas para modificá-lo e melhorá-lo:
+```bash
+npm install
+```
+#### * (após esse comando ser executado, uma pasta *node_modules* será criada)
+
+------------
+
+## 2. Alterando os dados da Equipe
