@@ -101,7 +101,12 @@ const comoPedir = () => {
   const h1 = document.createElement("h1");
   h1.textContent = "Como Pedir";
 
+  const img = document.createElement("img");
+  img.classList.add("fluxograma");
+  img.setAttribute("src", "./img/fluxograma.png");
+
   main.appendChild(h1);
+  main.appendChild(img)
 
   return main;
 }

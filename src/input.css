@@ -435,6 +435,18 @@ main .funcionarios .cargo {
   }
 }
 
+main img.fluxograma {
+  margin: auto;
+  padding: calc(var(--base-padding) * 1.5);
+
+  max-width: 1000px;
+  width: 75%;
+  height: auto;
+
+  position: relative;
+  left: 25px;
+}
+
 /* Responsive main section */
 @media screen and (max-width:850px) {
   main h1 {
