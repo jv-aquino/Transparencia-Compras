@@ -59,6 +59,7 @@ const Nav = (() => {
 const Dom = (() => {
   const div = document.querySelector("div#container");
   const liPages = document.querySelectorAll("li.page");
+  const logoImg = document.querySelector("#logo");
   
   const cleanMain = () => {
     if (div.children.length > 2) {
@@ -93,6 +94,9 @@ const Dom = (() => {
   liPages.forEach(li => {
     li.addEventListener("click", () => {Controller.switchPage(li.id)});
   });
+
+  logoImg.addEventListener("click", () => {Controller.switchPage("inicio")})
+  
 
   return {changePage, cleanMain, highlightLi};
 })();
