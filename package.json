@@ -1,6 +1,6 @@
 {
   "name": "transparencia-compras",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Programa do setor de compras da FEG/Unesp que visa facilitar a parte de compras e licitação de materiais da instituição.",
   "main": "index.js",
   "scripts": {

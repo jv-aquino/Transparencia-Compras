@@ -9,11 +9,23 @@ const inicio = () => {
   const content = document.createElement("div");
   content.classList.add("content", "drop-shadow-lg");
   content.innerHTML = "<h3>Início<h3>";
-  content.innerHTML += "<p>Bem-vindo ao site Transparência de Compras, feito pela Seção Técnica de Materiais da FEG! Aqui você poderá encontrar:</p>";
+  content.innerHTML += "<p class='group'>Bem-vindo ao site Transparência de Compras, feito pela Seção Técnica de Materiais da FEG! Aqui você poderá encontrar:</p>";
   content.innerHTML += "<ul class='p'><li>como realizar pedidos</li><li>o status dos seus pedidos</li><li>informações sobre a STMA</li><li>contato da seção e da equipe</li><li>esclarecimento de dúvidas</li></ul>";
   content.innerHTML += "";
+
   content.innerHTML += "<h3>Perguntas Frequentes<h3>";
-  content.innerHTML += "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Consectetur purus ut faucibus pulvinar elementum integer enim. Sodales ut etiam sit amet.</p>";
+
+  content.innerHTML += "<h4>Como posso realizar um pedido?</h4>";
+  content.innerHTML += "<p></p>";
+
+  content.innerHTML += "<h4>Como posso saber o status do meu pedido?</h4>";
+  content.innerHTML += "<p></p>";
+  
+  content.innerHTML += "<h4>O que é inexigibilidade?</h4>";
+  content.innerHTML += "<p class='group'><b>Inexigibilidade</b> de um produto ou serviço acontece quando este item é ofertado por <b>apenas uma empresa</b> em todo o Brasil, ou seja, não há competição ou outras ofertas desse material / serviço.</p><p>Isso é bem comum no caso de <b>assistências técnicas especializadas</b>, onde em muitos casos só a marca responsável pela criação do produto realiza a assistência técnica do mesmo.</p>";
+
+  content.innerHTML += "<h4>O que devo fazer se houver inexigibilidade?</h4>";
+  content.innerHTML += "<p></p>";
 
   main.appendChild(h1);
   main.appendChild(content);

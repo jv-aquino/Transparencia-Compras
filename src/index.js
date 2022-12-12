@@ -91,6 +91,15 @@ const Dom = (() => {
     liSelected.classList.add("selected");
   }
 
+  const addSymbols = () => {
+    const h4s = Array.from(document.querySelectorAll("main .content h4"));
+    console.log(h4s)
+    h4s.forEach(h4 => {
+      h4.innerHTML = "<span class='material-symbols-outlined'>expand_more</span>" + h4.textContent;
+    });
+  };
+
+
   liPages.forEach(li => {
     li.addEventListener("click", () => {Controller.switchPage(li.id)});
   });
@@ -98,7 +107,7 @@ const Dom = (() => {
   logoImg.addEventListener("click", () => {Controller.switchPage("inicio")})
   
 
-  return {changePage, cleanMain, highlightLi};
+  return {changePage, cleanMain, highlightLi, addSymbols};
 })();
 
 const Controller = (() => {
@@ -106,6 +115,8 @@ const Controller = (() => {
     Dom.cleanMain();
     Dom.changePage(page);
     Dom.highlightLi(page);
+    
+    (page == 'inicio') ? Dom.addSymbols() : null;
   }
 
   return {switchPage};
