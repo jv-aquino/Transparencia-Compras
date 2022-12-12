@@ -63,7 +63,7 @@ nav {
   z-index: 1;
 }
 nav img {
-  filter: brightness(0) invert(1); /* change img to white */
+  width: auto;
 }
 nav ul {
   display: flex;
@@ -211,7 +211,7 @@ nav #mobileButton span {
     background-color: var(--dblue500);
   }
 
-  nav div.ul {
+  nav .ul {
     position: fixed;
     top: 0;
     left: 0;
@@ -228,11 +228,11 @@ nav #mobileButton span {
 
     transition: .4s;
   }
-  nav div.ul * {
+  nav .ul * {
     font-size: 28px;
   }
 
-  nav div.ul.selected {
+  nav .ul.selected {
     display: flex;
 
     z-index: 2;
@@ -241,23 +241,23 @@ nav #mobileButton span {
     height: 100vh;
   }
 
-  nav div.ul:not(.selected) * {
+  nav .ul:not(.selected) * {
     display: none;
   } 
 
-  nav div.ul > ul {
+  nav .ul > ul {
     flex-direction: column;
   }
-  nav div.ul ul li {
+  nav .ul ul li {
     color: var(--dblue500);
   }
-  nav div.ul ul li.page.selected {
+  nav .ul ul li.page.selected {
     color: var(--green500);
   }
-  nav div.ul ul li.page.selected:hover {
+  nav .ul ul li.page.selected:hover {
     color: var(--white);
   }
-  nav div.ul .dropdown * {
+  nav .ul .dropdown * {
     margin: auto;
 
     position: relative;
@@ -273,7 +273,7 @@ nav #mobileButton span {
   nav .dropdown ul li:hover {
     background-color: var(--dblue500);
   }
-  nav div.ul .dropdown > li.selected {
+  nav .ul .dropdown > li.selected {
     color: var(--green500);
   }
 }
@@ -488,7 +488,7 @@ main img.fluxograma {
   main h1 {
     font-size: calc(42px + 1vw);
   }
-  main div.content h3 {
+  main .content h3 {
     font-size: 25px;
   }
 }
