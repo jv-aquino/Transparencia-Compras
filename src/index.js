@@ -91,10 +91,22 @@ const Dom = (() => {
     liSelected.classList.add("selected");
   }
 
-  const addSymbols = () => {
+  const showH4Content = (e) => {
+    let actualH4 = document.querySelector(".content h4#" + e.target.id);
+
+    let showDiv = document.querySelector(".content h4#" + e.target.id + " + div");
+    // Selecting the div right after the h4 topic
+
+    actualH4.classList.toggle("selected");
+    showDiv.classList.toggle("selected");
+  }
+
+  const addContent = () => {
     const h4s = Array.from(document.querySelectorAll("main .content h4"));
     h4s.forEach(h4 => {
       h4.innerHTML = "<span class='material-symbols-outlined'>expand_more</span>" + h4.textContent;
+
+      h4.addEventListener("click", showH4Content);
     });
   };
 
@@ -106,7 +118,7 @@ const Dom = (() => {
   logoImg.addEventListener("click", () => {Controller.switchPage("inicio")})
   
 
-  return {changePage, cleanMain, highlightLi, addSymbols};
+  return {changePage, cleanMain, highlightLi, addContent};
 })();
 
 const Controller = (() => {
@@ -115,7 +127,7 @@ const Controller = (() => {
     Dom.changePage(page);
     Dom.highlightLi(page);
     
-    (page == 'inicio') ? Dom.addSymbols() : null;
+    (page == 'inicio') ? Dom.addContent() : null;
   }
 
   return {switchPage};
