@@ -8,23 +8,23 @@ const inicio = () => {
 
   const content = document.createElement("div");
   content.classList.add("content", "drop-shadow-lg");
-  content.innerHTML = "<h3>Início</h3>";
+  content.innerHTML = "<h2>Início</h2>";
   content.innerHTML += "<p class='group'>Bem-vindo ao site Transparência de Compras, feito pela Seção Técnica de Materiais da FEG! Aqui você poderá encontrar:</p>";
   content.innerHTML += "<ul class='p'><li>como realizar pedidos</li><li>o status dos seus pedidos</li><li>informações sobre a STMA</li><li>contato da seção e da equipe</li><li>esclarecimento de dúvidas</li></ul>";
   content.innerHTML += "";
 
-  content.innerHTML += "<h3 class='faq'>Perguntas Frequentes</h3>";
+  content.innerHTML += "<h2 class='faq'>Perguntas Frequentes</h2>";
 
-  content.innerHTML += "<h4 id='realizarPedido'>Como posso realizar um pedido?</h4>";
+  content.innerHTML += "<button id='realizarPedido'>Como posso realizar um pedido?</button>";
   content.innerHTML += "<div><p>Abcd</p></div>";
 
-  content.innerHTML += "<h4 id='statusPedido'>Como posso saber o status do meu pedido?</h4>";
+  content.innerHTML += "<button id='statusPedido'>Como posso saber o status do meu pedido?</button>";
   content.innerHTML += "<div><p>Abcd</p></div>";
   
-  content.innerHTML += "<h4 id='inexigibilidade'>O que é inexigibilidade?</h4>";
+  content.innerHTML += "<button id='inexigibilidade'>O que é inexigibilidade?</button>";
   content.innerHTML += "<div><p class='group'><b>Inexigibilidade</b> de um produto ou serviço acontece quando este item é ofertado por <b>apenas uma empresa</b> em todo o Brasil, ou seja, não há competição ou outras ofertas desse material / serviço.</p><p>Isso é bem comum no caso de <b>assistências técnicas especializadas</b>, onde em muitos casos só a marca responsável pela criação do produto realiza a assistência técnica do mesmo.</p></div>";
 
-  content.innerHTML += "<h4 id='fazerInexigibildade'>O que devo fazer se houver inexigibilidade?</h4>";
+  content.innerHTML += "<button id='fazerInexigibildade'>O que devo fazer se houver inexigibilidade?</button>";
   content.innerHTML += "<div><p>Abcd</p></div>";
 
   main.appendChild(h1);

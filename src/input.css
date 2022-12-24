@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --black: hsl(222, 77%, 5%);
+  --black: hsl(225, 77%, 5%);
 
   --grey500: hsl(240, 8%, 51%);
   --grey300: hsl(235, 14%, 71%);
@@ -11,10 +11,13 @@
 
   --white: hsl(117, 90%, 97%); 
 
-  --liblue700: hsl(178, 100%, 27%);
+  --liblue700: hsl(176, 98%, 25%);
   --liblue500: hsl(178, 97%, 40%);
 
-  --dblue500: hsl(221, 80%, 50%);
+  --dblue700: hsl(222, 85%, 40%);
+  --dblue500: hsl(221, 81%, 51%);
+  --dblue400: hsl(221, 83%, 56%);
+  --dblue300: hsl(219, 85%, 61%);
 
   --green500: hsl(146, 100%, 45%);
   --green400: hsl(146, 85%, 54%);
@@ -319,20 +322,19 @@ main ul.p li:nth-child(even) {
   color: var(--liblue700);
 }
 
-main button {
+main button.pedidos {
   font-size: 1.7rem;
   font-weight: 500;
 
   margin: 0.7rem auto;
   padding: calc(var(--base-padding) * 0.6);
+  padding-top: calc(calc(var(--base-padding) * 0.5) + 2px);
+
   border-radius: var(--base-radius);
 
   color: var(--white);
   background-color: var(--green500);
   transition: .6s;
-}
-main button.pedidos {
-  padding-top: calc(calc(var(--base-padding) * 0.5) + 2px);
   
   box-shadow: inset 0 2px 0 rgba(158, 247, 140, 0.9);
 }
@@ -361,18 +363,18 @@ main .content p b {
 main .content p.group {
   padding-bottom: 0;
 }
-main .content h3 {
+main .content h2 {
   font-size: 28px;
   line-height: 1.2;
   font-weight: 600;
 
   cursor: default;
 }
-main .content h3.faq {
+main .content h2.faq {
   padding-bottom: calc(var(--base-padding) * 0.8);
 }
 
-main .content h4 {
+main .content button {
   font-family: "Quicksand", sans-serif;
   font-weight: 600;
   font-size: 22px;
@@ -384,19 +386,22 @@ main .content h4 {
   padding-left: 2px;
 
   border-top: 2px solid var(--liblue700);
+
+  width: 100%;
+  text-align: left;
 }
-main .content h4 span {
+main .content button span {
   font-size: 26px;
 
   position: relative;
   top: 4px;
   left: -2px;
 }
-main .content h4.selected span {
+main .content button.selected span {
   transform: rotate(180deg);
   transition: ease-out .4s;
 }
-main .content h4 + div {
+main .content button + div {
   padding-top: calc(var(--smallest-padding));
 
   visibility: hidden;
@@ -404,16 +409,16 @@ main .content h4 + div {
   height: 0;
   z-index: -1;
 
-  transition: .6s, opacity .05s;
+  transition: .5s, opacity .05s;
 }
-main .content h4 + div.selected {
+main .content button + div.selected {
   visibility: visible;
   opacity: 1;
   height: auto;
 
   z-index: 2;
 }
-main .content h4 + div p::first-letter {
+main .content button + div p::first-letter {
   margin-left: 16px;
 }
 
@@ -509,7 +514,7 @@ main img.fluxograma {
   main h1 {
     font-size: calc(42px + 1vw);
   }
-  main .content h3 {
+  main .content h2 {
     font-size: 25px;
   }
 }
@@ -542,25 +547,26 @@ footer * {
 
   justify-content: center;
 }
-footer h4 {
+footer h3 {
   cursor: default;
 
   font-size: 1.35rem;
   font-weight: 500;
-  color: var(--dblue500);
+  color: var(--dblue400);
 
-  padding: var(--smallest-padding) 0;
+  padding: var(--smallest-padding) 0 0;
 }
-footer ul {
+footer ul,
+footer > div {
   justify-content: start;
 
   display: flex;
   flex-direction: column;
 
-  gap: calc(var(--base-padding) * 0.5);
+  gap: calc(var(--base-padding) * 0.7);
 }
 footer li {
-  font-size: 1rem;
+  font-size: 17px;
   cursor: pointer;
 
   width: fit-content;
@@ -597,22 +603,32 @@ footer img {
   }
   footer ul,
   footer img {
-    padding: 0 0 20px;
-    width: 190px;
+    padding: 0 0 15px;
 
     margin: auto;
   }
-  footer img {
-    padding: 10px;
-
-    height: auto;
-  }
+  footer > div,
   footer ul {
     justify-content: center;
     display: block;
+
+    width: 220px;
   }
   footer ul li {
     padding: 5px 0;
+  }
+  footer img {
+    width: 185px;
+    height: auto;
+
+    padding-top: 10px;
+  }
+  footer > div {
+    margin: auto;
+  }
+
+  footer h3 {
+    padding-bottom: 6px;
   }
 }
 

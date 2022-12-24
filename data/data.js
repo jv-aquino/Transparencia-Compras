@@ -1,6 +1,10 @@
 const csvToJson = require('convert-csv-to-json');
 
-const fileInputName = "./data/equipe.csv"; 
-const fileOutputName = "./data/equipe.json";
+const equipeCsv = "./data/equipe.csv"; 
+const equipeJSON = "./data/equipe.json";
 
-csvToJson.fieldDelimiter(',').generateJsonFileFromCsv(fileInputName, fileOutputName);
+const faqCsv = "./data/faq.csv";
+const faqJSON = "./data/faq.json";
+
+csvToJson.fieldDelimiter(',').generateJsonFileFromCsv(equipeCsv, equipeJSON);
+csvToJson.fieldDelimiter(',').generateJsonFileFromCsv(faqCsv, faqJSON);

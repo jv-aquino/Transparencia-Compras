@@ -91,22 +91,22 @@ const Dom = (() => {
     liSelected.classList.add("selected");
   }
 
-  const showH4Content = (e) => {
-    let actualH4 = document.querySelector(".content h4#" + e.target.id);
+  const showContent = (e) => {
+    let actualQuestion = document.querySelector(".content button#" + e.target.id);
 
-    let showDiv = document.querySelector(".content h4#" + e.target.id + " + div");
-    // Selecting the div right after the h4 topic
+    let showDiv = document.querySelector(".content button#" + e.target.id + " + div");
+    // Selecting the div right after the question
 
-    actualH4.classList.toggle("selected");
+    actualQuestion.classList.toggle("selected");
     showDiv.classList.toggle("selected");
   }
 
   const addContent = () => {
-    const h4s = Array.from(document.querySelectorAll("main .content h4"));
-    h4s.forEach(h4 => {
-      h4.innerHTML = "<span class='material-symbols-outlined'>expand_more</span>" + h4.textContent;
+    const questions = Array.from(document.querySelectorAll("main .content button"));
+    questions.forEach(question => {
+      question.innerHTML = "<span class='material-symbols-outlined'>expand_more</span>" + question.textContent;
 
-      h4.addEventListener("click", showH4Content);
+      question.addEventListener("click", showContent);
     });
   };
 
