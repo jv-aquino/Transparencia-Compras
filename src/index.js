@@ -92,10 +92,9 @@ const Dom = (() => {
   }
 
   const showContent = (e) => {
-    let actualQuestion = document.querySelector(".content button#" + e.target.id);
-
-    let showDiv = document.querySelector(".content button#" + e.target.id + " + div");
-    // Selecting the div right after the question
+    let actualQuestion = e.target;
+    let showDiv = e.target.nextSibling;
+    // Selecting the div right after the topic
 
     actualQuestion.classList.toggle("selected");
     showDiv.classList.toggle("selected");

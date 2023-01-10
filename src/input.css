@@ -360,8 +360,8 @@ main .content p b {
   font-weight: 500;
   color: var(--liblue700);
 }
-main .content p.group {
-  padding-bottom: 0;
+main .content p:not(:last-child) {
+  padding-bottom: 2px;
 }
 main .content h2 {
   font-size: 28px;
@@ -409,7 +409,7 @@ main .content button + div {
   height: 0;
   z-index: -1;
 
-  transition: .5s, opacity .05s;
+  transition: .5s, opacity 0s;
 }
 main .content button + div.selected {
   visibility: visible;
