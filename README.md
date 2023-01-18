@@ -12,7 +12,7 @@ Programa do setor de compras da FEG/Unesp que visa facilitar a parte de compras 
 
 ### [**0. Tech Stack**](#0-tech-stack)
 ### [**1. Configurando o projeto**](#1-configurando-o-projeto)
-### [**2. Alterando os dados da Equipe**](#2-alterando-os-dados-da-equipe)
+### [**2. Alterando os dados do Site**](#2-alterando-os-dados-do-site)
 
 ------------
 
@@ -42,9 +42,9 @@ npm install
 
 ------------
 
-## 2. Alterando os dados da Equipe
-### O site da STMA tem uma página com os dados da equipe da seção, e esses dados são armazenados por meio de uma planilha no Excel a qual você deve ter acesso. Para alterar as informações no site é preciso alterar esse Excel e depois seguir os passos adiante:
-1. ### Faça o Download da planilha em formato CSV e nomeie-a de "equipe.csv" substituindo o arquivo de mesmo nome já existente na pasta **/data/**
+## 2. Alterando os dados do Site
+### O site da STMA tem uma página com os dados da equipe da seção e uma seção de FAQ na página inicial com perguntas e respostas. Ambos esses dados são armazenados por meio de uma única planilha no Google Sheets a qual você deve ter acesso. Para alterar as informações no site é preciso alterar essa planilha e depois seguir os passos adiante:
+1. ### Faça o Download da planilha em formato CSV e nomeie-a de "equipe.csv" ou "faq.csv" dependendo do que você quer alterar, substituindo o arquivo de mesmo nome já existente na pasta **/data/**
 2. ### Abra o CMD ou Bash no VSCode indo em **Terminal > New Terminal**
 3. ### Por fim, execute o comando a seguir no terminal e depois atualize o site:
 ```bash
