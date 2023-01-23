@@ -114,7 +114,7 @@ const Dom = (() => {
     li.addEventListener("click", () => {Controller.switchPage(li.id)});
   });
 
-  logoImg.addEventListener("click", () => {Controller.switchPage("inicio")})
+  logoImg.addEventListener("click", () => {Controller.switchPage("início")})
   
 
   return {changePage, cleanMain, highlightLi, addContent};
@@ -126,12 +126,12 @@ const Controller = (() => {
     Dom.changePage(page);
     Dom.highlightLi(page);
     
-    (page == 'inicio') ? Dom.addContent() : null;
+    (page == 'início') ? Dom.addContent() : null;
   }
 
   return {switchPage};
 })();
 
 const Start = (() => {
-  Controller.switchPage("inicio");
+  Controller.switchPage("início");
 })();

@@ -2,7 +2,7 @@ const main = document.createElement("main");
 main.classList.add("pt-7", "pb-6", "flex", "flex-col", "items-center");
 
 const faq = require("../data/faq.json");
-const inicio = () => {
+const início = () => {
   main.textContent = '';
   const h1 = document.createElement("h1");
   h1.textContent = "Transparência de Compras";
@@ -32,7 +32,7 @@ const inicio = () => {
   return main;
 };
 
-const visualizar = () => {
+const visualizarPedidos = () => {
   main.textContent = '';
   const h1 = document.createElement("h1");
   h1.textContent = "Pedidos";
@@ -122,4 +122,4 @@ const comoPedir = () => {
   return main;
 }
 
-export {inicio, visualizar, equipe, contato, sobre, comoPedir};
+export {início, visualizarPedidos, equipe, contato, sobre, comoPedir};

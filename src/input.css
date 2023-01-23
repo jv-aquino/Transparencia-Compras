@@ -66,7 +66,8 @@ nav {
   z-index: 1;
 }
 nav img {
-  width: auto;
+  height: 64px;
+  width: 192px;
 }
 nav ul {
   display: flex;
@@ -79,6 +80,8 @@ nav ul li {
 
   border-radius: calc(var(--base-radius) + 2px);
   transition: .6s, box-shadow .3s, z-index 0s;
+
+  cursor: pointer;
 }
 nav ul li.selected {
   color: var(--green400); /* slightly lighter green for nav links */
@@ -592,7 +595,7 @@ footer li span.email {
 /* Desktop footer */
 footer img {
   height: 120px;
-  width: auto;
+  width: 183px;
 
   grid-column: 1 / 1;
 }
@@ -619,7 +622,7 @@ footer img {
   }
   footer img {
     width: 185px;
-    height: auto;
+    height: 121px;
 
     padding-top: 10px;
   }
