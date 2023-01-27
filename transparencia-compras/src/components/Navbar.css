@@ -29,7 +29,7 @@ nav ul li.selected {
   color: var(--green400); /* slightly lighter green for nav links */
 }
 nav ul li:hover,
-nav ul li.visible {
+nav .dropdown:hover li {
   color: var(--liblue500);
   background-color: var(--white);
 }
@@ -53,12 +53,8 @@ nav .dropdown > li span {
   position: relative;
   top: 3px;
 }
-nav .dropdown > li.selected {
+nav .dropdown:has(li.selected) > li {
   color: var(--green400);
-}
-nav .dropdown > li.selected:hover {
-  color: var(--green400);
-  background-color: var(--white);
 }
 
 nav .dropdown ul {
@@ -87,14 +83,14 @@ nav .dropdown ul li:hover {
   background-color: var(--liblue500);
 }
 
-nav .dropdown ul.visible {
+nav .dropdown:hover > ul  {
   visibility: visible;
   opacity: 1;
   height: auto;
 
   z-index: 2;
 }
-nav .dropdown ul.visible * {
+nav .dropdown:hover > ul * {
   z-index: 2;
 }
 nav .dropdown ul li.selected {
@@ -113,7 +109,7 @@ nav #stmas li {
   padding-right: calc(var(--base-padding) * 1.3);
 }
 
-nav .dropdown > li.visible span {
+nav .dropdown:hover > li span {
   transform: rotate(180deg);
   transition: .4s ease-out;
 }

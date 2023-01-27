@@ -20,7 +20,7 @@ footer * {
 footer h3 {
   cursor: default;
 
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: var(--dblue400);
 
@@ -28,41 +28,36 @@ footer h3 {
 }
 footer ul,
 footer > div {
-  justify-content: start;
+  justify-content: flex-start;
 
   display: flex;
   flex-direction: column;
 
   gap: calc(var(--base-padding) * 0.7);
 }
+footer > div {
+  gap: calc(var(--base-padding) * 0.35);
+}
 footer li {
-  font-size: 17px;
+  font-size: 18px;
   cursor: pointer;
 
   width: fit-content;
 }
 footer li span {
   color: inherit;
-  font-size: 1.3rem !important;
+  font-size: 1.4rem !important;
 
   position: relative;
   top: 3px;
 
   padding-right: 6px;
 }
-footer #equipe span {
-  font-size: 1.27rem !important;
-  top: 4px;
-}
-footer #contato span,
-footer li span.email {
-  font-size: 1.2rem !important;
-}
 
 /* Desktop footer */
 footer img {
-  height: 120px;
-  width: 183px;
+  height: 125px;
+  width: 185px;
 
   grid-column: 1 / 1;
 }
