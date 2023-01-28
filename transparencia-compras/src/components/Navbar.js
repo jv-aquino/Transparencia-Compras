@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './Navbar.css';
 import unespLogo from '../img/unesp.png';
 
@@ -25,25 +25,30 @@ function Dropdown({name, children}) {
   )
 }
 
-function Navbar({onLiClick}) {
-  function Li({text}) {
-    const id = text.toLowerCase().replace(/\s+/g, '');
-    // ID is a lowercase and no-space version of the Li text
-  
-    const li = (
-      <li className="p-2 page" id={id} 
-      onClick={(e) => {
-        const selectedLi = document.getElementById(e.target.id);
-        selectedLi.classList.add("selected");
+function Li({text, onLiClick}) {
+  const id = text.toLowerCase().replace(/\s+/g, '');
+  // ID is a lowercase and no-space version of the Li text
 
-        onLiClick(e.target.id);
+  const li = (
+    <li className={id + " p-2 page"} id={id} 
+    onClick={(e) => {
+      document.querySelectorAll("nav li.page").forEach(li => {
+        li.classList.remove("selected");
+      })
+
+      e.target.classList.add("selected");
+
+      onLiClick(e.target.id);
       }}>
-        {text}
-      </li>
-    );
-  
-    return li;
-  }
+      {text}
+    </li>
+  );
+
+  return li;
+}
+
+function Navbar({onLiClick}) {
+  const handleLiClick = useCallback(onLiClick, [onLiClick]);
 
   return (
     <nav className="py-3 px-8 justify-between items-center">
@@ -52,21 +57,21 @@ function Navbar({onLiClick}) {
       <MobileMenuButton />
 
       <ul className="font-bold items-center gap-3">
-        <Li text='Início' />
+        <Li text='Início' onLiClick={handleLiClick} />
         
         <Dropdown name="Pedidos">
-            <Li text="Como Pedir" />
-            <Li text="Visualizar Pedidos" />
+            <Li text="Como Pedir" onLiClick={handleLiClick} />
+            <Li text="Visualizar Pedidos" onLiClick={handleLiClick} />
         </Dropdown>
 
         <Dropdown name="STMA">
-          <Li text="Sobre" />
-          <Li text="Equipe"/>
-          <Li text="Contato"/>
+          <Li text="Sobre" onLiClick={handleLiClick}/>
+          <Li text="Equipe" onLiClick={handleLiClick}/>
+          <Li text="Contato" onLiClick={handleLiClick}/>
         </Dropdown>
       </ul>
     </nav>
   );
 }
 
-export default Navbar;
+export default React.memo(Navbar);

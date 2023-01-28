@@ -5,15 +5,11 @@ import Main from './components/Main';
 import { useState } from 'react';
 
 function App() {
-  const [actualPage, setPage] = useState("início")
-
-  function changePage(newPage) {
-    setPage(newPage);
-  }
+  const [actualPage, setPage] = useState("início");
 
   return (
     <>
-      <Navbar onLiClick={changePage}/>
+      <Navbar onLiClick={(page) => setPage(page)}/>
       <Main page={actualPage} />
       <Footer />
     </>
