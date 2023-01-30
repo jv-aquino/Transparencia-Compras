@@ -79,14 +79,16 @@ main .content p:not(:last-child) {
   padding-bottom: 2px;
 }
 main .content h2 {
-  font-size: 28px;
+  font-size: 30px;
   line-height: 1.2;
   font-weight: 600;
 
   cursor: default;
+
+  padding-bottom: calc(var(--base-padding) * 0.5);
 }
 main .content h2.faq {
-  padding-bottom: calc(var(--base-padding) * 0.8);
+  padding-bottom: calc(var(--base-padding) * 1);
 }
 
 main .content button {
@@ -122,19 +124,16 @@ main .content button + div {
   visibility: hidden;
   opacity: 0;
   height: 0;
-  z-index: -1;
 
   transition: .5s, opacity 0s;
 }
-main .content button + div.selected {
+main .content button + div p::first-letter {
+  margin-left: 16px;
+}
+main .content button.selected + div {
   visibility: visible;
   opacity: 1;
   height: auto;
-
-  z-index: 2;
-}
-main .content button + div p::first-letter {
-  margin-left: 16px;
 }
 
 
@@ -230,7 +229,7 @@ main img.fluxograma {
     font-size: calc(42px + 1vw);
   }
   main .content h2 {
-    font-size: 25px;
+    font-size: 27px;
   }
 }
 

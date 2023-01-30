@@ -29,8 +29,11 @@ function Li({text, onLiClick}) {
   const id = text.toLowerCase().replace(/\s+/g, '');
   // ID is a lowercase and no-space version of the Li text
 
+  const inicio = (id === 'início') ? " selected" : "";
+
   const li = (
-    <li className={id + " p-2 page"} id={id} 
+    <li className={id + " p-2 page" + inicio} 
+    id={id} 
     onClick={(e) => {
       document.querySelectorAll("nav li.page").forEach(li => {
         li.classList.remove("selected");

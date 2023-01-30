@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Transparência de Compras
+Programa do setor de compras da FEG/Unesp que visa facilitar a parte de compras e licitação de materiais da instituição desenvolvido pela **Seção Técnica de Materiais (STMA)**.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [Clique aqui para acessar o site](https://jv-aquino.github.io/Transparencia-Compras/)
+<p align="center">
+  <img src="./dist/img/unesp.png" alt="Logo da Unesp" style="width: 350px; height: auto;">
+</p>
 
-## Available Scripts
+------------
 
-In the project directory, you can run:
+## Manual
 
-### `npm start`
+### [**0. Tech Stack**](#0-tech-stack)
+### [**1. Configurando o projeto**](#1-configurando-o-projeto)
+### [**2. Alterando os dados da Equipe**](#2-alterando-os-dados-da-equipe)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+------------
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 0. Tech Stack
+### As tecnologias usadas nesse projeto foram escolhidas pela simplicidade e fácil curva de aprendizagem, logo podem ser facilmente aprendidas e usadas para modificar o projeto. É desejado conhecimento intermediário em Front-end para a alteração e manutenção do projeto, e as tecnologias usadas nele são:
 
-### `npm test`
+- ### **<img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" height="20" width="20"> HTML**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ### **<img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" height="20" width="20"> CSS** e **<img src="https://github.com/devicons/devicon/blob/master/icons/tailwindcss/tailwindcss-plain.svg" height="20" width="20"> Tailwind**
 
-### `npm run build`
+- ### **<img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" height="20" width="20"> Javascript** e **<img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" height="20" width="20"> Webpack**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ### **<img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" height="20" width="20"> NPM / <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg" height="20" width="20"> NodeJS**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ### **<img src="https://github.com/sempostma/office365-icons/blob/master/svg/excel.svg" height="20" width="20"> Excel**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+------------
 
-### `npm run eject`
+## 1. Configurando o projeto
+1. ### Como já citado, o programa usa Node/NPM e para os passos a seguir e para se mexer com o site no geral é necessário usá-los. Para isso, deve-se [instalar o Node.js](https://nodejs.org/en/) **(versão LTS)** e reiniciar o computador, assim tanto o Node.js quanto a NPM estarão instalados e funcionando em seu computador.
+2. ### Para clonar e modificar o projeto também usamos o programa [Git](https://git-scm.com/downloads) que tem a função de controlar as versões e alterações do projeto. Se você ainda não tem essa importante ferramenta instalada, [instale-a aqui](https://git-scm.com/downloads). Após isso, clone este projeto em sua máquina.
+3. ### Com tudo isso feito, abra o seu editor de código (como o [VSCode](https://code.visualstudio.com/)) na pasta do projeto e abra um Terminal indo em **Terminal > New Terminal**. No terminal, insira o seguinte comando para instalar todas as dependências do projeto que são usadas para modificá-lo e melhorá-lo:
+```bash
+npm install
+```
+#### * (após esse comando ser executado, uma pasta *node_modules* será criada)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+------------
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 2. Alterando os dados da Equipe
+### O site da STMA tem uma página com os dados da equipe da seção, e esses dados são armazenados por meio de uma planilha no Excel a qual você deve ter acesso. Para alterar as informações no site é preciso alterar esse Excel e depois seguir os passos adiante:
+1. ### Faça o Download da planilha em formato CSV e nomeie-a de "equipe.csv" substituindo o arquivo de mesmo nome já existente na pasta **/data/**
+2. ### Abra o CMD ou Bash no VSCode indo em **Terminal > New Terminal**
+3. ### Por fim, execute o comando a seguir no terminal e depois atualize o site:
+```bash
+npm run data
+```
+### Esse comando modificará o arquivo equipe.json (que está sendo usado para gerar o conteúdo da página) e executará o Webpack, que vai então atualizar o Javascript que está sendo utilizado na página e suas informações.
