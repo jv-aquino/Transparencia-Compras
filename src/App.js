@@ -9,9 +9,11 @@ function App() {
 
   return (
     <>
-      <Navbar onLiClick={(page) => setPage(page)}/>
+      <Navbar onLiClick={(page) => setPage(page)} />
+      
       <Main page={actualPage} />
-      <Footer />
+
+      <Footer onLiClick={(page) => setPage(page)} />
     </>
   );
 }

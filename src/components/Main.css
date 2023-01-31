@@ -23,6 +23,7 @@ main ul {
 }
 main ul li {
   font-weight: 500;
+  font-size: 19px;
 }
 main ul.p {
   margin-top: var(--smallest-padding);
@@ -64,6 +65,8 @@ main .content > * {
   padding: var(--smallest-padding);
 }
 main .content p {
+  font-size: 19px;
+
   text-align: justify;
   hyphens: auto;
   
@@ -85,10 +88,10 @@ main h2 {
 
   cursor: default;
 
-  padding-bottom: calc(var(--base-padding) * 0.5);
+  padding-bottom: calc(var(--base-padding) * 0.4) !important;
 }
 main .content h2.faq {
-  padding-bottom: calc(var(--base-padding) * 1);
+  padding-bottom: calc(var(--base-padding) * 1.1) !important;
 }
 
 main .content button {

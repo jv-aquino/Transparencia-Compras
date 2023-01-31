@@ -1,20 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './Footer.css';
 import stmaLogo from '../img/stma.png';
-
-function Li({text, icon, link, isNav}) {
-  const id = (isNav) ? text.toLowerCase().replace(/\s+/g, '') : '';
-  // ID is a lowercase and no-space version of the Li text
-
-  const li = (
-    <li className={"highlight " + ((isNav) ? "page" : '')}
-    id={id}>
-      <a href={link}><span className="material-symbols-outlined">{icon}</span>{text}</a>
-    </li>
-  )
-
-  return li;
-}
 
 function Section({header, children}) {
   return (
@@ -27,16 +13,44 @@ function Section({header, children}) {
   )
 }
 
-function Footer(props) {
+function Li({text, icon, link, onLiClick}) {
+  const isNav = onLiClick ? true : false;
+
+  const id = (isNav) ? text.toLowerCase().replace(/\s+/g, '') : '';
+  // ID is a lowercase and no-space version of the Li text
+
+  const li = (
+    <li className={"highlight " + ((isNav) ? "page" : '')}
+    id={id}
+    onClick={() => {
+      if (isNav) { 
+        onLiClick(id);
+      }
+    }}>
+      
+      <a href={link}>
+        <span className="material-symbols-outlined">{icon}</span>
+        {text}
+      </a>
+
+    </li>
+  )
+
+  return li;
+}
+
+function Footer({ onLiClick }) {
+  const handleLiClick = useCallback(onLiClick, [onLiClick]);
+
   return (
     <footer className="gap-2 px-2 py-7">
       <Section header="Navegação">
-        <Li isNav={true} text='Início' link='#root' icon='home' />
-        <Li isNav={true} text='Como Pedir' link='#root' icon='edit_square' />
-        <Li isNav={true} text='Visualizar Pedidos' link='#root' icon='sort' />
-        <Li isNav={true} text='STMA' link='#root' icon='apartment' />
-        <Li isNav={true} text='Equipe' link='#root' icon='groups' />
-        <Li isNav={true} text='Contato' link='#root' icon='call' />
+        <Li onLiClick={handleLiClick} text='Início' link='#root' icon='home' />
+        <Li onLiClick={handleLiClick} text='Como Pedir' link='#root' icon='edit_square' />
+        <Li onLiClick={handleLiClick} text='Visualizar Pedidos' link='#root' icon='sort' />
+        <Li onLiClick={handleLiClick} text='Sobre' link='#root' icon='apartment' />
+        <Li onLiClick={handleLiClick} text='Equipe' link='#root' icon='groups' />
+        <Li onLiClick={handleLiClick} text='Contato' link='#root' icon='call' />
       </Section>
       
       <Section header="Links">

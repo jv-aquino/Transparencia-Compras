@@ -39,6 +39,10 @@ nav .dropdown ul li.selected:hover {
   background-color: var(--green500);
 }
 
+nav li#sobre {
+  padding-right: calc(var(--base-padding) * 3);
+}
+
 /* Dropdown menus */
 nav .dropdown {
   position: relative;
