@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "./static/css/main.b8ad054d.css",
+    "main.js": "./static/js/main.06603b70.js",
+    "static/js/787.881052a8.chunk.js": "./static/js/787.881052a8.chunk.js",
+    "static/media/fluxograma.png": "./static/media/fluxograma.ceab16b06f393e37b00e.png",
+    "static/media/stma.png": "./static/media/stma.079c3573a44316c6e4c7.png",
+    "index.html": "./index.html",
+    "main.b8ad054d.css.map": "./static/css/main.b8ad054d.css.map",
+    "main.06603b70.js.map": "./static/js/main.06603b70.js.map",
+    "787.881052a8.chunk.js.map": "./static/js/787.881052a8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8ad054d.css",
+    "static/js/main.06603b70.js"
+  ]
+}
