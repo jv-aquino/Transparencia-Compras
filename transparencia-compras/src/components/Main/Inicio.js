@@ -1,6 +1,6 @@
 import React from "react";
-import Faq from "../../data/faq";
 import { v4 as uuidv4 } from 'uuid';
+import faq from "../../data/faq.json";
 
 function Início() {
   function showContent (e) {
@@ -25,7 +25,7 @@ function Início() {
 
         <h2 className='faq'>Perguntas Frequentes</h2>
         {
-          Faq.map(obj => {
+          faq.map(obj => {
             return Object.keys(obj).map(key => {
               if (key === "Pergunta") {
                 return (

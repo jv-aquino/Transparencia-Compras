@@ -78,7 +78,7 @@ main .content p b {
 main .content p:not(:last-child) {
   padding-bottom: 2px;
 }
-main .content h2 {
+main h2 {
   font-size: 30px;
   line-height: 1.2;
   font-weight: 600;
@@ -153,7 +153,7 @@ main a {
   color: var(--dblue500);
 }
 main .contact p {
-  font-size: 22px;
+  font-size: 23px;
 }
 
 main .telefone {
