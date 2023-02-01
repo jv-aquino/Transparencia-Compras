@@ -3,7 +3,7 @@ Programa do setor de compras da FEG/Unesp que visa facilitar a parte de compras 
 
 ### [Clique aqui para acessar o site](https://jv-aquino.github.io/Transparencia-Compras/)
 <p align="center">
-  <img src="./dist/img/unesp.png" alt="Logo da Unesp" style="width: 350px; height: auto;">
+  <img src="./src/img/unesp.png" alt="Logo da Unesp" style="width: 350px; height: auto;">
 </p>
 
 ------------
@@ -17,17 +17,17 @@ Programa do setor de compras da FEG/Unesp que visa facilitar a parte de compras 
 ------------
 
 ## 0. Tech Stack
-### As tecnologias usadas nesse projeto foram escolhidas pela simplicidade e fácil curva de aprendizagem, logo podem ser facilmente aprendidas e usadas para modificar o projeto. É desejado conhecimento intermediário em Front-end para a alteração e manutenção do projeto, e as tecnologias usadas nele são:
+### As tecnologias usadas nesse projeto foram escolhidas para facilitar o desenvolvimento mas ao mesmo tempo evitar overengineering e usar tecnologias mais fáceis, modernas e populares. Levando isso em consideração, segue abaixo a tech stack desse projeto:
 
 - ### **<img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" height="20" width="20"> HTML**
 
 - ### **<img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" height="20" width="20"> CSS** e **<img src="https://github.com/devicons/devicon/blob/master/icons/tailwindcss/tailwindcss-plain.svg" height="20" width="20"> Tailwind**
 
-- ### **<img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" height="20" width="20"> Javascript** e **<img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" height="20" width="20"> Webpack**
+- ### **<img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" height="20" width="20"> Javascript** e **<img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" height="20" width="20"> React**
 
 - ### **<img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" height="20" width="20"> NPM / <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg" height="20" width="20"> NodeJS**
 
-- ### **<img src="https://github.com/sempostma/office365-icons/blob/master/svg/excel.svg" height="20" width="20"> Excel**
+- ### **<img src="https://github.com/sempostma/office365-icons/blob/master/svg/excel.svg" height="20" width="20"> Google Sheets**
 
 ------------
 
