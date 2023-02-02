@@ -1,11 +1,24 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import './Navbar.css';
 import unespLogo from '../img/unesp.png';
 
 function MobileMenuButton() {
+  const [selected, setSelected] = useState(false);
+
+  const toggleMenu = () => {
+    document.querySelector("nav > ul").classList.toggle("selected");
+
+    setSelected((prevState) => {
+      return !prevState;
+    })
+  }
+
   return (
     <button type="button" className="items-center justify-center" id="mobileButton">
-      <span className="material-symbols-outlined">menu</span>
+      <span className={"material-symbols-outlined " + ((selected) ? 'selected' : '')}
+      onClick={toggleMenu}>
+        {selected ? 'close' : 'menu'}
+      </span>
     </button>
   )
 }

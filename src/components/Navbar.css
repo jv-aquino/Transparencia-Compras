@@ -70,7 +70,7 @@ nav .dropdown ul {
   height: 0;
   z-index: -1;
 
-  transition: .6s, z-index 0s;
+  transition: .6s;
 }
 nav .dropdown ul * {
   z-index: -1;
@@ -78,9 +78,6 @@ nav .dropdown ul * {
 nav .dropdown ul li {
   display: block;
   border-radius: 0;
-  
-  color: var(--liblue500);
-  background-color: var(--white);
 }
 nav .dropdown ul li:hover {
   color: var(--white);
@@ -153,13 +150,16 @@ nav #mobileButton span {
   nav #mobileButton span.selected {
     color: var(--black);
   }
-
-  nav li.page:hover {
-    color: var(--white);
+  
+  nav > ul li {
+    color: var(--dblue500);
+  }
+  nav > ul li.page:hover {
+    color: var(--white) !important;
     background-color: var(--dblue500);
   }
 
-  nav .ul {
+  nav > ul {
     position: fixed;
     top: 0;
     left: 0;
@@ -171,16 +171,17 @@ nav #mobileButton span {
 
     background-color: var(--white);
 
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
     transition: .4s;
   }
-  nav .ul * {
-    font-size: 28px;
+  nav > ul * {
+    font-size: 28px !important;
   }
 
-  nav .ul.selected {
+  nav > ul.selected {
     display: flex;
 
     z-index: 2;
@@ -189,27 +190,28 @@ nav #mobileButton span {
     height: 100vh;
   }
 
-  nav .ul:not(.selected) * {
+  nav > ul:not(.selected) * {
     display: none;
   } 
 
-  nav .ul > ul {
+  nav > ul > ul {
     flex-direction: column;
   }
-  nav .ul ul li {
-    color: var(--dblue500);
-  }
-  nav .ul ul li.page.selected {
+  nav > ul ul li.page.selected {
     color: var(--green500);
   }
-  nav .ul ul li.page.selected:hover {
+  nav > ul ul li.page.selected:hover {
     color: var(--white);
   }
-  nav .ul .dropdown * {
+  nav > ul .dropdown * {
     margin: auto;
 
     position: relative;
     min-width: fit-content;
+  }
+  nav .dropdown:hover ul li,
+  nav .dropdown:hover li {
+    color: var(--dblue500);
   }
   nav .dropdown {
     display: flex;
@@ -220,8 +222,5 @@ nav #mobileButton span {
   }
   nav .dropdown ul li:hover {
     background-color: var(--dblue500);
-  }
-  nav .ul .dropdown > li.selected {
-    color: var(--green500);
   }
 }
