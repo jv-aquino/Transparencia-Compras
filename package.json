@@ -2,7 +2,7 @@
   "name": "transparencia-compras",
   "version": "2.0.3",
   "private": true,
-  "homepage": "./",
+  "homepage": "https://jv-aquino.github.io/Transparencia-Compras/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "data": "node ./src/data/data.js && webpack"
+    "data": "node ./src/data/data.js && webpack",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "tailwindcss": "^3.2.4"
   }
 }
