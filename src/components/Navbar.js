@@ -24,9 +24,18 @@ function MobileMenuButton() {
 }
 
 function Dropdown({name, children}) {
+  const [visible, setVisible] = useState(false);
+
+  const toggleVisible = () => {
+    setVisible((prevState) => {
+      return !prevState;
+    })
+  }
+
   return (
-    <div className='dropdown'>
-      <li className="p-2" id={name.toLowerCase()}>
+    <div className={'dropdown' + ((visible) ? " click" : '')}>
+      <li className="p-2" id={name.toLowerCase()}
+      onClick={toggleVisible}>
         {name}
         <span className="material-symbols-outlined">expand_more</span>
       </li>

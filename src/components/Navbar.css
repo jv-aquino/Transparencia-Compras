@@ -84,16 +84,6 @@ nav .dropdown ul li:hover {
   background-color: var(--liblue500);
 }
 
-nav .dropdown:hover > ul  {
-  visibility: visible;
-  opacity: 1;
-  height: auto;
-
-  z-index: 2;
-}
-nav .dropdown:hover > ul * {
-  z-index: 2;
-}
 nav .dropdown ul li.selected {
   color: var(--green400);
 }
@@ -110,7 +100,7 @@ nav #stmas li {
   padding-right: calc(var(--base-padding) * 1.3);
 }
 
-nav .dropdown:hover > li span {
+nav .dropdown.click > li span {
   transform: rotate(180deg);
   transition: .4s ease-out;
 }
@@ -127,6 +117,25 @@ nav span {
     --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)  !important;
+  }
+}
+
+/* Desktop animations */
+@media screen and (min-width:850px) {
+  nav .dropdown:hover > li span {
+    transform: rotate(180deg);
+    transition: .4s ease-out;
+  }
+  
+  nav .dropdown:hover > ul  {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+
+    z-index: 2;
+  }
+  nav .dropdown:hover > ul * {
+    z-index: 2;
   }
 }
 
@@ -152,6 +161,9 @@ nav #mobileButton span {
   }
   
   nav > ul li {
+    color: var(--liblue500);
+  }
+  nav > ul li.page {
     color: var(--dblue500);
   }
   nav > ul li.page:hover {
@@ -197,11 +209,18 @@ nav #mobileButton span {
   nav > ul > ul {
     flex-direction: column;
   }
+  nav > ul li.page.selected {
+    color: var(--green500);
+  }
   nav > ul ul li.page.selected {
     color: var(--green500);
   }
+  nav > ul li.page.selected:hover {
+    background-color: var(--green500);
+  }
   nav > ul ul li.page.selected:hover {
     color: var(--white);
+    background-color: var(--green500);
   }
   nav > ul .dropdown * {
     margin: auto;
@@ -209,8 +228,7 @@ nav #mobileButton span {
     position: relative;
     min-width: fit-content;
   }
-  nav .dropdown:hover ul li,
-  nav .dropdown:hover li {
+  nav .dropdown:hover ul li {
     color: var(--dblue500);
   }
   nav .dropdown {
@@ -222,5 +240,21 @@ nav #mobileButton span {
   }
   nav .dropdown ul li:hover {
     background-color: var(--dblue500);
+  }
+
+  nav .dropdown.click > li span {
+    transform: rotate(180deg);
+    transition: .4s ease-out;
+  }
+  
+  nav .dropdown.click > ul  {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+  
+    z-index: 2;
+  }
+  nav .dropdown.click > ul * {
+    z-index: 2;
   }
 }
