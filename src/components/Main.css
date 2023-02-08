@@ -175,6 +175,8 @@ main .funcionarios div {
   border-radius: var(--base-radius);
 
   padding: calc(var(--base-padding) * 1.4);
+
+  align-self: start;
 }
 main .funcionarios div::before {
   content: "";
@@ -182,7 +184,7 @@ main .funcionarios div::before {
   top: 2px;
   left: 0;
 
-  width: 8px;
+  width: 9px;
   height: calc(100% - 2px);
   border-radius: 6px 0 0 6px;
 
@@ -205,6 +207,41 @@ main .funcionarios .cargo {
   font-size: 19px;
   filter: brightness(92%);
 }
+
+main .funcionarios button {
+  position: relative;
+  left: -5px;
+
+  padding: 4px 0 2px;
+
+  font-size: 20px;
+}
+main .funcionarios button span {
+  font-size: 28px !important;
+  vertical-align: bottom;
+}
+
+main .funcionarios ul.funcoes {
+  position: relative;
+  left: 9px;
+
+  padding: 0;
+
+  display: none;
+}
+main .funcionarios ul.funcoes li {
+  font-weight: 500;
+  color: var(--liblue700);
+}
+main .funcionarios ul.funcoes.visible {
+  display: block;
+}
+
+main .funcionarios div:has(ul.funcoes.visible) button span {
+  transform: rotate(180deg);
+  transition: ease-out .4s;
+}
+
 @media screen and (max-width:400px) {
   main .funcionarios {
     grid-template-columns: 1fr;
