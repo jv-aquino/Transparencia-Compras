@@ -7,13 +7,23 @@ import { useState } from 'react';
 function App() {
   const [actualPage, setPage] = useState("início");
 
+  function changePage(page) {
+    setPage(page);
+
+    document.querySelectorAll("nav li.page").forEach(li => {
+      li.classList.remove("selected");
+    })
+
+    document.querySelector('nav li#' + page).classList.add("selected");
+  }
+
   return (
     <>
-      <Navbar onLiClick={(page) => setPage(page)} />
+      <Navbar onLiClick={changePage} />
       
       <Main page={actualPage} />
 
-      <Footer onLiClick={(page) => setPage(page)} />
+      <Footer onLiClick={changePage} />
     </>
   );
 }

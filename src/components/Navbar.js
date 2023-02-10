@@ -57,13 +57,7 @@ function Li({text, onLiClick}) {
     <li className={id + " p-2 page" + inicio} 
     id={id} 
     onClick={(e) => {
-      document.querySelectorAll("nav li.page").forEach(li => {
-        li.classList.remove("selected");
-      })
-
-      e.target.classList.add("selected");
-
-      onLiClick(e.target.id);
+        onLiClick(e.target.id);
       }}>
       {text}
     </li>
