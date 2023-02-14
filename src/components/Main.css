@@ -16,6 +16,10 @@ main h1 {
   line-height: 1;
   letter-spacing: -2px;
 }
+main p b {
+  font-weight: 500;
+  color: var(--liblue700);
+}
 
 main ul {
   margin-left: var(--base-padding);
@@ -73,10 +77,6 @@ main .content p {
   line-height: 1.6;
 
   padding-bottom: calc(var(--base-padding) * 1.25);
-}
-main .content p b {
-  font-weight: 500;
-  color: var(--liblue700);
 }
 main .content p:not(:last-child) {
   padding-bottom: 2px;
@@ -139,9 +139,19 @@ main .content button.selected + div {
   height: auto;
 }
 
+main .sobre {
+  width: 70%;
+}
+main .sobre > div {
+  align-self: center;
+}
+main .sobre > div p {
+  font-size: 20px;
+}  
 
 main .content,
-main .contact {
+main .contact,
+main .sobre > div {
   font-size: 18px;
 
   width: min(800px, 90%);
@@ -276,6 +286,7 @@ main img.fluxograma {
 /* Emulate light source */
 main .funcionarios div,
 main .content,
-main .contact {
+main .contact,
+main .sobre > div  {
   box-shadow: inset 0 2px 0 rgba(204, 204, 235, 0.9);
 }
