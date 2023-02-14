@@ -54,8 +54,9 @@ nav .dropdown > li {
   border-radius: var(--base-radius) var(--base-radius) 0 0;
 }
 nav .dropdown > li span {
+  font-size: 25px;
   position: relative;
-  top: 3px;
+  bottom: 2px;
 }
 nav .dropdown:has(li.selected) > li {
   color: var(--green400);
@@ -103,10 +104,6 @@ nav #stmas li {
 nav .dropdown.click > li span {
   transform: rotate(180deg);
   transition: .4s ease-out;
-}
-
-nav span {
-  color: inherit;
 }
 
 /* Emulate nav light source */

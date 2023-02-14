@@ -139,16 +139,6 @@ main .content button.selected + div {
   height: auto;
 }
 
-main .sobre {
-  width: 70%;
-}
-main .sobre > div {
-  align-self: center;
-}
-main .sobre > div p {
-  font-size: 20px;
-}  
-
 main .content,
 main .contact,
 main .sobre > div {
@@ -167,10 +157,6 @@ main a {
 }
 main .contact p {
   font-size: 23px;
-}
-
-main .telefone {
-  color: var(--liblue700);
 }
 
 main .funcionarios {
@@ -201,39 +187,56 @@ main .funcionarios div::before {
   background-color: var(--liblue500);
 }
 main .funcionarios div > * {
-  font-size: 18px;
+  font-size: 20px;
 
-  padding: calc(var(--smallest-padding) * 1.8);
+  padding: calc(var(--smallest-padding) * 1.2) 4px;
 }
 main .funcionarios .nome {
   width: fit-content;
 
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 500;
 }
 main .funcionarios .cargo {
   cursor: default;
-
-  font-size: 19px;
-  filter: brightness(92%);
+}
+main .funcionarios .telefone {
+  padding-top: 6px;
+  color: var(--liblue700);
+}
+main .funcionarios .telefone span {
+  font-size: 23px !important;
+  padding-right: 2px;
+}
+main .funcionarios .email {
+  padding-top: 0px;
+}
+main .funcionarios .email span {
+  font-size: 22px !important;
+  padding-right: 4px;
 }
 
 main .funcionarios button {
   position: relative;
-  left: -5px;
+  left: -3px;
 
-  padding: 4px 0 2px;
+  padding: 8px 0 2px;
 
-  font-size: 20px;
+  font-size: 21px;
 }
 main .funcionarios button span {
   font-size: 28px !important;
   vertical-align: bottom;
+
+  padding-right: 0px;
+
+  position: relative;
+  bottom: 2px;
 }
 
 main .funcionarios ul.funcoes {
   position: relative;
-  left: 9px;
+  left: 12px;
 
   padding: 0;
 

@@ -43,7 +43,16 @@ export default function Equipe() {
                     key={uuidv4()}>
                       {
                         (key === 'Email')
-                        ?  <a href={"mailto:" + funcionario[key]}>{funcionario[key]}</a>
+                        ? <a href={"mailto:" + funcionario[key]}>
+                          <span className="material-symbols-outlined">mail</span>
+                          {funcionario[key]}
+                        </a>
+
+                        : (key === "Telefone") ? <>
+                          <span className="material-symbols-outlined">call</span>
+                          {funcionario[key]}
+                        </>
+                        
                         : funcionario[key]
                       }
                     </p>

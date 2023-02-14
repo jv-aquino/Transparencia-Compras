@@ -45,11 +45,7 @@ footer li {
   width: fit-content;
 }
 footer li span {
-  color: inherit;
-  font-size: 1.4rem !important;
-
-  position: relative;
-  top: 3px;
+  font-size: 23px !important;
 
   padding-right: 6px;
 }

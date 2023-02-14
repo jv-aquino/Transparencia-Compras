@@ -75,7 +75,7 @@ function Navbar({onLiClick}) {
 
       <MobileMenuButton />
 
-      <ul className="font-bold items-center gap-3">
+      <ul className="items-center gap-3">
         <Li text='Início' onLiClick={handleLiClick} />
         
         <Dropdown name="Pedidos">

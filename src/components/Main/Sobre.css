@@ -1,0 +1,9 @@
+main .sobre {
+  width: 70%;
+}
+main .sobre > div {
+  align-self: center;
+}
+main .sobre > div p {
+  font-size: 20px;
+}  

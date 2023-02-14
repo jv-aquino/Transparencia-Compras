@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Sobre.css";
 import fotoSTMA from '../../img/stma.png';
 
 export default function Sobre() {
