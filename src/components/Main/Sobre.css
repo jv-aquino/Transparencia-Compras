@@ -1,9 +1,28 @@
 main .sobre {
   width: 70%;
 }
-main .sobre > div {
+main .sobre div {
   align-self: center;
 }
-main .sobre > div p {
+main .sobre div.grid {
+  padding: var(--base-padding) 0;
+  gap: var(--base-padding);
+  grid-auto-flow: column;
+}
+main .sobre div p {
   font-size: 20px;
 }  
+
+
+@media screen and (max-width:1000px) {
+  main .sobre {
+    width: 90%;
+  }
+
+  main .sobre div.grid {
+    grid-auto-flow: row;
+  }
+  main .sobre div.grid:nth-child(2) img {
+    grid-row: 1 / 2;
+  }
+}

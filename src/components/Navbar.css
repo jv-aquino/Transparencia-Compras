@@ -154,7 +154,7 @@ nav #mobileButton span {
     z-index: 5;
   }
   nav #mobileButton span.selected {
-    color: var(--black);
+    color: var(--black) !important;
   }
   
   nav > ul li {
