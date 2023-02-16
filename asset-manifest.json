@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Transparencia-Compras/static/css/main.c27e9207.css",
-    "main.js": "/Transparencia-Compras/static/js/main.c5acfac8.js",
+    "main.css": "/Transparencia-Compras/static/css/main.79e05e53.css",
+    "main.js": "/Transparencia-Compras/static/js/main.53af358b.js",
     "static/js/787.881052a8.chunk.js": "/Transparencia-Compras/static/js/787.881052a8.chunk.js",
     "static/media/fluxograma.png": "/Transparencia-Compras/static/media/fluxograma.ceab16b06f393e37b00e.png",
     "static/media/stma.png": "/Transparencia-Compras/static/media/stma.079c3573a44316c6e4c7.png",
     "index.html": "/Transparencia-Compras/index.html",
-    "main.c27e9207.css.map": "/Transparencia-Compras/static/css/main.c27e9207.css.map",
-    "main.c5acfac8.js.map": "/Transparencia-Compras/static/js/main.c5acfac8.js.map",
+    "main.79e05e53.css.map": "/Transparencia-Compras/static/css/main.79e05e53.css.map",
+    "main.53af358b.js.map": "/Transparencia-Compras/static/js/main.53af358b.js.map",
     "787.881052a8.chunk.js.map": "/Transparencia-Compras/static/js/787.881052a8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c27e9207.css",
-    "static/js/main.c5acfac8.js"
+    "static/css/main.79e05e53.css",
+    "static/js/main.53af358b.js"
   ]
 }
