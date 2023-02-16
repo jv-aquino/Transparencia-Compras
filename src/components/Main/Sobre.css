@@ -11,6 +11,19 @@ main .sobre div.grid {
 }
 main .sobre div p {
   font-size: 20px;
+}
+main .sobre div ul {
+  padding-left: 5px;
+}
+main .sobre div li {
+  padding: 1px 0;
+  font-size: 19px;
+}
+main .sobre p.horario li {
+  font-size: 20px;
+}
+main .sobre ul li:nth-child(even) b {
+  color: var(--dblue500) !important;
 }  
 
 
