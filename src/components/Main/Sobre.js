@@ -14,15 +14,15 @@ export default function Sobre() {
           <div className='drop-shadow-xl text'>
             <h2>Responsabilidades</h2>
 
-            <p>A Seção Técnica de Materiais da FEG é responsável por:
-              <ul>
-                <li><b>comprar materiais</b> necessários para o funcionamento da Faculdade.</li>
-                <li><b>contratar serviços</b> terceirizados (manutenção, reparo, etc.)</li>
-                <li>gerenciar <b>contratos</b></li>
-                <li>controlar o <b>patrimônio</b> da FEG</li>
-                <li><b>estocar os materiais</b> de uso contínuo</li>
-              </ul>
-            </p>
+            <p className='pt-1'>A Seção Técnica de Materiais da FEG é responsável por: </p>
+            
+            <ul className='pt-1'>
+              <li><b>comprar materiais</b> necessários para o funcionamento da Faculdade.</li>
+              <li><b>contratar serviços</b> terceirizados (manutenção, reparo, etc.)</li>
+              <li>gerenciar <b>contratos</b></li>
+              <li>controlar o <b>patrimônio</b> da FEG</li>
+              <li><b>estocar os materiais</b> de uso contínuo</li>
+            </ul>
 
           </div>
         </div>
@@ -32,16 +32,19 @@ export default function Sobre() {
           <div className='drop-shadow-xl text'>
             <h2>Localização e Horário</h2>
 
-            <p>
+            <p className='pt-1'>
               A STMA está localizada perto da <b>cantina</b> da FEG, no bloco do <b>CTIG</b>.
             </p>
-            <p className='pt-2 horario'>
+
+            <p className='pt-2'>
               O <b>horário</b> de funcionamento para atendimentos é:
-              <ul className='pt-1'>
-                <li>Manhã: <b>8h -&gt; 12h</b></li>
-                <li>Tarde: <b>13:30h -&gt; 17h</b> </li>
-              </ul>
             </p>
+
+            <ul className='pt-1 horario'>
+              <li>Manhã: <b>8h -&gt; 12h</b></li>
+              <li>Tarde: <b>13:30h -&gt; 17h</b> </li>
+            </ul>
+            
           </div>
 
           <img src={fotoSTMA} alt="Imagem de exemplo" />

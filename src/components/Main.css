@@ -11,7 +11,7 @@ main h1 {
   padding-bottom: var(--base-padding);
 
   font-family: "Quicksand", sans-serif;
-  font-size: 60px;
+  font-size: 64px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -2px;
@@ -279,7 +279,7 @@ main img.fluxograma {
 /* Responsive main section */
 @media screen and (max-width:850px) {
   main h1 {
-    font-size: calc(42px + 1vw);
+    font-size: calc(46px + 1vw);
   }
   main .content h2 {
     font-size: 27px;

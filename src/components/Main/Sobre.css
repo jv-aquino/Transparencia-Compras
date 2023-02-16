@@ -1,26 +1,29 @@
 main .sobre {
-  width: 70%;
+  width: 77%;
 }
 main .sobre div {
   align-self: center;
 }
 main .sobre div.grid {
   padding: var(--base-padding) 0;
-  gap: var(--base-padding);
+  gap: calc(var(--base-padding) * 1.5);
   grid-auto-flow: column;
 }
-main .sobre div p {
-  font-size: 20px;
+main .sobre p {
+  font-size: 1.3rem;
 }
-main .sobre div ul {
+main .sobre ul {
   padding-left: 5px;
 }
-main .sobre div li {
+main .sobre li {
   padding: 1px 0;
   font-size: 19px;
 }
-main .sobre p.horario li {
-  font-size: 20px;
+main .sobre ul.horario li {
+  font-size: 21px;
+}
+main .sobre ul li b {
+  color: var(--liblue700);
 }
 main .sobre ul li:nth-child(even) b {
   color: var(--dblue500) !important;
