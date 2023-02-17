@@ -1,4 +1,5 @@
 import React from 'react';
+import './Contato.css';
 
 export default function Contato() {
   return (
@@ -8,8 +9,13 @@ export default function Contato() {
       <div className="contact grid drop-shadow-lg">
         <h2>STMA</h2>
 
-        <p className='telefone'>(12) 3123-2733</p>
-        <p><a href='mailto:sma.feg@unesp.br'>sma.feg@unesp.br</a></p>
+        <p className='telefone'>
+          <span className="material-symbols-outlined pr-1">call</span>
+          (12) 3123-2733
+        </p>
+        <p><a href='mailto:sma.feg@unesp.br'>
+          <span className="material-symbols-outlined pr-2">mail</span>
+          sma.feg@unesp.br</a></p>
       </div>
     </>
   )

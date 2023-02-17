@@ -155,9 +155,6 @@ main .sobre .text {
 main a {
   color: var(--dblue500);
 }
-main .contact p {
-  font-size: 23px;
-}
 
 main .funcionarios {
   padding-top: 12px;
