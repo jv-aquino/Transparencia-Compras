@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import funcionarios from "../../data/equipe.json";
 import { v4 as uuidv4 } from 'uuid';
 
-function Funcoes({funcionario, funcKey}) {
+function Funcoes({text}) {
   const [visible, setVisible] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ function Funcoes({funcionario, funcKey}) {
       Funções
     </button>
     <ul className={'funcoes list-disc ' + ((visible) ? "visible" : "")}>
-      <li>{funcionario[funcKey]}</li>
+      <li>{text}</li>
     </ul>
     </>
   )
@@ -32,33 +32,21 @@ export default function Equipe() {
             return (
               <div className='drop-shadow-lg'
               key={uuidv4()}>
-                {
-                  Object.keys(funcionario).map(key => {
-                    if (key === "Funcoes") {
-                      return <Funcoes key={uuidv4()} funcionario={funcionario} funcKey={key}/>
-                    }
-              
-                    return (
-                    <p className={key.toLowerCase() + ((key === "Nome") ? " highlight" : "")}
-                    key={uuidv4()}>
-                      {
-                        (key === 'Email')
-                        ? <a href={"mailto:" + funcionario[key]}>
-                          <span className="material-symbols-outlined">mail</span>
-                          {funcionario[key]}
-                        </a>
+                  <p className={'nome highlight'}>
+                    {funcionario.Nome }
+                  </p>
+                  <p className={"email"}>
+                    <a href={"mailto:" + funcionario.Email}>
+                      <span className="material-symbols-outlined">mail</span>
+                      {funcionario.Email}
+                    </a>
+                  </p>
+                  <p className='telefone'>
+                      <span className="material-symbols-outlined">call</span>
+                      {funcionario.Telefone}
+                  </p>
 
-                        : (key === "Telefone") ? <>
-                          <span className="material-symbols-outlined">call</span>
-                          {funcionario[key]}
-                        </>
-                        
-                        : funcionario[key]
-                      }
-                    </p>
-                    );
-                  })
-                }
+                  <Funcoes key={uuidv4()} text={funcionario.Funcoes}/>
               </div>
             )
           })
