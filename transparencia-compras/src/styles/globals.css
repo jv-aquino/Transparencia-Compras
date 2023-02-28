@@ -1,0 +1,222 @@
+@import url("./Navbar.css");
+
+@import url("./Main.css");
+@import url("./Contato.css");
+@import url("./Sobre.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: hsl(225, 77%, 5%);
+
+  --grey500: hsl(240, 8%, 51%);
+  --grey300: hsl(235, 14%, 71%);
+  --grey100: hsl(233, 100%, 93%);
+
+  --white: hsl(117, 90%, 97%); 
+
+  --liblue700: hsl(176, 98%, 25%);
+  --liblue500: hsl(178, 97%, 40%);
+
+  --dblue700: hsl(222, 85%, 40%);
+  --dblue500: hsl(221, 81%, 51%);
+  --dblue400: hsl(221, 83%, 56%);
+  --dblue300: hsl(219, 85%, 61%);
+
+  --green500: hsl(146, 100%, 45%);
+  --green400: hsl(146, 85%, 54%);
+
+  --base-padding: 16px;
+  --smallest-padding: 2px;
+
+  --base-radius: 8px;
+}
+
+::selection {
+  color: var(--white);
+  background-color: var(--liblue500);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  box-sizing: border-box;
+
+  font-family: 'Inter', sans-serif;
+  color: var(--black);
+
+  transition: .4s;
+}
+
+/* Creates smooth scroll behaviour for in page links */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  background-color: var(--grey100);
+
+  margin: 0;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+span {
+  vertical-align: text-bottom;
+  color: inherit !important;
+}
+
+/* Highlight Animation (desktop) */
+@media screen and (min-width:850px) {
+  main h1::after {
+    bottom: 5px;
+  }
+  main h1.contato::after {
+    bottom: 8px;
+  }
+
+  .highlight,
+  h1 {
+    transform: perspective(0px) translateZ(0) translate3d(0,0,0);
+
+    cursor: default;
+    position: relative;
+  }
+  .highlight::after,
+  h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+
+    width: 0;
+    height: 2px;
+    border-radius: 20px;
+
+    transition: .6s;
+
+    background-color: var(--liblue700);
+  } 
+  footer .highlight:hover {
+    text-shadow: 0 0 1px var(--white);
+  }
+  .highlight:hover::after,
+  h1:hover::after {
+    width: 100%;
+  }
+
+  main .nome.highlight:hover,
+  main h1:hover {
+    transform: translateZ(0) scale(1.02);
+  }
+
+  footer .highlight::after {
+    bottom: 0;
+    background-color: var(--liblue500);
+  }
+}
+
+footer {
+  background-color: var(--black);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-auto-flow: column;
+  grid-template-rows: 1fr fit-content;
+
+  gap: calc(var(--base-padding) * 0.5);
+
+  justify-content: space-around;
+
+  transition: .4s;
+}
+footer * {
+  color: var(--white);
+
+  justify-content: center;
+}
+footer h3 {
+  cursor: default;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--dblue400);
+
+  padding: var(--smallest-padding) 0 0;
+}
+footer ul,
+footer > div {
+  justify-content: flex-start;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: calc(var(--base-padding) * 0.7);
+}
+footer > div {
+  gap: calc(var(--base-padding) * 0.35);
+}
+footer li {
+  font-size: 18px;
+  cursor: pointer;
+
+  width: fit-content;
+}
+footer li span {
+  font-size: 23px !important;
+
+  padding-right: 6px;
+}
+
+/* Desktop footer */
+footer img {
+  height: 125px;
+  width: 185px;
+
+  grid-column: 1 / 1;
+}
+/* Mobile footer */
+@media screen and (max-width:850px) {
+  footer {
+    display: block;
+  }
+  footer ul,
+  footer img {
+    padding: 0 0 15px;
+
+    margin: auto;
+  }
+  footer > div,
+  footer ul {
+    justify-content: center;
+    display: block;
+
+    width: 220px;
+  }
+  footer ul li {
+    padding: 5px 0;
+  }
+  footer img {
+    width: 185px;
+    height: 121px;
+
+    padding-top: 10px;
+  }
+  footer > div {
+    margin: auto;
+  }
+
+  footer h3 {
+    padding-bottom: 6px;
+  }
+}
