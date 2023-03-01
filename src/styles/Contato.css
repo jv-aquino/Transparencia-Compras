@@ -1,0 +1,24 @@
+main .contact p {
+  font-size: 23px;
+}
+
+main .contact .telefone {
+  color: var(--liblue700);
+}
+main .contact .telefone span {
+  font-size: 26px !important;
+}
+
+@media screen and (max-width:850px) {
+  main .contact p {
+    font-size: calc(17px + 1vw);
+  }
+  main .contact span {
+    padding-right: 3px !important;
+
+    font-size: calc(18px + 1vw) !important;
+  }
+  main .contact .telefone span {
+    font-size: calc(19px + 1vw) !important;
+  }
+}

@@ -1,0 +1,124 @@
+@import url("./Navbar.css");
+
+@import url("./Main.css");
+@import url("./Contato.css");
+@import url("./Sobre.css");
+
+@import url("./Footer.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: hsl(225, 77%, 5%);
+
+  --grey500: hsl(240, 8%, 51%);
+  --grey300: hsl(235, 14%, 71%);
+  --grey100: hsl(233, 100%, 93%);
+
+  --white: hsl(117, 90%, 97%); 
+
+  --liblue700: hsl(176, 98%, 25%);
+  --liblue500: hsl(178, 97%, 40%);
+
+  --dblue700: hsl(222, 85%, 40%);
+  --dblue500: hsl(221, 81%, 51%);
+  --dblue400: hsl(221, 83%, 56%);
+  --dblue300: hsl(219, 85%, 61%);
+
+  --green500: hsl(146, 100%, 45%);
+  --green400: hsl(146, 85%, 54%);
+
+  --base-padding: 16px;
+  --smallest-padding: 2px;
+
+  --base-radius: 8px;
+}
+
+::selection {
+  color: var(--white);
+  background-color: var(--liblue500);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  box-sizing: border-box;
+
+  font-family: 'Inter', sans-serif;
+  color: var(--black);
+
+  transition: .4s;
+}
+
+/* Creates smooth scroll behaviour for in page links */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  background-color: var(--grey100);
+
+  margin: 0;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+span {
+  vertical-align: text-bottom;
+  color: inherit !important;
+}
+
+/* Highlight Animation (desktop) */
+@media screen and (min-width:850px) {
+  main h1::after {
+    bottom: 5px;
+  }
+  main h1.contato::after {
+    bottom: 8px;
+  }
+
+  .highlight,
+  h1 {
+    transform: perspective(0px) translateZ(0) translate3d(0,0,0);
+
+    cursor: default;
+    position: relative;
+  }
+  .highlight::after,
+  h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+
+    width: 0;
+    height: 2px;
+    border-radius: 20px;
+
+    transition: .6s;
+
+    background-color: var(--liblue700);
+  } 
+  footer .highlight:hover {
+    text-shadow: 0 0 1px var(--white);
+  }
+  .highlight:hover::after,
+  h1:hover::after {
+    width: 100%;
+  }
+
+  main .nome.highlight:hover,
+  main h1:hover {
+    transform: translateZ(0) scale(1.02);
+  }
+
+  footer .highlight::after {
+    bottom: 0;
+    background-color: var(--liblue500);
+  }
+}

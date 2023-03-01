@@ -1,0 +1,44 @@
+main .sobre {
+  width: 77%;
+}
+main .sobre div {
+  align-self: center;
+}
+main .sobre div.grid {
+  padding: var(--base-padding) 0;
+  gap: calc(var(--base-padding) * 1.5);
+  grid-auto-flow: column;
+}
+main .sobre p {
+  font-size: 1.3rem;
+}
+main .sobre ul {
+  padding-left: 5px;
+}
+main .sobre li {
+  padding: 1px 0;
+  font-size: 19px;
+}
+main .sobre ul.horario li {
+  font-size: 21px;
+}
+main .sobre ul li b {
+  color: var(--liblue700);
+}
+main .sobre ul li:nth-child(even) b {
+  color: var(--dblue500) !important;
+}  
+
+
+@media screen and (max-width:1000px) {
+  main .sobre {
+    width: 90%;
+  }
+
+  main .sobre div.grid {
+    grid-auto-flow: row;
+  }
+  main .sobre div.grid:nth-child(2) img {
+    grid-row: 1 / 2;
+  }
+}
