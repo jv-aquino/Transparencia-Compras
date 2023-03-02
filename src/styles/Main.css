@@ -195,10 +195,12 @@ main .funcionarios .nome {
   font-weight: 500;
 }
 main .funcionarios .cargo {
+  padding-top: 2px;
   cursor: default;
 }
 main .funcionarios .telefone {
-  padding-top: 6px;
+  padding-top: 4px;
+  padding-bottom: 0;
   color: var(--liblue700);
 }
 main .funcionarios .telefone span {
@@ -206,7 +208,7 @@ main .funcionarios .telefone span {
   padding-right: 2px;
 }
 main .funcionarios .email {
-  padding-top: 0px;
+  padding-top: 4px;
 }
 main .funcionarios .email span {
   font-size: 22px !important;

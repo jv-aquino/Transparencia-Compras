@@ -15,6 +15,7 @@ function Section({header, children}) {
 
 function Li({text, icon, link, onLiClick}) {
   const isNav = onLiClick ? true : false;
+  link = (isNav) ? "#nav" : link;
 
   const id = (isNav) ? text.toLowerCase().replace(/\s+/g, '') : '';
   // ID is a lowercase and no-space version of the Li text
@@ -45,12 +46,12 @@ function Footer({ onLiClick }) {
   return (
     <footer className="gap-2 px-2 py-7">
       <Section header="Navegação">
-        <Li onLiClick={handleLiClick} text='Início' link='#root' icon='home' />
-        <Li onLiClick={handleLiClick} text='Como Pedir' link='#root' icon='edit_square' />
-        <Li onLiClick={handleLiClick} text='Visualizar Pedidos' link='#root' icon='sort' />
-        <Li onLiClick={handleLiClick} text='Sobre' link='#root' icon='apartment' />
-        <Li onLiClick={handleLiClick} text='Equipe' link='#root' icon='groups' />
-        <Li onLiClick={handleLiClick} text='Contato' link='#root' icon='call' />
+        <Li onLiClick={handleLiClick} text='Início' icon='home' />
+        <Li onLiClick={handleLiClick} text='Como Pedir' icon='edit_square' />
+        <Li onLiClick={handleLiClick} text='Visualizar Pedidos' icon='sort' />
+        <Li onLiClick={handleLiClick} text='Sobre' icon='apartment' />
+        <Li onLiClick={handleLiClick} text='Equipe' icon='groups' />
+        <Li onLiClick={handleLiClick} text='Contato' icon='call' />
       </Section>
       
       <Section header="Links">

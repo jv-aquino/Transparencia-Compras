@@ -35,6 +35,9 @@ export default function Equipe() {
                   <p className={'nome highlight'}>
                     {funcionario.Nome }
                   </p>
+                  <p className={'cargo'}>
+                    {funcionario.Cargo }
+                  </p>
                   <p className={"email"}>
                     <a href={"mailto:" + funcionario.Email}>
                       <span className="material-symbols-outlined">mail</span>

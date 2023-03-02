@@ -70,8 +70,9 @@ function Navbar({onLiClick}) {
   const handleLiClick = useCallback(onLiClick, [onLiClick]);
 
   return (
-    <nav className="py-3 px-8 justify-between items-center">
-      <Image src={unespLogo} alt="Logo da Unesp" className="page cursor-pointer" id="logo" />
+    <nav className="py-3 px-8 justify-between items-center" id="nav">
+      <Image src={unespLogo} alt="Logo da Unesp" className="page cursor-pointer" id="logo"
+      onClick={() => handleLiClick("início")} />
 
       <MobileMenuButton />
 
