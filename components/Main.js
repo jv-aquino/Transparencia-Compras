@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Inicio from './Main/Inicio';
 
@@ -9,7 +9,26 @@ import Sobre from './Main/Sobre';
 import Equipe from './Main/Equipe';
 import Contato from './Main/Contato';
 
+import { supabase } from '../lib/supabaseClient';
+
+const getFuncionarios = async () => {
+  let { data: equipe, error } = await supabase
+  .from('equipe')
+  .select('*');
+
+  return equipe;
+}
+
 function Main({page}) {
+  let [data, setData] = useState([]);
+
+  useEffect(() => {
+    getFuncionarios().then((res) => {
+      setData(res);
+    });
+
+  }, [])
+
   return (
     <main className='py-7 flex flex-col items-center'>
       { (page === 'início') && <Inicio /> }
@@ -18,7 +37,7 @@ function Main({page}) {
       { (page === 'visualizarpedidos') && <VisualizarPedidos /> }
 
       { (page === 'sobre') && <Sobre /> }
-      { (page === 'equipe') && <Equipe /> }
+      { (page === 'equipe') && <Equipe funcionarios={data} /> }
       { (page === 'contato') && <Contato /> }
     </main>
   );

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import funcionarios from "../../data/equipe.json";
 import { v4 as uuidv4 } from 'uuid';
 
 function Funcoes({text}) {
@@ -21,7 +20,7 @@ function Funcoes({text}) {
   )
 }
 
-export default function Equipe() {
+export default function Equipe({funcionarios}) {
   return (
     <>
       <h1>Equipe</h1>
@@ -33,23 +32,23 @@ export default function Equipe() {
               <div className='drop-shadow-lg'
               key={uuidv4()}>
                   <p className={'nome highlight'}>
-                    {funcionario.Nome }
+                    {funcionario.nome }
                   </p>
                   <p className={'cargo'}>
-                    {funcionario.Cargo }
+                    {funcionario.cargo }
                   </p>
                   <p className={"email"}>
-                    <a href={"mailto:" + funcionario.Email}>
+                    <a href={"mailto:" + funcionario.email}>
                       <span className="material-symbols-outlined">mail</span>
-                      {funcionario.Email}
+                      {funcionario.email}
                     </a>
                   </p>
                   <p className='telefone'>
                       <span className="material-symbols-outlined">call</span>
-                      {funcionario.Telefone}
+                      {funcionario.telefone}
                   </p>
 
-                  <Funcoes key={uuidv4()} text={funcionario.Funcoes}/>
+                  <Funcoes key={uuidv4()} text={funcionario.funcoes}/>
               </div>
             )
           })
