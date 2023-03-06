@@ -11,6 +11,14 @@ import Contato from './Main/Contato';
 
 import { supabase } from '../lib/supabaseClient';
 
+const getFaq = async () => {
+  let { data: faq, error } = await supabase
+  .from('faq')
+  .select('*');
+
+  return faq;
+}
+
 const getFuncionarios = async () => {
   let { data: equipe, error } = await supabase
   .from('equipe')
@@ -20,24 +28,27 @@ const getFuncionarios = async () => {
 }
 
 function Main({page}) {
-  let [data, setData] = useState([]);
+  let [equipe, setEquipe] = useState([]);
+  let [faq, setFaq] = useState([]);
 
   useEffect(() => {
+    getFaq().then((res) => {
+      setFaq(res);
+    })
     getFuncionarios().then((res) => {
-      setData(res);
+      setEquipe(res);
     });
-
   }, [])
 
   return (
     <main className='py-7 flex flex-col items-center'>
-      { (page === 'início') && <Inicio /> }
+      { (page === 'início') && <Inicio faq={faq} /> }
 
       { (page === 'comopedir') && <ComoPedir /> }
       { (page === 'visualizarpedidos') && <VisualizarPedidos /> }
 
       { (page === 'sobre') && <Sobre /> }
-      { (page === 'equipe') && <Equipe funcionarios={data} /> }
+      { (page === 'equipe') && <Equipe funcionarios={equipe} /> }
       { (page === 'contato') && <Contato /> }
     </main>
   );

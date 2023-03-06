@@ -1,8 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from 'uuid';
-import faq from "../../data/faq.json";
 
-function Início() {
+function Início({faq}) {
   function showContent (e) {
     e.target.classList.toggle("selected");
   }
@@ -26,26 +25,20 @@ function Início() {
         <h2 className='faq'>Perguntas Frequentes</h2>
         {
           faq.map(obj => {
-            return Object.keys(obj).map(key => {
-              if (key === "Pergunta") {
-                return (
-                <button 
-                  onClick={showContent}
-                  key={uuidv4()}> 
-                  <span className='material-symbols-outlined'>expand_more</span>
-                  { obj[key] } 
-                </button>
-                );
-              }
-              else {
-                return (
-                    <div 
-                    key={uuidv4()}
-                    dangerouslySetInnerHTML={{ __html: obj[key] }}>
-                    </div>
-                );
-              }
-            });
+            return (
+            <>
+              <button 
+                onClick={showContent}
+                key={uuidv4()}> 
+                <span className='material-symbols-outlined'>expand_more</span>
+                { obj.pergunta } 
+              </button>
+              <div 
+              key={uuidv4()}
+              dangerouslySetInnerHTML={ {__html: obj.resposta} }>
+              </div>
+            </>
+            )
           })
         }
       </div>
