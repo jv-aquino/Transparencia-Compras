@@ -35,7 +35,7 @@ function Início({faq}) {
               </button>
               <div 
               key={uuidv4()}
-              dangerouslySetInnerHTML={ {__html: obj.resposta} }>
+              dangerouslySetInnerHTML={{__html: obj.resposta}}>
               </div>
             </>
             )
