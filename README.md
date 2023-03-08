@@ -1,7 +1,7 @@
 # Transparência de Compras
 Programa do setor de compras da FEG/Unesp que visa facilitar a parte de compras e licitação de materiais da instituição desenvolvido pela **Seção Técnica de Materiais (STMA)**.
 
-### [Clique aqui para acessar o site](https://jv-aquino.github.io/Transparencia-Compras/)
+### [Clique aqui para acessar o site](https://transparencia-compras.vercel.app/)
 <p align="center">
   <img src="./src/img/unesp.png" alt="Logo da Unesp" style="width: 350px; height: auto;">
 </p>
@@ -27,7 +27,7 @@ Programa do setor de compras da FEG/Unesp que visa facilitar a parte de compras 
 
 - ### **<img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" height="20" width="20"> NPM / <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg" height="20" width="20"> NodeJS**
 
-- ### **<img src="https://github.com/sempostma/office365-icons/blob/master/svg/excel.svg" height="20" width="20"> Google Sheets**
+- ### **<img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original.svg" height="20" width="20"> Supabase**
 
 ------------
 
