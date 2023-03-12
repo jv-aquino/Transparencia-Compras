@@ -1,4 +1,14 @@
 import React from 'react';
+import { supabase } from 'lib/supabaseClient';
+
+const searchPedido = async (pedido) => {
+  let { data: pedidosEmCompras, error } = await supabase
+  .from('pedidosEmCompras')
+  .select('*')
+  .eq('id_pedido', pedido);
+
+  return pedidosEmCompras;
+}
 
 export default function VisualizarPedidos() {
   return (
@@ -18,7 +28,15 @@ export default function VisualizarPedidos() {
         <label htmlFor="id" className='a text-lg'>Número do <b>Pedido</b> ou <b>Agrupamento</b>:</label>
         <input type="text" name="id" id="id" maxLength={11} className='rounded p-2 border-2 border-black' />
 
-        <button className='search'>Pesquisar</button>
+        <button className='search' type='button'
+        onClick={() => {
+          let pedido = document.querySelector("#id").value;
+          console.log(pedido)
+          searchPedido(pedido)
+          .then(res => console.log(res[0]))
+        }}>
+          Pesquisar
+        </button>
 
         <button type='button' className="cancelar" onClick={(e) => {
           document.querySelector('form.pesquisa').classList.add('hidden');

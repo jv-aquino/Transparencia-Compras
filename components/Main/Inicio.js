@@ -26,7 +26,7 @@ function Início({faq}) {
         {
           faq.map(obj => {
             return (
-            <>
+            <React.Fragment key={uuidv4()}>
               <button 
                 onClick={showContent}
                 key={uuidv4()}> 
@@ -37,7 +37,7 @@ function Início({faq}) {
               key={uuidv4()}
               dangerouslySetInnerHTML={{__html: obj.resposta}}>
               </div>
-            </>
+            </React.Fragment>
             )
           })
         }
