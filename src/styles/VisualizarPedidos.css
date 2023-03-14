@@ -3,7 +3,7 @@ main button.search,
 main button.cancelar {
   font-weight: 500;
 
-  padding-top: calc(calc(var(--base-padding) * 0.5) + 2px);
+  padding-top: calc(var(--base-padding) * 0.5);
   transition: .6s, border .1s, box-shadow 0s;
 
   border-radius: var(--base-radius);
@@ -62,4 +62,11 @@ main button.cancelar:hover {
 }
 main form.pesquisa {
   background-color: var(--white);
+}
+
+main .pedidoEncontrado {
+  padding: calc(var(--base-padding) * 0.5);
+  background-color: var(--dblue500);
+
+  @apply rounded;
 }
