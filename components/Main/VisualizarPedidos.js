@@ -1,6 +1,27 @@
 import React, { useState } from 'react';
 import { supabase } from 'lib/supabaseClient';
 
+function Pedido({obj}) {
+  if (obj == undefined) {
+    return (
+    <div className="pedidoEncontrado">
+          <p className='pb-3 font-bold text-4xl text-light-blue'>Pedido não encontrado :(</p>
+          <p>Pesquise o número da sua solicitação no <b className="text-light-blue">SISADM</b>:</p>
+          <ul className='list-disc pt-1.5'>
+            <li className='pb-1'>Se estiver em <b className="text-light-blue">Compras</b> mas <b className="a text-red-600">não tem número de agrupamento</b>, seu pedido está na <b className='text-dark-blue'>lista de espera</b>, aguardando definição da modalidade de compra</li>
+            <li>Se o pedido <b className='text-green'>tem número de agrupamento</b>, <b className='text-dark-blue'>pesquise novamente</b> com o número do <b className="text-dark-blue">agrupamento</b></li>
+          </ul>
+    </div>
+    )
+  }
+  return (
+    <div className='pedidoEncontrado'>
+      <p className='pedido'>Pedido <b className="font-bold text-light-blue">{obj.id_agrupamento}</b></p>
+      <p className='status'>Status: <b className='font-bold text-green'>{obj.status}</b></p>
+    </div>
+  )
+} 
+
 const searchPedido = async (pedido) => {
   let { data: pedidosEmCompras, error } = await supabase
   .from('pedidosEmCompras')
@@ -10,27 +31,6 @@ const searchPedido = async (pedido) => {
   return pedidosEmCompras;
 }
 
-function Pedido({obj}) {
-  if (obj == undefined) {
-    return (
-    <div className="pedidoEncontrado">
-          <p>Pedido não encontrado :(</p>
-          <p>Pesquise o número da sua solicitação no SISADM:</p>
-          <ul className='list-disc'>
-            <li>Se estiver em compras mas não tiver número de agrupamento, seu pedido está na lista de <b>espera</b>, aguardando definição da modalidade de compra</li>
-            <li>Se o pedido tiver número de agrupamento, pesquise novamente com o número do agrupamento</li>
-          </ul>
-    </div>
-    )
-  }
-  return (
-    <div className='pedidoEncontrado'>
-      <p>Pedido n°{obj.id_agrupamento}</p>
-      <p className='status'>Status: {obj.status}</p>
-    </div>
-  )
-} 
-
 export default function VisualizarPedidos() {
   const [visible, setVisible] = useState(false);
   const [pedidoEncontrado, setPedido] = useState({});
@@ -39,42 +39,43 @@ export default function VisualizarPedidos() {
     <>
       <h1>Pedidos</h1>
 
-      {visible && <Pedido obj={pedidoEncontrado} />}
+      <div className="visualizarPedidos grid gap-2 justify-center">
+        {visible && <Pedido obj={pedidoEncontrado} />}
 
-      <button className="pedidos drop-shadow-lg" onClick={(e) => {
-        e.target.classList.add('hidden');
-
-        document.querySelector('form.pesquisa').classList.remove('hidden');
-        document.querySelector('form.pesquisa').classList.add('flex');
-      }}>
-        Visualizar Pedido
-      </button>
-
-      <form className="pesquisa hidden flex-col p-4 gap-3 rounded-md" onSubmit={(e) => {
-          e.preventDefault();
-          let pedido = document.querySelector("#id").value;
-          searchPedido(pedido)
-          .then(res => {
-            setPedido(res[0]);
-            setVisible(true);
-          })
+        <button className="pedidos drop-shadow-lg" onClick={(e) => {
+          e.target.classList.add('hidden');
+          document.querySelector('form.pesquisa').classList.remove('hidden');
+          document.querySelector('form.pesquisa').classList.add('flex');
         }}>
-        <label htmlFor="id" className='text-[1.2rem]'>Número do <b>Agrupamento</b>:</label>
-        <input type="text" name="id" id="id" maxLength={11} className='rounded p-2 border-2 border-black' />
-
-        <button className='search'>
-          Pesquisar
+          Visualizar {visible && 'Outro'} Pedido
         </button>
 
-        <button type='button' className="cancelar" onClick={(e) => {
-          document.querySelector('form.pesquisa').classList.add('hidden');
-          document.querySelector('form.pesquisa').classList.remove('flex');
+        <form className="pesquisa hidden flex-col p-4 gap-2 rounded-md justify-self-center" onSubmit={(e) => {
+            e.preventDefault();
+            let pedido = document.querySelector("#id").value;
+            searchPedido(pedido)
+            .then(res => {
+              setPedido(res[0]);
+              setVisible(true);
+            })
+          }}>
+          <label htmlFor="id" className='text-[1.4rem] text-center'>Número do <b className='text-dark-blue'>Agrupamento</b>:</label>
+          <input type="text" name="id" id="id" maxLength={11} 
+          placeholder='ex: 1234567'
+          className='border-2 border-black rounded mb-3 p-2 font-bold text-xl text-dark-blue' />
 
-          document.querySelector('button.pedidos').classList.remove('hidden');
-        }}>
-          Cancelar
-        </button>
-      </form>
+          <button className='search'>
+            Pesquisar
+          </button>
+          <button type='button' className="cancelar" onClick={(e) => {
+            document.querySelector('form.pesquisa').classList.add('hidden');
+            document.querySelector('form.pesquisa').classList.remove('flex');
+            document.querySelector('button.pedidos').classList.remove('hidden');
+          }}>
+            Cancelar
+          </button>
+        </form>
+      </div>
     </>
   )
 }

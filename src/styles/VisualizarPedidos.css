@@ -3,7 +3,7 @@ main button.search,
 main button.cancelar {
   font-weight: 500;
 
-  padding-top: calc(var(--base-padding) * 0.5);
+  padding-top: calc(var(--base-padding) * 0.4);
   transition: .6s, border .1s, box-shadow 0s;
 
   border-radius: var(--base-radius);
@@ -12,7 +12,7 @@ main button.cancelar {
 main button.pedidos {
   font-size: 1.7rem;
   padding: calc(var(--base-padding) * 0.6);
-  margin: 0.7rem auto;
+  margin: 0.4rem auto;
 
   color: var(--white);
   background-color: var(--green500);
@@ -61,12 +61,35 @@ main button.cancelar:hover {
   box-shadow: none;
 }
 main form.pesquisa {
+  width: 350px;
   background-color: var(--white);
 }
 
 main .pedidoEncontrado {
-  padding: calc(var(--base-padding) * 0.5);
-  background-color: var(--dblue500);
+  background-color: var(--black);
 
-  @apply rounded;
+  @apply rounded-xl py-6 px-3 mb-4 flex flex-col items-center justify-center;
+}
+
+.pedidoEncontrado * {
+  color: var(--white);
+}
+main .pedidoEncontrado p {
+  font-weight: 500;
+  font-size: 1.4rem;
+
+  line-height: 1.4;
+}
+main .pedidoEncontrado ul {
+  width: 80%;
+  margin: auto;
+}
+main .pedidoEncontrado li {
+  font-size: 1.25rem;
+  margin: 0 auto;
+}
+
+.visualizarPedidos {
+  margin: 0 auto;
+  max-width: min(90%, 750px);
 }
