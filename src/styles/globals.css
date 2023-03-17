@@ -60,13 +60,10 @@ html {
 }
 
 body {
-  width: 100%;
-  background-color: var(--grey100);
-
-  margin: 0;
-  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @apply m-0 bg-grey-100 w-full;
 }
 
 span {

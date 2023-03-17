@@ -5,19 +5,19 @@ function Pedido({obj}) {
   if (obj == undefined) {
     return (
     <div className="pedidoEncontrado">
-          <p className='pb-3 font-bold text-4xl text-light-blue'>Pedido não encontrado :(</p>
-          <p>Pesquise o número da sua solicitação no <b className="text-light-blue">SISADM</b>:</p>
+          <p className='pb-3 font-bold text-4xl text-light-blue-500'>Pedido não encontrado :(</p>
+          <p>Pesquise o número da sua solicitação no <b className="text-light-blue-500">SISADM</b>:</p>
           <ul className='list-disc pt-1.5'>
-            <li className='pb-1'>Se estiver em <b className="text-light-blue">Compras</b> mas <b className="a text-red-600">não tem número de agrupamento</b>, seu pedido está na <b className='text-dark-blue'>lista de espera</b>, aguardando definição da modalidade de compra</li>
-            <li>Se o pedido <b className='text-green'>tem número de agrupamento</b>, <b className='text-dark-blue'>pesquise novamente</b> com o número do <b className="text-dark-blue">agrupamento</b></li>
+            <li className='pb-1'>Se estiver em <b className="text-light-blue-500">Compras</b> mas <b className="a text-red-600">não tem número de agrupamento</b>, seu pedido está na <b className='text-dark-blue-500'>lista de espera</b>, aguardando definição da modalidade de compra</li>
+            <li>Se o pedido <b className='text-green-500'>tem número de agrupamento</b>, <b className='text-dark-blue-500'>pesquise novamente</b> com o número do <b className="text-dark-blue-500">agrupamento</b></li>
           </ul>
     </div>
     )
   }
   return (
     <div className='pedidoEncontrado'>
-      <p className='pedido'>Pedido <b className="font-bold text-light-blue">{obj.id_agrupamento}</b></p>
-      <p className='status'>Status: <b className='font-bold text-green'>{obj.status}</b></p>
+      <p className='pedido'>Pedido <b className="font-bold text-light-blue-500">{obj.id_agrupamento}</b></p>
+      <p className='status'>Status: <b className='font-bold text-green-500'>{obj.status}</b></p>
     </div>
   )
 } 
@@ -59,10 +59,10 @@ export default function VisualizarPedidos() {
               setVisible(true);
             })
           }}>
-          <label htmlFor="id" className='text-[1.4rem] text-center'>Número do <b className='text-dark-blue'>Agrupamento</b>:</label>
+          <label htmlFor="id" className='text-[1.4rem] text-center'>Número do <b className='text-dark-blue-500'>Agrupamento</b>:</label>
           <input type="text" name="id" id="id" maxLength={11} 
           placeholder='ex: 1234567'
-          className='border-2 border-black rounded mb-3 p-2 font-bold text-xl text-dark-blue' />
+          className='border-2 border-black rounded mb-3 p-2 font-bold text-xl text-dark-blue-500' />
 
           <button className='search'>
             Pesquisar

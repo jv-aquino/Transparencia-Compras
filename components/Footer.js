@@ -44,7 +44,7 @@ function Footer({ onLiClick }) {
   const handleLiClick = useCallback(onLiClick, [onLiClick]);
 
   return (
-    <footer className="gap-2 px-2 py-7">
+    <footer className="bg-black grid px-2 py-7">
       <Section header="Navegação">
         <Li onLiClick={handleLiClick} text='Início' icon='home' />
         <Li onLiClick={handleLiClick} text='Como Pedir' icon='edit_square' />
