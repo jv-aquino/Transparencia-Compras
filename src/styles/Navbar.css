@@ -3,7 +3,7 @@ nav {
   position: relative; /* nav as a parent position container for dropdowns */
   width: 100%;
 
-  background-color: var(--dblue500);
+  background-color: theme('colors.dark-blue.500');
   box-shadow: 0px 1px 6px 3px rgba(128, 128, 128, 0.9);
   z-index: 1;
 }
@@ -15,7 +15,7 @@ nav ul {
   display: flex;
 }
 nav ul li {
-  color: var(--white);
+  color: theme('colors.white');
 
   font-size: 1.5rem;
   font-weight: 500;
@@ -26,17 +26,17 @@ nav ul li {
   cursor: pointer;
 }
 nav ul li.selected {
-  color: var(--green400); /* slightly lighter green for nav links */
+  color: theme('colors.green.400'); /* slightly lighter green for nav links */
 }
 nav ul li:hover,
 nav .dropdown:hover li {
-  color: var(--liblue500);
-  background-color: var(--white);
+  color: theme('colors.light-blue.500');
+  background-color: theme('colors.white');
 }
 nav ul li.selected:hover,
 nav .dropdown ul li.selected:hover {
-  color: var(--white);
-  background-color: var(--green500);
+  color: theme('colors.white');
+  background-color: theme('colors.green.500');
 }
 
 nav li#sobre {
@@ -59,7 +59,7 @@ nav .dropdown > li span {
   bottom: 2px;
 }
 nav .dropdown:has(li.selected) > li {
-  color: var(--green400);
+  color: theme('colors.green.400');
 }
 
 nav .dropdown ul {
@@ -81,12 +81,12 @@ nav .dropdown ul li {
   border-radius: 0;
 }
 nav .dropdown ul li:hover {
-  color: var(--white);
-  background-color: var(--liblue500);
+  color: theme('colors.white');
+  background-color: theme('colors.light-blue.500');
 }
 
 nav .dropdown ul li.selected {
-  color: var(--green400);
+  color: theme('colors.green.400');
 }
 
 nav .dropdown ul li:first-child {
@@ -106,9 +106,7 @@ nav #stmas li {
   nav ul li:hover,
   nav ul li.visible,
   nav ul.visible li {
-    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)  !important;
+    @apply shadow-lg;
   }
 }
 
@@ -135,7 +133,7 @@ nav #stmas li {
 /* Mobile nav button */
 nav #mobileButton {
   display: none;
-  color: var(--white);
+  color: theme('colors.white');
 }
 nav #mobileButton span {
   padding-top: var(--smallest-padding);
@@ -149,18 +147,18 @@ nav #mobileButton span {
     z-index: 5;
   }
   nav #mobileButton span.selected {
-    color: var(--black) !important;
+    color: theme('colors.black') !important;
   }
   
   nav > ul li {
-    color: var(--liblue500);
+    color: theme('colors.light-blue.500');
   }
   nav > ul li.page {
-    color: var(--dblue500);
+    color: theme('colors.dark-blue.500');
   }
   nav > ul li.page:hover {
-    color: var(--white) !important;
-    background-color: var(--dblue500);
+    color: theme('colors.white') !important;
+    background-color: theme('colors.dark-blue.500');
   }
 
   nav > ul {
@@ -173,7 +171,7 @@ nav #mobileButton span {
     width: 0%;
     height: 100%;
 
-    background-color: var(--white);
+    background-color: theme('colors.white');
 
     flex-direction: column;
     align-items: center;
@@ -202,17 +200,17 @@ nav #mobileButton span {
     flex-direction: column;
   }
   nav > ul li.page.selected {
-    color: var(--green500);
+    color: theme('colors.green.500');
   }
   nav > ul ul li.page.selected {
-    color: var(--green500);
+    color: theme('colors.green.500');
   }
   nav > ul li.page.selected:hover {
-    background-color: var(--green500);
+    background-color: theme('colors.green.500');
   }
   nav > ul ul li.page.selected:hover {
-    color: var(--white);
-    background-color: var(--green500);
+    color: theme('colors.white');
+    background-color: theme('colors.green.500');
   }
   nav > ul .dropdown * {
     margin: auto;
@@ -221,7 +219,7 @@ nav #mobileButton span {
     min-width: fit-content;
   }
   nav .dropdown:hover ul li {
-    color: var(--dblue500);
+    color: theme('colors.dark-blue.500');
   }
   nav .dropdown {
     display: flex;
@@ -231,7 +229,7 @@ nav #mobileButton span {
     overflow: hidden;
   }
   nav .dropdown ul li:hover {
-    background-color: var(--dblue500);
+    background-color: theme('colors.dark-blue.500');
   }
 
   nav .dropdown.click > li span {

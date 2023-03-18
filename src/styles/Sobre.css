@@ -23,10 +23,10 @@ main .sobre ul.horario li {
   font-size: 21px;
 }
 main .sobre ul li b {
-  color: var(--liblue700);
+  color: theme('colors.light-blue.700');
 }
 main .sobre ul li:nth-child(even) b {
-  color: var(--dblue500) !important;
+  color: theme('colors.dark-blue.500') !important;
 }  
 
 

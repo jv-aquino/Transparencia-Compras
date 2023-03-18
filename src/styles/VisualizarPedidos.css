@@ -14,15 +14,15 @@ main button.pedidos {
   padding: calc(var(--base-padding) * 0.6);
   margin: 0.4rem auto;
 
-  color: var(--white);
-  background-color: var(--green500);
+  color: theme('colors.white');
+  background-color: theme('colors.green.500');
 
   border: none;  
   box-shadow: inset 0 2px 0 rgba(150, 243, 130, 0.9);
 }
 main button.pedidos:hover {
-  color: var(--liblue500);
-  background-color: var(--white);
+  color: theme('colors.light-blue.500');
+  background-color: theme('colors.white');
 
   box-shadow: inset 0 2px 0 hsl(209, 84%, 88%);
 }
@@ -30,14 +30,14 @@ main button.search {
   font-size: 1.55rem;
   padding: calc(var(--base-padding) * 0.5);
 
-  color: var(--white);
-  background-color: var(--green500);
+  color: theme('colors.white');
+  background-color: theme('colors.green.500');
   
   box-shadow: inset 0 2px 0 rgba(158, 247, 140, 0.9);
 }
 main button.search:hover {
-  background-color: var(--white);
-  color: var(--green500);
+  background-color: theme('colors.white');
+  color: theme('colors.green.500');
 
   border-color: rgba(158, 247, 140, 0.9);
 
@@ -47,13 +47,13 @@ main button.cancelar {
   font-size: 1.55rem;
   padding: calc(var(--base-padding) * 0.5);
 
-  color: var(--white);
+  color: theme('colors.white');
   background-color: rgb(216, 11, 11);
 
   box-shadow: inset 0 2px 0 rgba(250, 230, 228, 0.9);
 }
 main button.cancelar:hover {
-  background-color: var(--white);
+  background-color: theme('colors.white');
   color: rgb(216, 11, 11);
 
   border-color: rgba(216, 11, 11, 0.9);
@@ -62,17 +62,17 @@ main button.cancelar:hover {
 }
 main form.pesquisa {
   width: 350px;
-  background-color: var(--white);
+  background-color: theme('colors.white');
 }
 
 main .pedidoEncontrado {
-  background-color: var(--black);
+  background-color: theme('colors.black');
 
   @apply rounded-xl py-6 px-3 mb-4 flex flex-col items-center justify-center;
 }
 
 .pedidoEncontrado * {
-  color: var(--white);
+  color: theme('colors.white');
 }
 main .pedidoEncontrado p {
   font-weight: 500;

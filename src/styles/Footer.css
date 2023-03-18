@@ -10,7 +10,7 @@ footer {
   transition: .4s;
 }
 footer * {
-  color: var(--white);
+  color: theme('colors.white');
 
   justify-content: center;
 }
@@ -19,7 +19,7 @@ footer h3 {
 
   font-size: 1.5rem;
   font-weight: 500;
-  color: var(--dblue400);
+  color: theme('colors.dark-blue.400');
 
   padding: var(--smallest-padding) 0 0;
 }

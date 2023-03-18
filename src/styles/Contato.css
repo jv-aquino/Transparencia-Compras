@@ -3,7 +3,7 @@ main .contact p {
 }
 
 main .contact .telefone {
-  color: var(--liblue700);
+  color: theme('colors.light-blue.700');
 }
 main .contact .telefone span {
   font-size: 26px !important;
