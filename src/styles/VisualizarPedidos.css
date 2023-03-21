@@ -7,7 +7,7 @@ main button.cancelar {
   transition: .6s, border .1s, box-shadow 0s;
 
   border-radius: var(--base-radius);
-  border: 3px solid var(--white);
+  border: 3px solid theme('colors.white');
 }
 main button.pedidos {
   font-size: 1.7rem;
@@ -68,7 +68,7 @@ main form.pesquisa {
 main .pedidoEncontrado {
   background-color: theme('colors.black');
 
-  @apply rounded-xl py-6 px-3 mb-4 flex flex-col items-center justify-center;
+  @apply rounded-xl m-auto py-6 px-3 mb-4 flex flex-col items-center justify-center relative;
 }
 
 .pedidoEncontrado * {

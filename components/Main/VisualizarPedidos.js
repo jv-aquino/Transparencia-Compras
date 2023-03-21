@@ -1,22 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { supabase } from 'lib/supabaseClient';
 
-function Pedido({obj}) {
+function FecharPedido({changeVisible}) {
+  return (
+    <button className='closePedido absolute top-3 right-3'>
+      <span className="material-symbols-outlined" onClick={() => changeVisible(false)}>close</span>
+    </button>
+  )
+}
+
+function Pedido({obj, setVisible}) {
+  const changeVisible = useCallback(setVisible, [setVisible]);
+
   if (obj == undefined) {
     return (
     <div className="pedidoEncontrado">
-          <p className='pb-3 font-bold text-4xl text-light-blue-500'>Pedido não encontrado :(</p>
-          <p>Pesquise o número da sua solicitação no <b className="text-light-blue-500">SISADM</b>:</p>
-          <ul className='list-disc pt-1.5'>
-            <li className='pb-1'>Se estiver em <b className="text-light-blue-500">Compras</b> mas <b className="a text-red-600">não tem número de agrupamento</b>, seu pedido está na <b className='text-dark-blue-500'>lista de espera</b>, aguardando definição da modalidade de compra</li>
-            <li>Se o pedido <b className='text-green-500'>tem número de agrupamento</b>, <b className='text-dark-blue-500'>pesquise novamente</b> com o número do <b className="text-dark-blue-500">agrupamento</b></li>
-          </ul>
+      <FecharPedido changeVisible={changeVisible}/>
+
+      <p className='pb-3 font-bold text-4xl text-light-blue-500'>Pedido não encontrado :(</p>
+      <p>Pesquise o número da sua solicitação no <b className="text-light-blue-500">SISADM</b>:</p>
+      <ul className='list-disc pt-1.5'>
+        <li className='pb-1'>Se estiver em <b className="text-light-blue-500">Compras</b> mas <b className="a text-red-500">não tem número de agrupamento</b>, seu pedido está na <b className='text-red-500'>lista de espera</b>, aguardando definição da modalidade de compra</li>
+        <li>Se o pedido <b className='text-green-500'>tem número de agrupamento</b>, <b className='text-green-500'>pesquise novamente</b> com o número do <b className="text-green-500">agrupamento</b></li>
+      </ul>
     </div>
     )
   }
   return (
-    <div className='pedidoEncontrado'>
-      <p className='pedido'>Pedido <b className="font-bold text-light-blue-500">{obj.id_agrupamento}</b></p>
+    <div className='pedidoEncontrado w-[340px]'>
+      <FecharPedido changeVisible={changeVisible}/>
+
+      <p className='pedido pb-0.5'>Pedido <b className="font-bold text-light-blue-500">{obj.id_agrupamento}</b></p>
       <p className='status'>Status: <b className='font-bold text-green-500'>{obj.status}</b></p>
     </div>
   )
@@ -40,7 +54,7 @@ export default function VisualizarPedidos() {
       <h1>Pedidos</h1>
 
       <div className="visualizarPedidos grid gap-2 justify-center">
-        {visible && <Pedido obj={pedidoEncontrado} />}
+        {visible && <Pedido obj={pedidoEncontrado} setVisible={setVisible} />}
 
         <button className="pedidos drop-shadow-lg" onClick={(e) => {
           e.target.classList.add('hidden');
@@ -53,6 +67,7 @@ export default function VisualizarPedidos() {
         <form className="pesquisa hidden flex-col p-4 gap-2 rounded-md justify-self-center" onSubmit={(e) => {
             e.preventDefault();
             let pedido = document.querySelector("#id").value;
+
             searchPedido(pedido)
             .then(res => {
               setPedido(res[0]);
