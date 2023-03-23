@@ -13,7 +13,7 @@ function Início({faq}) {
       <div className="content drop-shadow-xl">
         <h2>Início</h2>
 
-        <p>Bem-vindo ao site Transparência de Compras, feito pela Seção Técnica de Materiais da FEG! Aqui você poderá encontrar:</p>
+        <p>Bem-vindo ao site Transparência de Compras, feito pela Seção Técnica de Materiais da FEG para maior facilidade de comunicação entre a seção e o resto da faculdade. Aqui você poderá encontrar:</p>
         <ul className='p'>
           <li>como realizar pedidos</li>
           <li>o status dos seus pedidos</li>

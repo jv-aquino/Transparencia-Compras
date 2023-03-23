@@ -33,6 +33,8 @@
   color: theme('colors.black');
 
   transition: .4s;
+
+  @apply outline-dark-blue-500;
 }
 
 /* Creates smooth scroll behaviour for in page links */

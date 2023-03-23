@@ -30,7 +30,8 @@ function Pedido({obj, setVisible}) {
     <div className='pedidoEncontrado w-[340px]'>
       <FecharPedido changeVisible={changeVisible}/>
 
-      <p className='pedido pb-0.5'>Pedido <b className="font-bold text-light-blue-500">{obj.id_agrupamento}</b></p>
+      <p className='pedido pb-2'>Pedido <b className="font-bold text-light-blue-500">{obj.id_agrupamento}</b></p>
+      <p className="nome">Nome: <b className='font-bold text-dark-blue-500'>{obj.nome}</b></p>
       <p className='status'>Status: <b className='font-bold text-green-500'>{obj.status}</b></p>
     </div>
   )
@@ -47,6 +48,7 @@ const searchPedido = async (pedido) => {
 
 export default function VisualizarPedidos() {
   const [visible, setVisible] = useState(false);
+  const [visibleForm, setVisibleForm] = useState(false);
   const [pedidoEncontrado, setPedido] = useState({});
 
   return (
@@ -56,15 +58,13 @@ export default function VisualizarPedidos() {
       <div className="visualizarPedidos grid gap-2 justify-center">
         {visible && <Pedido obj={pedidoEncontrado} setVisible={setVisible} />}
 
-        <button className="pedidos drop-shadow-lg" onClick={(e) => {
-          e.target.classList.add('hidden');
-          document.querySelector('form.pesquisa').classList.remove('hidden');
-          document.querySelector('form.pesquisa').classList.add('flex');
-        }}>
+        { !visibleForm &&
+        <button className="pedidos drop-shadow-lg" onClick={() => setVisibleForm(true)}>
           Visualizar {visible && 'Outro'} Pedido
-        </button>
+        </button>}
 
-        <form className="pesquisa hidden flex-col p-4 gap-2 rounded-md justify-self-center" onSubmit={(e) => {
+        { visibleForm &&
+          <form className="pesquisa flex flex-col p-4 gap-2 rounded-md justify-self-center" onSubmit={(e) => {
             e.preventDefault();
             let pedido = document.querySelector("#id").value;
 
@@ -82,14 +82,10 @@ export default function VisualizarPedidos() {
           <button className='search'>
             Pesquisar
           </button>
-          <button type='button' className="cancelar" onClick={(e) => {
-            document.querySelector('form.pesquisa').classList.add('hidden');
-            document.querySelector('form.pesquisa').classList.remove('flex');
-            document.querySelector('button.pedidos').classList.remove('hidden');
-          }}>
+          <button type='button' className="cancelar" onClick={() => setVisibleForm(false)}>
             Cancelar
           </button>
-        </form>
+        </form>}
       </div>
     </>
   )
