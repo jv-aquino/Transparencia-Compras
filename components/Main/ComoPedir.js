@@ -17,7 +17,7 @@ export default function ComoPedir() {
         <ul className='flex flex-col gap-2
         [&>*]:text-white [&>li]:text-[21px] [&>li>b]:text-light-blue-500'>
           <li>Se a <b>qualidade</b> do produto é importante, especifique ele o máximo possível - incluindo <b>características e qualidades</b> relevantes, não a marca desejada.</li>
-          <li>Faça de 1 a 3 <b>orçamentos</b> para o produto para que o tempo de cotação seja reduzido e o seu pedido <b>chegue de forma mais rápida</b></li>
+          <li>Sempre faça <b className="text-green-500">3</b> <b>orçamentos</b> para o objeto para que o tempo de cotação seja reduzido e o seu pedido <b>chegue de forma mais rápida</b></li>
         </ul>      
       </div>
     </>

@@ -16,7 +16,7 @@ function MobileMenuButton() {
   return (
     <button type="button" className="items-center justify-center" id="mobileButton">
       <span className={"material-symbols-outlined " + ((selected) ? 'selected' : '')}
-      onClick={toggleMenu}>
+      onClick={() => toggleMenu()}>
         {selected ? 'close' : 'menu'}
       </span>
     </button>
@@ -35,7 +35,7 @@ function Dropdown({name, children}) {
   return (
     <div className={'dropdown' + ((visible) ? " click" : '')}>
       <li className="p-2" id={name.toLowerCase()}
-      onClick={toggleVisible}>
+      onClick={() => toggleVisible()}>
         {name}
         <span className="material-symbols-outlined">expand_more</span>
       </li>

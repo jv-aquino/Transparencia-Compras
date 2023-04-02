@@ -64,7 +64,11 @@ function Footer({ onLiClick }) {
       </Section>
           
 
-      <Image src={stmaLogo} alt="Logo da STMA" className="justify-self-center self-center" />
+      <Image src={stmaLogo} alt="Logo da STMA" className="justify-self-center self-center cursor-pointer" 
+      onClick={() => {
+        handleLiClick("início");
+        document.querySelector("#nav").scrollIntoView({ behavior: 'smooth' })
+      }}/>
     </footer>
   );
 }
