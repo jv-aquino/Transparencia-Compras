@@ -43,11 +43,23 @@ npm install
 ------------
 
 ## 2. Alterando os dados do Site
-### O site da STMA tem uma página com os dados da equipe da seção e uma seção de FAQ na página inicial com perguntas e respostas. Ambos esses dados são armazenados por meio de uma única planilha no Google Sheets a qual você deve ter acesso. Para alterar as informações no site é preciso alterar essa planilha e depois seguir os passos adiante:
-1. ### Faça o Download da planilha em formato CSV e nomeie-a de "equipe.csv" ou "faq.csv" dependendo do que você quer alterar, substituindo o arquivo de mesmo nome já existente na pasta **/data/**
-2. ### Abra o CMD ou Bash no VSCode indo em **Terminal > New Terminal**
-3. ### Por fim, execute o comando a seguir no terminal e depois atualize o site:
-```bash
-npm run data
-```
-### Esse comando modificará o arquivo equipe.json (que está sendo usado para gerar o conteúdo da página) e executará o Webpack, que vai então atualizar o Javascript que está sendo utilizado na página e suas informações.
+### O site da STMA tem uma página com os dados da equipe da seção e uma seção de FAQ na página inicial com perguntas e respostas. Ambos esses dados são armazenados por meio de duas tabelas SQL na [*Supabase*](https://app.supabase.com/project/lzpnenviarjylhsikvtp), na parte "Table Editor".
+<img src='https://i.imgur.com/S1GYPtu.png' />
+
+## Para editar dados existentes, vá para a tabela desejada e clique duas vezes na célula a ser editada e faça as alterações necessárias
+![image](https://user-images.githubusercontent.com/67425140/231265453-4b62ba54-e583-4e3f-9814-409b8ee94dbd.png)
+
+## Para criar uma nova linha de dados, como um novo funcionário ou uma nova pergunta/resposta, va para a tabela desejada > Insert > Insert Row
+![image](https://user-images.githubusercontent.com/67425140/231265929-5cb9d691-cc7b-427f-b10f-99ed3b038a7b.png)
+
+## Para criar uma nova coluna de dados (um novo dado que todas as linhas terão), vá na tabela desejada > Insert > Insert Column.
+### Ao criar uma nova coluna, lembre-se de:
+1. Colocar um **nome descritivo**
+2. Colocar um **tipo de dado** que condiza com os valores desejados (text pra texto, int8 para inteiros, float8 para decimais, etc.) 
+3. Se necessário, colocar um **valor padrão** (default value, que é usado sempre que esse campo é nulo)
+4. Informar se são permitidos valores nulos ou não - ou seja, se não é um **campo obrigatório**
+5. Informar se o valor é **único** dentre todas as linhas ou não (o padrão é que não seja)
+<br/>
+
+<img width="630px" height="400px" src="https://user-images.githubusercontent.com/67425140/231266381-114b3510-1eea-4b48-9aab-c17b26d20ae5.png" />
+<img width="600px" height="400px" src="https://user-images.githubusercontent.com/67425140/231266826-0ad2a268-ab0e-4172-89d6-91a9f97c8bfe.png" />
