@@ -21,9 +21,12 @@ nav ul li {
   font-weight: 500;
 
   border-radius: calc(var(--base-radius) + 2px);
-  transition: .6s, box-shadow .3s, z-index 0s;
+  transition: .5s .1s, box-shadow .3s;
 
   cursor: pointer;
+}
+nav .dropdown > li {
+  transition: .6s .07s;
 }
 nav ul li.selected {
   color: theme('colors.green.400'); /* slightly lighter green for nav links */
@@ -71,7 +74,7 @@ nav .dropdown ul {
   height: 0;
   z-index: -1;
 
-  transition: .6s;
+  transition: .4s .1s;
 }
 nav .dropdown ul * {
   z-index: -1;
