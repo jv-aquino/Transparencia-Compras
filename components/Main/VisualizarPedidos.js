@@ -22,12 +22,13 @@ function Pedido({obj, setVisible}) {
       <ul className='list-disc pt-1.5'>
         <li className='pb-1'>Se estiver em <b className="text-light-blue-500">Compras</b> mas <b className="a text-red-500">não tem número de agrupamento</b>, seu pedido está na <b className='text-red-500'>lista de espera</b>, aguardando definição da modalidade de compra</li>
         <li>Se o pedido <b className='text-green-500'>tem número de agrupamento</b>, <b className='text-green-500'>pesquise novamente</b> com o número do <b className="text-green-500">agrupamento</b></li>
+        <li className='pt-4'>Pode ser também que o pedido já tenha sido <b className="text-green-500">Finalizado</b>, e por isso ele não está mais em <b className="text-light-blue-500">Compras</b>.</li>
       </ul>
     </div>
     )
   }
   return (
-    <div className='pedidoEncontrado w-[340px]'>
+    <div className='pedidoEncontrado w-[400px]'>
       <FecharPedido changeVisible={changeVisible}/>
 
       <p className='pedido pb-2'>Pedido <b className="font-bold text-light-blue-500">{obj.id_agrupamento}</b></p>

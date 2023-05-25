@@ -68,7 +68,7 @@ main form.pesquisa {
 main .pedidoEncontrado {
   background-color: theme('colors.black');
 
-  @apply rounded-xl m-auto py-6 px-3 mb-4 flex flex-col items-center justify-center relative;
+  @apply rounded-xl m-auto py-6 px-8 mb-4 flex flex-col items-center justify-center relative;
 }
 
 .pedidoEncontrado * {
